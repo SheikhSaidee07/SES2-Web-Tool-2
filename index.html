@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+   // Constants
+const Cpr = 1.4;
+const Ry = 1.1;
+const Fy = 345; // Mpa (Grade 50) AISC 341-16 Table A3.1
+const E = 200000; // Mpa
+
+// User inputs for beam and column
+const beam = {
+    d: 419.608, // mm
+    bf: 261.49, // mm
+    tf: 19.304, // mm
+    tw: 11.557, // mm
+    zpy: 673508, // mm3
+    zpx: 2458059.6, // mm3
+    zex: 2202135.7, // mm3
+    zey: 439322.9 // mm3
+};
+
+const column = {
+    d: 525.018, // mm
+    bf: 293.497, // mm
+    tf: 48.514, // mm
+    tw: 26.924, // mm
+    zpy: 2163092.4, // mm3
+    zpx: 8029661, // mm3
+    zex: 6865601, // mm3
+    zey: 1398324.9, // mm3
+    kdes: 2.31
+};
+
+// User inputs
+const L = 5; // m - Span c/c
+const H = 3.7; // m - Story Height
+const DL = 16.31; // kN/m - Dead Load
+const LL = 7.5; // kN/m - Live Load
+
+// Analysis and calculation
+// Calculating moment capacity
+const Mpr = Cpr * Ry * Fy * beam.zpx / Math.pow(10, 6);
+
+console.log("Max Moment, Mpr =", Mpr.toFixed(2), "kNm");
+
+// Calculating loads
+const wu = 1.2 * DL + 0.5 * LL; // kNm
+const Lh = L - column.bf / 1000; // m
+
+const Ve = 2 * Mpr / Lh; // kNm
+const Vg = 35.104; // kN from analysis
+
+// Shear calculation for different sway conditions
+const Vurl = Ve - Vg; // kN
+const Vurr = Ve + Vg; // kN
+
+console.log("--------------------------------------- MEMBER LEFT END ------------------------------------------------------");
+console.log("Left End Shear, VuL = ", Vurl, "kN", "\nRight End Shear, VuR = ", Vurr, "kNm");
+
+const Vull = Ve + Vg; // kN
+const Vulr = Ve - Vg; // kN
+
+console.log("\n--------------------------------------- MEMBER RIGHT END ------------------------------------------------------");
+console.log("Left End Shear, VuL = ", Vull, "kN", "\nRight End Shear, VuR = ", Vulr, "kNm");
+
+// Dataframe creation
+const end = ["Left", "Right", "Left", "Right"];
+const V = [Vurl, Vurr, Vull, Vulr];
+const df = { "End": end, "Shear (kN)": V };
+
+console.table(df);
+
+// Panel zone shear demand calculation
+const sh = 0;
+const Vu = Math.max(Vurl, Vurr, Vull, Vulr);
+const Mf = Mpr + Vu * sh; // kNm
+
+const Mb1 = Mpr + Vu * (sh + column.d / 2000);
+const Mb2 = Mpr + Vu * (sh + column.d / 2000);
+
+const Vc = 2 * (Mb1) / H; // kN
+
+const Mf1 = Mf;
+const Mf2 = Mf;
+const Vpzdemand = Mf1 * Math.pow(10, 3) / (beam.d - beam.tf) + Mf2 * Math.pow(10, 3) / (beam.d - beam.tf) - Vc; // kN
+
+// Panel zone shear capacity calculation
+const Vpzcapacity = 0.6 * Fy * column.d * column.tw / 1000 + (1.8 * column.bf * Math.pow(column.tf, 2) * Fy) / beam.d / 1000;
+
+console.log("Demand = ", Vpzdemand.toFixed(2), "kN", "Capacity = ", Vpzcapacity.toFixed(2), "kN");
+
+if (Vpzcapacity < Vpzdemand) {
+    console.log("\n\033[1;31m UNSAFE IN PANEL ZONE SHEAR");
+    console.log("\n\033[1;32m USE DOUBLER PLATES");
+}
+
+// Shear Capacity of Doubler Plates
+const VpDP = Vpzdemand - Vpzcapacity;
+const tdpreq = VpDP * Math.pow(10, 3) / (0.6 * Fy * beam.d); // Thickness of DP required
+const tdp = Math.round(tdpreq, 0); // Provided DP thickness
+
+const dz = beam.d - 2 * beam.tf;
+const wz = column.d - 2 * column.tf;
+const tpdlim = (dz + wz) / 90; // Min. Doubler Thickness
+
+if (tpdlim < column.tw) {
+    console.log("\n\033[1;32m SAFE IN SHEAR");
+} else {
+    console.log("\n\033[1;31m UNSAFE IN SHEAR");
+}
+
+// Beam Flange Bending
+const Ru_b = Math.max(Mf1, Mf2) * 1000 / (beam.d - beam.tf); // AISC 360-16 Sec. J10 (6)
+const Rn_b = 1.8 * beam.bf * beam.tf * Fy * Ry; // AISC 360-16 Sec. J10 (6)
+
+if (Rn_b > Ru_b) {
+    console.log("\n\033[1;32m -SAFE FOR BEAM FLANGE");
+} else {
+    console.log("\n\033[1;31m UNSAFE FOR BEAM FLANGE");
+}
+
+// Column Flange Bending (Strength)
+const Rn_c = 6.25 * Fy * Math.pow(column.tf, 2) / 1000;
+const Rn_clim = 1.8 * beam.bf * beam.tf * Fy * Ry / 1000;
+
+if (Rn_c > Rn_clim) {
+    console.log("\n\033[1;32m -SAFE FOR COLUMN FLANGE");
+} else {
+    console.log("\n\033[1;31m UNSAFE FOR COLUMN FLANGE");
+}
+
+// Column Flange Bending (Stiffness)
+const tlim_c = beam.bf / 6;
+
+if (column.tf > tlim_c) {
+    console.log("\n\033[1;32m -SAFE FOR COLUMN BENDING STIFFNESS\n --NO CONTINUITY PLATES REQURIED");
+} else {
+    console.log("\n\033[1;31m UNSAFE FOR BENDING STIFFNESS");
+}
+
+// Column Web Local Yielding
+const tw = column.tw + tdp + 1000; // similar To IS 800: 2007 - Cl. 8.7.1.3 stiff bearing length
+const k = column.kdes;
+const Lb = column.tf;
+const Rnc_webyield = Fy * tw * (5 * k + Lb) / 1000; // AISC 360-16 Sec. J10 (16.1-143)
+
+if (Rnc_webyield > Ru_b) {
+    console.log("\n\033[1;32m -SAFE FOR WEB LOCAL YIELDING");
+} else {
+    console.log("\n\033[1;31m UNSAFE IN WEB LOCAL YIELDING");
+}
+
+// Column Web Crippling
+const Qf = 1;
+const Rnc_webcrip = 0.80 * (Math.pow(tw, 2)) * (1 + 3 * (Lb / column.d) * Math.pow(tw / column.tf, 1.5)) * Math.sqrt(E * Fy * column.tf / tw) * Qf / 1000;
+
+if (Rnc_webcrip > Ru_b) {
+    console.log("\n\033[1;32m SAFE FOR WEB CRIPPLING");
+} else {
+    console.log("\n\033[1;31m UNSAFE IN WEB CRIPPLING");
+} 
+</script>
+</html>
