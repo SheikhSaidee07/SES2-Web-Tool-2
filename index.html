@@ -3,10 +3,88 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
     <title>Document</title>
 </head>
 <body>
-    
+    <div class="app--container">
+        <header>
+            <h1 class="heading">Structual Steel Member Design </h1> 
+        </br>
+                <span class="sub--heading">AISC 360-16, AISC 341-16, AISC 358-16</span></p>
+        </header>
+        <hr>
+        <section class="input--section">
+            <div class="input--parent-container">
+                <div class="input--container">
+                    <label for="L" class="label label-L"> L </label>
+                    <input type="number" id="L" class="input input--field-1">
+                </div> 
+                <div class="input--container">
+                    <label for="H" class="label label-H">H</label>
+                    <input type="number" id="H" class="input input--field-2">
+                </div>
+                <div class="input--container">
+                    <label for="DL" class="label label-DL">DL</label>
+                    <input type="number" id="DL" class="input input--field-3">
+                </div>
+                <div class="input--container">
+                    <label for="LL" class="label label-LL">LL</label>
+                    <input type="number" id="LL" class="input input--field-4">
+                </div>
+        
+                <div class="input--container">
+                    <label for="Fy" class="label label-Fy">Fy</label>
+                    <input type="number" id="Fy"class="input input--field-5">
+                </div>
+                <div class="input--container">
+                    <label for="E" class="label label-E">E</label>
+                    <input type="number" id="E" class="input input--field-6">
+                </div>
+            </div>
+
+            <div class="dropdown--box">
+                <select name="BEAM" id="beam" class="dropdown dropdown-1">
+                    <option value="">BEAM W16X77</option>
+                    <option value="">BEAM W16X78</option>
+                    <option value="">BEAM W16X79</option>
+                    <option value="">BEAM W16X80</option>
+                    <option value="">BEAM W16X81</option>
+                </select>
+                <select name="Column" id="column" class="dropdown dropdown-2">
+                    <option value="">COLUMN W18X221</option>
+                    <option value="">COLUMN W18X222</option>
+                    <option value="">COLUMN W18X223</option>
+                    <option value="">COLUMN W18X224</option>
+                    <option value="">COLUMN W18X225</option>
+                </select>
+            </div>
+        </section>
+        <section>
+            <div></div>
+            <div class="table--container">
+                <table >
+                    <tbody>
+                        <tr>
+                        <th>Index</th>
+                        <th>0</th>
+                        <th>1</th>
+                        <th>2</th>
+                        <th>3</th>
+                        </tr>
+                        <tr>
+                            <td>END </br>SHEAR(kN)</td>
+                            <td>'Left' </br>519.8588101713736</td>
+                            <td>'Right' <br/> 590.0668101713737 </td>
+                            <td>'Left'  <br/> 590.0668101713737 </td>
+                            <td>'Right' <br/> 519.8588101713736  </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div></div>
+        </section>
+    </div>
 </body>
 <script>
    // Constants
@@ -16,28 +94,7 @@ const Fy = 345; // Mpa (Grade 50) AISC 341-16 Table A3.1
 const E = 200000; // Mpa
 
 // User inputs for beam and column
-const beam = {
-    d: 419.608, // mm
-    bf: 261.49, // mm
-    tf: 19.304, // mm
-    tw: 11.557, // mm
-    zpy: 673508, // mm3
-    zpx: 2458059.6, // mm3
-    zex: 2202135.7, // mm3
-    zey: 439322.9 // mm3
-};
 
-const column = {
-    d: 525.018, // mm
-    bf: 293.497, // mm
-    tf: 48.514, // mm
-    tw: 26.924, // mm
-    zpy: 2163092.4, // mm3
-    zpx: 8029661, // mm3
-    zex: 6865601, // mm3
-    zey: 1398324.9, // mm3
-    kdes: 2.31
-};
 
 // User inputs
 const L = 5; // m - Span c/c

@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+:root {
+    --background : #f5f5f5    
+}
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: var(--background);
+    font-family: "Poppins", sans-serif;
+    padding: 3rem;
+}
+.app--container{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border: 1px solid grey;
+    border-radius: 5px;
+    /* max-width: 70%; */
+}
+header {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+.heading{
+    font-weight: 800;
+}
+.sub--heading{
+    display: block;
+    font-weight: 600;
+}
+.input--container{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1rem;
+    width: 100%;
+}
+.input{
+    width: 20%;
+    height: 2.2rem;
+    border: 1px solid grey;
+    border-radius: 5px;
+    padding: 1rem;
+}
+.label{
+    font-weight: 500;
+}
+.input--parent-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.dropdown--box{
+    text-align: center;
+}
+.dropdown{
+    padding: 0.6rem;
+    border-radius: 5px;
+    width: 10%;
+}
+.table--container{
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+td, th {
+    border: 1px solid #777;
+    padding: 0.5rem;
+    text-align: center;
+}
+ 
+table {
+    border-collapse: collapse;
+}
+ 
+tbody tr:nth-child(odd) {
+    background: #eee;
+}
+caption {
+    font-size: 0.8rem;
+}
