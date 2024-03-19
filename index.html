@@ -49,19 +49,19 @@
             <div class="dropdown--box">
                 <select name="BEAM" id="beam" class="dropdown dropdown-1">
                     <option value="" disabled selected>Beams</option>
-                    <option value="">W16X77</option>
-                    <option value="">W16X78</option>
-                    <option value="">W16X79</option>
-                    <option value="">W16X80</option>
-                    <option value="">W16X81</option>
+                    <option value="W16X77">W16X77</option>
+                    <option value="W16X78">W16X78</option>
+                    <option value="W16X79">W16X79</option>
+                    <option value="W16X80">W16X80</option>
+                    <option value="W16X81">W16X81</option>
                 </select>
                 <select name="Column" id="column" class="dropdown dropdown-2">
                     <option value="" disabled selected>Columns</option>
-                    <option value="">W18X221</option>
-                    <option value="">W18X222</option>
-                    <option value="">W18X223</option>
-                    <option value="">W18X224</option>
-                    <option value="">W18X225</option>
+                    <option value="W18X221">W18X221</option>
+                    <option value="W18X222">W18X222</option>
+                    <option value="W18X223">W18X223</option>
+                    <option value="W18X224">W18X224</option>
+                    <option value="W18X225">W18X225</option>
                 </select>
             </div>
         </section>
@@ -92,7 +92,14 @@
     </div>
 </body>
 <script>
-
+    const dropdowns = document.querySelectorAll(".dropdown");
+    let dropdownData
+    dropdowns.forEach((dropdown) => {
+        dropdown.addEventListener("change", (e) => {
+            fetch("./data.json").then((res) => { return res.json() }).then((data) => { dropdownData = data }).catch((error) => console.log(error))
+        })
+    })
+    console.log(dropdownDataq)
     // Constants
     const Cpr = 1.4;
     const Ry = 1.1;
