@@ -210,11 +210,11 @@
                     demandContainer.insertAdjacentHTML("beforeend", demandHtml)
 
                     if (Vpzcapacity < Vpzdemand) {
-                        // console.log("\n\x1b[1;31m UNSAFE IN PANEL ZONE SHEAR");
-                        // console.log("\n\x1b[1;32m USE DOUBLER PLATES");
-                        const unsafeHtml = `<!-- <p> UNSAFE IN PANEL ZONE SHEAR"</p>
-                <p>USE DOUBLER PLATES"</p> -->`
-                        demandContainer.insertAdjacentHTML("beforebegin", unsafeHtml)
+                        console.log("\n\x1b[1;31m UNSAFE IN PANEL ZONE SHEAR");
+                        console.log("\n\x1b[1;32m USE DOUBLER PLATES");
+                        const unsafeHtml = "<p> UNSAFE IN PANEL ZONE SHEAR</p><p>USE DOUBLER PLATES</p>"
+                        demandContainer.insertAdjacentHTML("beforeend", unsafeHtml)
+                        // console.log(unsafeHtm)
                     }
 
                     // Shear Capacity of Doubler Plates
@@ -228,41 +228,67 @@
 
                     if (tpdlim < columnData.tw) {
                         // console.log("\n\x1b[1;32m SAFE IN SHEAR");
-                        const safeInShearHTML = `<!-- <p> SAFE IN SHEAR"</p>`
-                        demandContainer.insertAdjacentHTML("beforebegin", safeInShearHTML)
+                        const safeInShearHTML = "<p> SAFE IN SHEAR</p>"
+                        demandContainer.insertAdjacentHTML("beforeend", safeInShearHTML)
                     } else {
                         // console.log("\n\x1b[1;31m UNSAFE IN SHEAR");
-                        const unsafeInShearHTML = `<!-- <p> UNSAFE IN SHEAR"</p>`
-                        demandContainer.insertAdjacentHTML("beforebegin", unsafeInShearHTML)
+                        const unsafeInShearHTML = "<p> UNSAFE IN SHEAR</p>"
+                        demandContainer.insertAdjacentHTML("beforeend", unsafeInShearHTML)
                     }
 
                     // Beam Flange Bending
                     const Ru_b = Math.max(Mf1, Mf2) * 1000 / (beamData.d - beamData.tf); // AISC 360-16 Sec. J10 (6)
                     const Rn_b = 1.8 * beamData.bf * beamData.tf * Fy * Ry; // AISC 360-16 Sec. J10 (6)
 
-                    if (Rn_b > Ru_b) {
-                        console.log("\n\x1b[1;32m -SAFE FOR BEAM FLANGE");
-                    } else {
-                        console.log("\n\x1b[1;31m UNSAFE FOR BEAM FLANGE");
-                    }
+                    // if (Rn_b > Ru_b) {
+                    //     console.log("\n\x1b[1;32m -SAFE FOR BEAM FLANGE");
+                    // } else {
+                    //     console.log("\n\x1b[1;31m UNSAFE FOR BEAM FLANGE");
+                    // }
 
+                    if (Rn_b > Ru_b) {
+                        const safeForBeamFlangHTML = "<p> -SAFE FOR BEAM FLANGE</p>"
+                        demandContainer.insertAdjacentHTML("beforeend", safeForBeamFlangHTML)
+                    } else {
+                        // console.log("\n\x1b[1;31m UNSAFE IN SHEAR");
+                        const unsafeForBeamFlangHTML = "<p> -UNSAFE FOR BEAM FLANGE</p>"
+                        demandContainer.insertAdjacentHTML("beforeend", unsafeForBeamFlangHTML)
+                    }
                     // Column Flange Bending (Strength)
                     const Rn_c = 6.25 * Fy * Math.pow(columnData.tf, 2) / 1000;
                     const Rn_clim = 1.8 * beamData.bf * beamData.tf * Fy * Ry / 1000;
 
+                    // if (Rn_c > Rn_clim) {
+                    //     console.log("\n\x1b[1;32m -SAFE FOR COLUMN FLANGE");
+                    // } else {
+                    //     console.log("\n\x1b[1;31m UNSAFE FOR COLUMN FLANGE");
+                    // }
+
                     if (Rn_c > Rn_clim) {
-                        console.log("\n\x1b[1;32m -SAFE FOR COLUMN FLANGE");
+                        const safeForColumnFlangHTML = "<p> -SAFE FOR COLUMN FLANGE</p>"
+                        demandContainer.insertAdjacentHTML("beforeend", safeForColumnFlangHTML)
                     } else {
-                        console.log("\n\x1b[1;31m UNSAFE FOR COLUMN FLANGE");
+                        // console.log("\n\x1b[1;31m UNSAFE IN SHEAR");
+                        const unsafeForColumnFlangHTML = "<!-- <p> -UNSAFE FOR COLUMN FLANGE</p>"
+                        demandContainer.insertAdjacentHTML("beforeend", unsafeForColumnFlangHTML)
                     }
 
                     // Column Flange Bending (Stiffness)
                     const tlim_c = beamData.bf / 6;
 
-                    if (column.tf > tlim_c) {
-                        console.log("\n\x1b[1;32m -SAFE FOR COLUMN BENDING STIFFNESS\n --NO CONTINUITY PLATES REQURIED");
+                    // if (column.tf > tlim_c) {
+                    //     console.log("\n\x1b[1;32m -SAFE FOR COLUMN BENDING STIFFNESS\n --NO CONTINUITY PLATES REQURIED");
+                    // } else {
+                    //     console.log("\n\x1b[1;31m UNSAFE FOR BENDING STIFFNESS");
+                    // }
+
+                    if (Rn_c > Rn_clim) {
+                        const safeForColumnBendingHTML = "<p> -SAFE FOR COLUMN BENDING STIFFNESS </br>--NO CONTINUITY PLATES REQURIED</p>"
+                        demandContainer.insertAdjacentHTML("beforeend", safeForColumnBendingHTML)
                     } else {
-                        console.log("\n\x1b[1;31m UNSAFE FOR BENDING STIFFNESS");
+                        // console.log("\n\x1b[1;31m UNSAFE IN SHEAR");
+                        const unsafeForColumnBendingHTML = "<p> UNSAFE FOR BENDING STIFFNESS</p>"
+                        demandContainer.insertAdjacentHTML("beforeend", unsafeForColumnBendingHTML)
                     }
 
                     // Column Web Local Yielding
