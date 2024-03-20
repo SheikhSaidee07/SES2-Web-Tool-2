@@ -70,17 +70,11 @@
                 <button type="button" class="btn" id="calculateBtn">Calculate</button>
             </div>
             <div class="mpr">
-                <!-- <p>"Max Moment, Mpr =", Mpr.toFixed(2), "kNm"</p>
-                // console.log("--------------------------------------- MEMBER LEFT END ------------------------------------------------------");
-                // console.log("Left End Shear, VuL = ", Vurl, "kN", "\nRight End Shear, VuR = ", Vurr, "kNm");
+               <!--  <p>"Max Moment, Mpr =", Mpr.toFixed(2), "kNm"</p>
                 <p>"--------------------------------------- MEMBER LEFT END ------------------------------------------------------"</p>
-                <p>"Left End Shear, VuL = ", ${}, "kN", "\nRight End Shear, VuR = ", {}, "kNm"></p> -->
-                <!-- 
-                // console.log("\n--------------------------------------- MEMBER RIGHT END
-                ------------------------------------------------------");
-                // console.log("Left End Shear, VuL = ", Vull, "kN", "\nRight End Shear, VuR = ", Vulr, "kNm"); -->
+                <p>"Left End Shear, VuL = ", ${}, "kN", "\nRight End Shear, VuR = ", {}, "kNm"></p>
 
-                <!-- <p>"--------------------------------------- MEMBER RIGHT END ------------------------------------------------------"</p>
+                <p>"--------------------------------------- MEMBER RIGHT END ------------------------------------------------------"</p>
                 <p>"Left End Shear, VuL = ", ${}, "kN", "\nRight End Shear, VuR = ", ${}, "kNm"</p> -->
             </div>
             <div class="table--container">
@@ -120,6 +114,8 @@
         const mprContainer = document.querySelector(".mpr")
         const demandContainer = document.querySelector(".demand")
         calculateBtn.addEventListener("click", function () {
+            mprContainer.innerHTML='';
+            demandContainer.innerHTML='';
             // Constants
             const Cpr = 1.4;
             const Ry = 1.1;
@@ -164,7 +160,7 @@
                     // console.log("Left End Shear, VuL = ", Vurl, "kN", "\nRight End Shear, VuR = ", Vurr, "kNm");
 
 
-                    const memberLeft = `<p>"--------------------------------------- MEMBER LEFT END ------------------------------------------------------"</p><p>"Left End Shear, VuL = ", ${Vurl}, "kN", "\nRight End Shear, VuR = ", ${Vurr}, "kNm"></p>`
+                    const memberLeft = `<p>"------------------------------------------------------ MEMBER LEFT END ------------------------------------------------------"</p><p>"Left End Shear, VuL = ", ${Vurl}, "kN", "\nRight End Shear, VuR = ", ${Vurr}, "kNm"></p>`
                     mprContainer.insertAdjacentHTML("beforeend", memberLeft)
 
                     const Vull = Ve + Vg; // kN
@@ -173,7 +169,7 @@
                     // console.log("\n--------------------------------------- MEMBER RIGHT END ------------------------------------------------------");
                     // console.log("Left End Shear, VuL = ", Vull, "kN", "\nRight End Shear, VuR = ", Vulr, "kNm");
 
-                    const memberRight = `<p>"--------------------------------------- MEMBER RIGHT END ------------------------------------------------------"</p><p>"Left End Shear, VuL = ", ${Vull}, "kN", "\nRight End Shear, VuR = ", ${Vulr}, "kNm"</p>`
+                    const memberRight = `<p>"------------------------------------------------------ MEMBER RIGHT END ------------------------------------------------------"</p><p>"Left End Shear, VuL = ", ${Vull}, "kN", "\nRight End Shear, VuR = ", ${Vulr}, "kNm"</p>`
                     mprContainer.insertAdjacentHTML("beforeend", memberRight)
 
                     // Dataframe creation
@@ -206,13 +202,13 @@
                     const Vpzcapacity = 0.6 * Fy * columnData.d * columnData.tw / 1000 + (1.8 * columnData.bf * Math.pow(columnData.tf, 2) * Fy) / beamData.d / 1000;
                     console.log("vpz capacity", Vpzcapacity)
                     // console.log("Demand = ", Vpzdemand.toFixed(2), "kN", "Capacity = ", Vpzcapacity.toFixed(2), "kN");
-                    const demandHtml = `<p>Demand = ", ${Vpzdemand.toFixed(2)}, "kN", "Capacity = ", ${Vpzcapacity.toFixed(2)}, "kN"</p>`
+                    const demandHtml = `<p class='demand-numbers'>Demand = ", ${Vpzdemand.toFixed(2)}, "kN", "Capacity = ", ${Vpzcapacity.toFixed(2)}, "kN"</p>`
                     demandContainer.insertAdjacentHTML("beforeend", demandHtml)
 
                     if (Vpzcapacity < Vpzdemand) {
                         console.log("\n\x1b[1;31m UNSAFE IN PANEL ZONE SHEAR");
                         console.log("\n\x1b[1;32m USE DOUBLER PLATES");
-                        const unsafeHtml = "<p> UNSAFE IN PANEL ZONE SHEAR</p><p>USE DOUBLER PLATES</p>"
+                        const unsafeHtml = "<p class='brown'> UNSAFE IN PANEL ZONE SHEAR</p><p class='green'>USE DOUBLER PLATES</p>"
                         demandContainer.insertAdjacentHTML("beforeend", unsafeHtml)
                         // console.log(unsafeHtm)
                     }
@@ -228,11 +224,11 @@
 
                     if (tpdlim < columnData.tw) {
                         // console.log("\n\x1b[1;32m SAFE IN SHEAR");
-                        const safeInShearHTML = "<p> SAFE IN SHEAR</p>"
+                        const safeInShearHTML = "<p class='green'> SAFE IN SHEAR</p>"
                         demandContainer.insertAdjacentHTML("beforeend", safeInShearHTML)
                     } else {
                         // console.log("\n\x1b[1;31m UNSAFE IN SHEAR");
-                        const unsafeInShearHTML = "<p> UNSAFE IN SHEAR</p>"
+                        const unsafeInShearHTML = "<p class='brown'> UNSAFE IN SHEAR</p>"
                         demandContainer.insertAdjacentHTML("beforeend", unsafeInShearHTML)
                     }
 
@@ -247,11 +243,11 @@
                     // }
 
                     if (Rn_b > Ru_b) {
-                        const safeForBeamFlangHTML = "<p> -SAFE FOR BEAM FLANGE</p>"
+                        const safeForBeamFlangHTML = "<p class='green'> -SAFE FOR BEAM FLANGE</p>"
                         demandContainer.insertAdjacentHTML("beforeend", safeForBeamFlangHTML)
                     } else {
                         // console.log("\n\x1b[1;31m UNSAFE IN SHEAR");
-                        const unsafeForBeamFlangHTML = "<p> -UNSAFE FOR BEAM FLANGE</p>"
+                        const unsafeForBeamFlangHTML = "<p class='brown'> -UNSAFE FOR BEAM FLANGE</p>"
                         demandContainer.insertAdjacentHTML("beforeend", unsafeForBeamFlangHTML)
                     }
                     // Column Flange Bending (Strength)
@@ -265,11 +261,11 @@
                     // }
 
                     if (Rn_c > Rn_clim) {
-                        const safeForColumnFlangHTML = "<p> -SAFE FOR COLUMN FLANGE</p>"
+                        const safeForColumnFlangHTML = "<p class='green'> -SAFE FOR COLUMN FLANGE</p>"
                         demandContainer.insertAdjacentHTML("beforeend", safeForColumnFlangHTML)
                     } else {
                         // console.log("\n\x1b[1;31m UNSAFE IN SHEAR");
-                        const unsafeForColumnFlangHTML = "<!-- <p> -UNSAFE FOR COLUMN FLANGE</p>"
+                        const unsafeForColumnFlangHTML = "<!-- <p class='brown'> -UNSAFE FOR COLUMN FLANGE</p>"
                         demandContainer.insertAdjacentHTML("beforeend", unsafeForColumnFlangHTML)
                     }
 
@@ -283,11 +279,11 @@
                     // }
 
                     if (Rn_c > Rn_clim) {
-                        const safeForColumnBendingHTML = "<p> -SAFE FOR COLUMN BENDING STIFFNESS </br>--NO CONTINUITY PLATES REQURIED</p>"
+                        const safeForColumnBendingHTML = "<p class='green'> -SAFE FOR COLUMN BENDING STIFFNESS </br></br>--NO CONTINUITY PLATES REQURIED</p>"
                         demandContainer.insertAdjacentHTML("beforeend", safeForColumnBendingHTML)
                     } else {
                         // console.log("\n\x1b[1;31m UNSAFE IN SHEAR");
-                        const unsafeForColumnBendingHTML = "<p> UNSAFE FOR BENDING STIFFNESS</p>"
+                        const unsafeForColumnBendingHTML = "<p class='brown'> UNSAFE FOR BENDING STIFFNESS</p>"
                         demandContainer.insertAdjacentHTML("beforeend", unsafeForColumnBendingHTML)
                     }
 
@@ -298,9 +294,13 @@
                     const Rnc_webyield = Fy * tw * (5 * k + Lb) / 1000; // AISC 360-16 Sec. J10 (16.1-143)
 
                     if (Rnc_webyield > Ru_b) {
-                        console.log("\n\x1b[1;32m -SAFE FOR WEB LOCAL YIELDING");
+                        /* console.log("\n\x1b[1;32m -SAFE FOR WEB LOCAL YIELDING"); */
+                        const safeWebLocalCripplingHTML = "<p class='green'> -SAFE FOR WEB LOCAL YIELDING</p>"
+                        demandContainer.insertAdjacentHTML("beforeend", safeWebLocalCripplingHTML)
                     } else {
-                        console.log("\n\x1b[1;31m UNSAFE IN WEB LOCAL YIELDING");
+                       /*  console.log("\n\x1b[1;31m UNSAFE IN WEB LOCAL YIELDING"); */
+                        const unSafeWebLocalCripplingHTML = "<p class='brown'> UNSAFE IN WEB LOCAL YIELDING</p>"
+                        demandContainer.insertAdjacentHTML("beforend", unSafeWebLocalCripplingHTML)
                     }
 
                     // Column Web Crippling
@@ -308,9 +308,13 @@
                     const Rnc_webcrip = 0.80 * (Math.pow(tw, 2)) * (1 + 3 * (Lb / columnData.d) * Math.pow(tw / columnData.tf, 1.5)) * Math.sqrt(E * Fy * columnData.tf / tw) * Qf / 1000;
 
                     if (Rnc_webcrip > Ru_b) {
-                        console.log("\n\x1b[1;32m SAFE FOR WEB CRIPPLING");
+                        const safeWebCripplingHTML = "<p class='green'> SAFE FOR WEB CRIPPLING</p>"
+                        demandContainer.insertAdjacentHTML("beforeend", safeWebCripplingHTML)
+                        /* console.log("\n\x1b[1;32m SAFE FOR WEB CRIPPLING"); */
                     } else {
-                        console.log("\n\x1b[1;31m UNSAFE IN WEB CRIPPLING");
+                        /* console.log("\n\x1b[1;31m UNSAFE IN WEB CRIPPLING"); */
+                        const unSafeWebCripplingHTML = "<p class='brown'> UNSAFE IN WEB CRIPPLING</p>"
+                        demandContainer.insertAdjacentHTML("beforeend", unSafeWebCripplingHTML)
                     }
 
                 })

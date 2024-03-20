@@ -118,3 +118,30 @@ caption {
         border-radius: .8rem;
       }
 }
+
+.mpr{
+    text-align: center;
+    font-size: 1rem;
+
+    p{
+        padding:1rem 0;
+        font-weight: 600;
+    }
+}
+.demand{
+    text-align: center;
+}
+.demand-numbers{
+    font-weight: 600;
+    padding: 1rem 0;
+}
+.brown{
+    color: red;
+    font-weight: 600;
+    padding: 1rem 0;
+}
+.green{
+    color: #03C03C;
+    font-weight: 600;
+    padding: 1rem 0;
+}
