@@ -4,8 +4,156 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
     <title>Document</title>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+:root {
+  --background: #f5f5f5;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: var(--background);
+  font-family: "Poppins", sans-serif;
+  padding: 3rem;
+}
+.app--container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  border: 1px solid grey;
+  border-radius: 5px;
+  /* max-width: 70%; */
+}
+header {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.heading {
+  font-weight: 800;
+}
+.sub--heading {
+  display: block;
+  font-weight: 600;
+}
+.input--container {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: 1rem;
+  padding-right: 7rem;
+  width: 70%;
+}
+
+.input {
+  width: 70%;
+  height: 2.2rem;
+  border: 1px solid grey;
+  border-radius: 5px;
+  padding: 1rem;
+}
+.label {
+  font-weight: 700;
+}
+.input--parent-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 50%;
+  gap: 2rem;
+  margin-bottom: 1rem;
+}
+.input--section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.dropdown--box {
+  text-align: center;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+.dropdown {
+  padding: 0.6rem;
+  border-radius: 5px;
+  width: 35%;
+  font-weight: 700;
+}
+.table--container {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+td,
+th {
+  border: 1px solid #777;
+  padding: 0.5rem;
+  text-align: center;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+tbody tr:nth-child(odd) {
+  background: #eee;
+}
+caption {
+  font-size: 0.8rem;
+}
+.calculate-btn{
+    text-align: center;
+    margin: 2rem;
+
+    .btn {
+        background-color: grey;
+        border: none;
+        color: white;
+        padding: 1rem 2rem;
+        text-align: center;
+        text-decoration: none;
+        font-size: 1rem;
+        cursor: pointer;
+        border-radius: .8rem;
+      }
+}
+
+.mpr{
+    text-align: center;
+    font-size: 1rem;
+
+    p{
+        padding:1rem 0;
+        font-weight: 600;
+    }
+}
+.demand{
+    text-align: center;
+}
+.demand-numbers{
+    font-weight: 600;
+    padding: 1rem 0;
+}
+.brown{
+    color: red;
+    font-weight: 600;
+    padding: 1rem 0;
+}
+.green{
+    color: #03C03C;
+    font-weight: 600;
+    padding: 1rem 0;
+}
+    </style>
 </head>
 
 <body>
@@ -109,6 +257,127 @@
     </div>
 </body>
 <script>
+   const data= {
+    beams: [
+      {
+        "id": "W16X77",
+        "d": 419.608, 
+        "bf": 261.49, 
+        "tf": 19.304, 
+        "tw": 11.557, 
+        "zpy": 673508, 
+        "zpx": 2458059.6, 
+        "zex": 2202135.7, 
+        "zey": 439322.9 
+      },
+      {
+        "id": "W16X78",
+        "d": 419.608, 
+        "bf": 261.49, 
+        "tf": 19.304, 
+        "tw": 11.557, 
+        "zpy": 673508, 
+        "zpx": 2458059.6, 
+        "zex": 2202135.7, 
+        "zey": 439322.9 
+      },
+      {
+        "id": "W16X79",
+        "d": 419.608, 
+        "bf": 261.49, 
+        "tf": 19.304, 
+        "tw": 11.557, 
+        "zpy": 673508, 
+        "zpx": 2458059.6, 
+        "zex": 2202135.7, 
+        "zey": 439322.9 
+      },
+      {
+        "id": "W16X80",
+        "d": 419.608, 
+        "bf": 261.49, 
+        "tf": 19.304, 
+        "tw": 11.557, 
+        "zpy": 673508, 
+        "zpx": 2458059.6, 
+        "zex": 2202135.7, 
+        "zey": 439322.9 
+      },
+      {
+        "id": "W16X81",
+        "d": 419.608, 
+        "bf": 261.49, 
+        "tf": 19.304, 
+        "tw": 11.557, 
+        "zpy": 673508, 
+        "zpx": 2458059.6, 
+        "zex": 2202135.7, 
+        "zey": 439322.9 ,
+      }
+    ],
+    columns: [
+      {
+        "id": "W18X221",
+        "d": 525.018, 
+        "bf": 293.497, 
+        "tf": 48.514, 
+        "tw": 26.924, 
+        "zpy": 2163092.4, 
+        "zpx": 8029661, 
+        "zex": 6865601, 
+        "zey": 1398324.9, 
+        "kdes": 2.31
+      },
+      {
+        "id": "W18X222",
+        "d": 525.018, 
+        "bf": 293.497, 
+        "tf": 48.514, 
+        "tw": 26.924, 
+        "zpy": 2163092.4, 
+        "zpx": 8029661, 
+        "zex": 6865601, 
+        "zey": 1398324.9, 
+        "kdes": 2.31
+      },
+      {
+        "id": "W18X223",
+        "d": 525.018, 
+        "bf": 293.497, 
+        "tf": 48.514, 
+        "tw": 26.924, 
+        "zpy": 2163092.4, 
+        "zpx": 8029661, 
+        "zex": 6865601, 
+        "zey": 1398324.9, 
+        "kdes": 2.31
+      },
+      {
+        "id": "W18X224",
+        "d": 525.018, 
+        "bf": 293.497, 
+        "tf": 48.514, 
+        "tw": 26.924, 
+        "zpy": 2163092.4, 
+        "zpx": 8029661, 
+        "zex": 6865601, 
+        "zey": 1398324.9, 
+        "kdes": 2.31
+      },
+      {
+        "id": "W18X225",
+        "d": 525.018, 
+        "bf": 293.497, 
+        "tf": 48.514, 
+        "tw": 26.924, 
+        "zpy": 2163092.4, 
+        "zpx": 8029661, 
+        "zex": 6865601, 
+        "zey": 1398324.9, 
+        "kdes": 2.31
+      }
+    ]
+  }
     document.addEventListener("DOMContentLoaded", function () {
         const calculateBtn = document.getElementById("calculateBtn");
         const mprContainer = document.querySelector(".mpr")
@@ -133,9 +402,6 @@
 
             // Fetching JSON data
             let beamData, columnData;
-            fetch("./data.json")
-                .then((res) => res.json())
-                .then((data) => {
                     beamData = data.beams.find((beam) => beam.id === beamId);
                     columnData = data.columns.find((column) => column.id === columnId);
                     console.log("column data is --------------->", columnData)
@@ -318,10 +584,8 @@
                     }
 
                 })
-                .catch((error) => console.log(error));
 
         });
-    });
 </script>
 
 </html>
