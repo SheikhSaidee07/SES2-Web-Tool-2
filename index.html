@@ -57,6 +57,7 @@ header {
 }
 .label {
   font-weight: 700;
+  width: 2rem;
 }
 .input--parent-container {
   display: flex;
@@ -64,7 +65,7 @@ header {
   justify-content: center;
   align-items: center;
   width: 100%;
-  max-width: 50%;
+  /* max-width: 50%; */
   gap: 2rem;
   margin-bottom: 1rem;
 }
@@ -73,6 +74,7 @@ header {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  padding: 2rem;
 }
 .dropdown--box {
   text-align: center;
@@ -89,19 +91,27 @@ header {
   font-weight: 700;
 }
 .table--container {
+  overflow-x: auto;
   display: flex;
   justify-content: center;
   margin-top: 2rem;
+  padding-bottom: 2rem;
 }
 td,
 th {
+  white-space: nowrap; 
+  overflow: hidden;
+  text-overflow: ellipsis;
   border: 1px solid #777;
   padding: 0.5rem;
   text-align: center;
 }
 
 table {
+  width: 100%;
   border-collapse: collapse;
+  table-layout: fixed;
+  margin: 0 1rem;
 }
 
 tbody tr:nth-child(odd) {
@@ -152,6 +162,58 @@ caption {
     color: #03C03C;
     font-weight: 600;
     padding: 1rem 0;
+}
+@media screen and (max-width: 2560px){
+    .dropdown--box{
+        margin-left: 9rem;
+        width: 58%;
+    }
+}
+  @media screen and (max-width: 1440px){
+    .dropdown--box{
+        width: 57%;
+        margin-left: 8rem;
+    }
+  }
+  @media screen and (max-width: 1024px){
+    .dropdown--box{
+        margin-left: 2.5rem;
+        width: 54%;
+        gap: 1rem;
+    }
+}
+@media screen and (max-width: 768px) {
+ body{
+    padding: 1rem;
+ }
+ .input{
+    width: 100%;
+ }
+ .input--section {
+  padding: 1rem;
+}
+.input--container {
+    padding-right: 0;
+    justify-content: center;
+
+}
+.input--parent-container{
+    max-width: 100%;
+    align-items: center;
+}
+.dropdown--box{
+    width: 65%;
+    margin-left: 3rem;
+}
+.dropdown {
+width: 45%;
+}
+table {
+    width: 100%;
+  }
+th, td {
+    display: block; 
+  }
 }
     </style>
 </head>
@@ -408,7 +470,7 @@ caption {
                     // Calculating moment capacity
                     const Mpr = Cpr * Ry * Fy * beamData.zpx / Math.pow(10, 6);
                     // console.log("Max Moment, Mpr =", Mpr.toFixed(2), "kNm");
-                    const html = `<p>"Max Moment, Mpr =", ${Mpr.toFixed(2)}, "kNm"</p>`
+                    const html = `<p>Max Moment Mpr = ${Mpr.toFixed(2)} kNm</p>`
                     mprContainer.insertAdjacentHTML("beforeend", html)
 
                     // Calculating loads
@@ -426,7 +488,7 @@ caption {
                     // console.log("Left End Shear, VuL = ", Vurl, "kN", "\nRight End Shear, VuR = ", Vurr, "kNm");
 
 
-                    const memberLeft = `<p>"------------------------------------------------------ MEMBER LEFT END ------------------------------------------------------"</p><p>"Left End Shear, VuL = ", ${Vurl}, "kN", "\nRight End Shear, VuR = ", ${Vurr}, "kNm"></p>`
+                    const memberLeft = `<p>MEMBER LEFT END </p><p>Left End Shear VuL = ${Vurl} kN</br> Right End Shear VuR = ${Vurr} kNm</p>`
                     mprContainer.insertAdjacentHTML("beforeend", memberLeft)
 
                     const Vull = Ve + Vg; // kN
@@ -435,7 +497,7 @@ caption {
                     // console.log("\n--------------------------------------- MEMBER RIGHT END ------------------------------------------------------");
                     // console.log("Left End Shear, VuL = ", Vull, "kN", "\nRight End Shear, VuR = ", Vulr, "kNm");
 
-                    const memberRight = `<p>"------------------------------------------------------ MEMBER RIGHT END ------------------------------------------------------"</p><p>"Left End Shear, VuL = ", ${Vull}, "kN", "\nRight End Shear, VuR = ", ${Vulr}, "kNm"</p>`
+                    const memberRight = `<p>MEMBER RIGHT END </p><p>Left End Shear VuL = ${Vull} kN<br> Right End Shear VuR = ${Vulr} kNm </p>`
                     mprContainer.insertAdjacentHTML("beforeend", memberRight)
 
                     // Dataframe creation
@@ -468,7 +530,7 @@ caption {
                     const Vpzcapacity = 0.6 * Fy * columnData.d * columnData.tw / 1000 + (1.8 * columnData.bf * Math.pow(columnData.tf, 2) * Fy) / beamData.d / 1000;
                     console.log("vpz capacity", Vpzcapacity)
                     // console.log("Demand = ", Vpzdemand.toFixed(2), "kN", "Capacity = ", Vpzcapacity.toFixed(2), "kN");
-                    const demandHtml = `<p class='demand-numbers'>Demand = ", ${Vpzdemand.toFixed(2)}, "kN", "Capacity = ", ${Vpzcapacity.toFixed(2)}, "kN"</p>`
+                    const demandHtml = `<p class='demand-numbers'>Demand = ${Vpzdemand.toFixed(2)} kN </br> Capacity = ${Vpzcapacity.toFixed(2)} kN</p>`
                     demandContainer.insertAdjacentHTML("beforeend", demandHtml)
 
                     if (Vpzcapacity < Vpzdemand) {
