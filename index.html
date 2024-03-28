@@ -68,12 +68,72 @@ header {
   gap: 2rem;
   margin-bottom: 1rem;
 }
+.input--section-box{
+    display : flex;
+    justify-content: center;
+    width: 100%;
+}
+.image--section{
+    display : flex;
+    gap : 1rem;
+    margin-top: 4rem;
+    margin-right: 2rem;
+    img {
+        width: 20rem;
+    }
+}
+
+.image--box-1{
+    /* border: 1px solid red; */
+    position: relative;
+}
+
+.image--box-2{
+    /* border: 1px solid red; */
+    position: relative;
+}
+
+.span-class{
+    position: absolute;
+    background-color: white;
+    color: black;
+    border:1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 3rem;
+    height: 2rem;
+    font-size: 13px;
+}
+.d_b, .d_c {
+    top: 11rem;
+    left: 1.3rem;
+}
+.bf_b, .bf_c{
+    bottom: 6.5rem;
+    left:8.9rem;
+}
+
+.tw_c{
+    bottom: 13rem;
+    right: 5rem;
+}
+.x{
+    bottom: 16.5rem;
+    right: 1.2rem;
+}
+.tf_c{
+    right: .6rem;
+    top: 1.5rem;
+}
+
 .input--section {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   padding: 2rem;
+  width: 50%;
 }
 .dropdown--box {
   text-align: center;
@@ -170,16 +230,49 @@ caption {
 }
   @media screen and (max-width: 1440px){
     .dropdown--box{
-        width: 57%;
-        margin-left: 8rem;
+        width: 61%;
+        margin-left: 3rem;
     }
   }
   @media screen and (max-width: 1024px){
-    .dropdown--box{
-        margin-left: 3rem;
-        width: 67%;
-        gap: 1rem;
+    .input{
+        width: 100%;
     }
+    .dropdown--box{
+        margin-left: 0;
+        width: 100%;
+    }
+    .span-class{
+  width: 2.4;
+}
+    .image--section{
+        img{
+            width: 14rem;
+            height: 20rem;
+        }
+    }
+    .d_b, .d_c {
+        top: 10rem;
+        left: .6rem;
+    }
+    .bf_b, .bf_c{
+        bottom: 10.5rem;
+        left:6rem;
+    }
+
+    .tw_c{
+        bottom: 15rem;
+        right: 2rem;
+    }
+    .x{
+        bottom: 18.4rem;
+        right: .7rem;
+    }
+    .tf_c{
+        right: .2rem;
+        top: 1rem;
+    }
+
 }
 @media screen and (max-width: 768px) {
  body{
@@ -187,19 +280,51 @@ caption {
  }
  .input{
     width: 100%;
- }
+ } 
  .input--section {
   padding: 1rem;
+  width: 100%;
 }
 .input--container {
     padding-right: 0;
     justify-content: center;
 
 }
+.input--section-box{
+    flex-direction: column;
+}
 .input--parent-container{
     max-width: 100%;
     align-items: center;
 }
+.image--section{
+    margin: 0;
+    img{
+        width: 19rem;
+        margin-left: 2rem;
+    }
+}
+.d_b, .d_c {
+        top: 10rem;
+        left: 1.3rem;
+    }
+    .bf_b, .bf_c{
+        bottom: 1.5rem;
+        left:10rem;
+    }
+
+    .tw_c{
+        bottom: 6rem;
+        right: 4rem;
+    }
+    .x{
+        bottom: 9.4rem;
+        right: .2rem;
+    }
+    .tf_c{
+        right: .3rem;
+        top: 1rem;
+    }
 .dropdown--box{
     width: 67%;
     margin-left: 3rem;
@@ -214,6 +339,119 @@ th, td {
     display: block; 
   }
 }
+@media screen and (max-width: 425px) {
+    .dropdown--box{
+        width: 100%;
+        margin-left: 0;
+    }
+    .image--section{
+        flex-direction: column;
+        margin-top: 0;
+        img{
+            width: 20rem;
+            margin: 0 2rem;
+        }
+    }
+    .d_b, .d_c {
+        top: 10rem;
+        left: 1.6rem;
+    }
+    .bf_b, .bf_c{
+        bottom: 1.5rem;
+        left:11rem;
+    }
+
+    .tw_c{
+        bottom: 6rem;
+        right: 5rem;
+    }
+    .x{
+        bottom: 9.4rem;
+        right: 1rem;
+    }
+    .tf_c{
+        right: 1.2rem;
+        top: 1rem;
+    }
+    .span-class{
+        width: 2.7rem;
+    }
+}
+@media screen and (max-width: 375px) {
+    .dropdown--box{
+        width: 100%;
+        margin-left: 0;
+    }
+    .image--section{
+        flex-direction: column;
+        margin-top: 0;
+        img{
+            width: 17rem;
+        }
+    }
+    .span-class{
+        font-size: 9px;
+        width: 2.5rem;
+    }
+    .d_b, .d_c {
+        top: 10rem;
+        left: 1.3rem;
+    }
+    .bf_b, .bf_c{
+        bottom: 1.5rem;
+        left:9.4rem;
+    }
+
+    .tw_c{
+        bottom: 6rem;
+        right: 4rem;
+    }
+    .x{
+        bottom: 9.4rem;
+        right: .7rem;
+    }
+    .tf_c{
+        right: .8rem;
+        top: 1rem;
+    }
+}
+@media screen and (max-width: 320px) {
+    .dropdown--box{
+        width: 100%;
+        margin-left: 0;
+    }
+    
+    .span-class{
+        width: 2.2rem;
+    }
+    .image--section{
+        flex-direction: column;
+        img{
+            width: 14rem;
+        }
+    }
+    .d_b, .d_c {
+        top: 10rem;
+        left: 1.3rem;
+    }
+    .bf_b, .bf_c{
+        bottom: 1.5rem;
+        left:8rem;
+    }
+
+    .tw_c{
+        bottom: 6rem;
+        right: 3rem;
+    }
+    .x{
+        bottom: 9.4rem;
+        left: 13.5rem;
+    }
+    .tf_c{
+        right: .1rem;
+        top: 1rem;
+    }
+}
     </style>
 </head>
 
@@ -225,55 +463,87 @@ th, td {
             <span class="sub--heading">AISC 360-16, AISC 341-16, AISC 358-16</span></p>
         </header>
         <hr>
-        <section class="input--section">
-            <div class="input--parent-container">
-                <div class="input--container">
-                    <label for="L" class="label label-L"> L </label>
-                    <input type="number" id="L" class="input input--field-1">
+        <div class="input--section-box">
+            <section class="input--section">
+                <div class="input--parent-container">
+                    <div class="input--container">
+                        <label for="L" class="label label-L"> L </label>
+                        <input type="number" id="L" class="input input--field-1">
+                    </div>
+                    <div class="input--container">
+                        <label for="H" class="label label-H">H</label>
+                        <input type="number" id="H" class="input input--field-2">
+                    </div>
+                    <div class="input--container">
+                        <label for="DL" class="label label-DL">DL</label>
+                        <input type="number" id="DL" class="input input--field-3">
+                    </div>
+                    <div class="input--container">
+                        <label for="LL" class="label label-LL">LL</label>
+                        <input type="number" id="LL" class="input input--field-4">
+                    </div>
+    
+                    <div class="input--container">
+                        <label for="Fy" class="label label-Fy">Fy</label>
+                        <input type="number" id="Fy" class="input input--field-5">
+                    </div>
+                    <div class="input--container">
+                        <label for="E" class="label label-E">E</label>
+                        <input type="number" id="E" class="input input--field-6">
+                    </div>
                 </div>
-                <div class="input--container">
-                    <label for="H" class="label label-H">H</label>
-                    <input type="number" id="H" class="input input--field-2">
+    
+                <h3>Select Beam And Column</h3>
+                <div class="dropdown--box">
+                    <select name="BEAM" id="beam" class="dropdown dropdown-1">
+                        <option value="" disabled selected>Beams</option>
+                        <option value="W8X67">W8X67</option>
+                        <option value="W10X77">W10X77</option>
+                        <option value="W12X58">W12X58</option>
+                        <option value="W14X68">W14X68</option>
+                        <option value="W16X77">W16X77</option>
+                        <option value="W18X211">W18X211</option>
+                        <option value="W21X68">W21X68</option>
+                        <option value="W24X94">W24X94</option>
+                        <option value="W27X114">W27X114</option>
+                        <option value="W30X116">W30X116</option>
+                        <option value="W40X149">W40X149</option>
+                    </select>
+                    <select name="Column" id="column" class="dropdown dropdown-2">
+                        <option value="" disabled selected>Columns</option>
+                        <option value="W8X67">W8X67</option>
+                        <option value="W10X77">W10X77</option>
+                        <option value="W12X58">W12X58</option>
+                        <option value="W14X68">W14X68</option>
+                        <option value="W16X77">W16X77</option>
+                        <option value="W18X211">W18X211</option>
+                        <option value="W21X68">W21X68</option>
+                        <option value="W24X94">W24X94</option>
+                        <option value="W27X114">W27X114</option>
+                        <option value="W30X116">W30X116</option>
+                        <option value="W40X149">W40X149</option>
+                    </select>
                 </div>
-                <div class="input--container">
-                    <label for="DL" class="label label-DL">DL</label>
-                    <input type="number" id="DL" class="input input--field-3">
-                </div>
-                <div class="input--container">
-                    <label for="LL" class="label label-LL">LL</label>
-                    <input type="number" id="LL" class="input input--field-4">
-                </div>
+            </section>
+            <section class="image--section">
+                <div class="image--box-1">
+                    <span class="span-class d_b"></span>
+                    <span class="bf_b span-class"></span>
 
-                <div class="input--container">
-                    <label for="Fy" class="label label-Fy">Fy</label>
-                    <input type="number" id="Fy" class="input input--field-5">
+                    <img src="./column.png" alt="column">
                 </div>
-                <div class="input--container">
-                    <label for="E" class="label label-E">E</label>
-                    <input type="number" id="E" class="input input--field-6">
+                <div class="image--box-2">
+                    <span class="d_c span-class"></span>
+                    <span class="bf_c span-class"></span>
+                    <span class="tw_c span-class"></span>
+                    <span class="x span-class"></span>
+                    <span class="tf_c span-class"></span>
+                    <img src="./row.png" alt="row">
                 </div>
-            </div>
+            </section>
 
-            <h3>Select Beam And Column</h3>
-            <div class="dropdown--box">
-                <select name="BEAM" id="beam" class="dropdown dropdown-1">
-                    <option value="" disabled selected>Beams</option>
-                    <option value="W16X77">W16X77</option>
-                    <option value="W16X78">W16X78</option>
-                    <option value="W16X79">W16X79</option>
-                    <option value="W16X80">W16X80</option>
-                    <option value="W16X81">W16X81</option>
-                </select>
-                <select name="Column" id="column" class="dropdown dropdown-2">
-                    <option value="" disabled selected>Columns</option>
-                    <option value="W18X221">W18X221</option>
-                    <option value="W18X222">W18X222</option>
-                    <option value="W18X223">W18X223</option>
-                    <option value="W18X224">W18X224</option>
-                    <option value="W18X225">W18X225</option>
-                </select>
-            </div>
-        </section>
+        </div>
+
         <section>
             <div class="calculate-btn">
                 <button type="button" class="btn" id="calculateBtn">Calculate</button>
@@ -320,123 +590,228 @@ th, td {
 <script>
    const data= {
     beams: [
-      {
+    {
+        "id": "W8X67",
+        "d": 228.6,
+        "bf": 210.312,
+        "tf": 23.749,
+        "tw": 14.478,
+        "zpy": 1149000,
+        "zpx": 535900,
+        "kdes": 33.782
+    },
+    {
+        "id": "W10X77",
+        "d": 269.24,
+        "bf": 259.08,
+        "tf": 22.098,
+        "tw": 13.462,
+        "zpy": 1599000,
+        "zpx": 752200,
+        "kdes": 34.798
+    },
+    {
+        "id": "W12X58",
+        "d": 309.88,
+        "bf": 254,
+        "tf": 16.256,
+        "tw": 9.144,
+        "zpy": 1416000,
+        "zpx": 532600,
+        "kdes": 31.496
+    },
+    {
+        "id": "W14X68",
+        "d": 355.6,
+        "bf": 254,
+        "tf": 18.288,
+        "tw": 10.541,
+        "zpy": 1885000,
+        "zpx": 604700,
+        "kdes": 33.274
+    },
+    {
         "id": "W16X77",
-        "d": 419.608, 
-        "bf": 261.49, 
-        "tf": 19.304, 
-        "tw": 11.557, 
-        "zpy": 673508, 
-        "zpx": 2458059.6, 
-        "zex": 2202135.7, 
-        "zey": 439322.9 
-      },
-      {
-        "id": "W16X78",
-        "d": 419.608, 
-        "bf": 261.49, 
-        "tf": 19.304, 
-        "tw": 11.557, 
-        "zpy": 673508, 
-        "zpx": 2458059.6, 
-        "zex": 2202135.7, 
-        "zey": 439322.9 
-      },
-      {
-        "id": "W16X79",
-        "d": 419.608, 
-        "bf": 261.49, 
-        "tf": 19.304, 
-        "tw": 11.557, 
-        "zpy": 673508, 
-        "zpx": 2458059.6, 
-        "zex": 2202135.7, 
-        "zey": 439322.9 
-      },
-      {
-        "id": "W16X80",
-        "d": 419.608, 
-        "bf": 261.49, 
-        "tf": 19.304, 
-        "tw": 11.557, 
-        "zpy": 673508, 
-        "zpx": 2458059.6, 
-        "zex": 2202135.7, 
-        "zey": 439322.9 
-      },
-      {
-        "id": "W16X81",
-        "d": 419.608, 
-        "bf": 261.49, 
-        "tf": 19.304, 
-        "tw": 11.557, 
-        "zpy": 673508, 
-        "zpx": 2458059.6, 
-        "zex": 2202135.7, 
-        "zey": 439322.9 ,
-      }
-    ],
+        "d": 419.1,
+        "bf": 261.62,
+        "tf": 19.304,
+        "tw": 11.557,
+        "zpy": 2458000,
+        "zpx": 673500,
+        "kdes": 29.464
+    },
+    {
+        "id": "W18X211",
+        "d": 525.78,
+        "bf": 294.64,
+        "tf": 48.514,
+        "tw": 26.928,
+        "zpy": 8030000,
+        "zpx": 2163000,
+        "kdes": 58.674
+    },
+    {
+        "id": "W21X68",
+        "d": 535.94,
+        "bf": 210.058,
+        "tf": 17.399,
+        "tw": 10.922,
+        "zpy": 2622000,
+        "zpx": 399800,
+        "kdes": 30.226
+    },
+    {
+        "id": "W24X94",
+        "d": 622.3,
+        "bf": 228.6,
+        "tf": 24.892,
+        "tw": 13.97,
+        "zpy": 5588000,
+        "zpx": 680100,
+        "kdes": 37.592
+    },
+    {
+        "id": "W27X114",
+        "d": 693.42,
+        "bf": 256.54,
+        "tf": 23.622,
+        "tw": 14.478,
+        "zpy": 5621000,
+        "zpx": 807900,
+        "kdes": 38.862
+    },
+    {
+        "id": "W30X116",
+        "d": 762,
+        "bf": 266.7,
+        "tf": 21.59,
+        "tw": 14.351,
+        "zpy": 6194000,
+        "zpx": 806200,
+        "kdes": 38.1
+    },
+    {
+        "id": "W40X149",
+        "d": 970.28,
+        "bf": 299.72,
+        "tf": 21.082,
+        "tw": 16.002,
+        "zpy": 9799000,
+        "zpx": 1019000,
+        "kdes": 51.054
+    }
+],
     columns: [
-      {
-        "id": "W18X221",
-        "d": 525.018, 
-        "bf": 293.497, 
-        "tf": 48.514, 
-        "tw": 26.924, 
-        "zpy": 2163092.4, 
-        "zpx": 8029661, 
-        "zex": 6865601, 
-        "zey": 1398324.9, 
-        "kdes": 2.31
-      },
-      {
-        "id": "W18X222",
-        "d": 525.018, 
-        "bf": 293.497, 
-        "tf": 48.514, 
-        "tw": 26.924, 
-        "zpy": 2163092.4, 
-        "zpx": 8029661, 
-        "zex": 6865601, 
-        "zey": 1398324.9, 
-        "kdes": 2.31
-      },
-      {
-        "id": "W18X223",
-        "d": 525.018, 
-        "bf": 293.497, 
-        "tf": 48.514, 
-        "tw": 26.924, 
-        "zpy": 2163092.4, 
-        "zpx": 8029661, 
-        "zex": 6865601, 
-        "zey": 1398324.9, 
-        "kdes": 2.31
-      },
-      {
-        "id": "W18X224",
-        "d": 525.018, 
-        "bf": 293.497, 
-        "tf": 48.514, 
-        "tw": 26.924, 
-        "zpy": 2163092.4, 
-        "zpx": 8029661, 
-        "zex": 6865601, 
-        "zey": 1398324.9, 
-        "kdes": 2.31
-      },
-      {
-        "id": "W18X225",
-        "d": 525.018, 
-        "bf": 293.497, 
-        "tf": 48.514, 
-        "tw": 26.924, 
-        "zpy": 2163092.4, 
-        "zpx": 8029661, 
-        "zex": 6865601, 
-        "zey": 1398324.9, 
-        "kdes": 2.31
-      }
+    {
+        "id": "W8X67",
+        "d": 228.6,
+        "bf": 210.312,
+        "tf": 23.749,
+        "tw": 14.478,
+        "zpy": 1149000,
+        "zpx": 535900,
+        "kdes": 33.782
+    },
+    {
+        "id": "W10X77",
+        "d": 269.24,
+        "bf": 259.08,
+        "tf": 22.098,
+        "tw": 13.462,
+        "zpy": 1599000,
+        "zpx": 752200,
+        "kdes": 34.798
+    },
+    {
+        "id": "W12X58",
+        "d": 309.88,
+        "bf": 254,
+        "tf": 16.256,
+        "tw": 9.144,
+        "zpy": 1416000,
+        "zpx": 532600,
+        "kdes": 31.496
+    },
+    {
+        "id": "W14X68",
+        "d": 355.6,
+        "bf": 254,
+        "tf": 18.288,
+        "tw": 10.541,
+        "zpy": 1885000,
+        "zpx": 604700,
+        "kdes": 33.274
+    },
+    {
+        "id": "W16X77",
+        "d": 419.1,
+        "bf": 261.62,
+        "tf": 19.304,
+        "tw": 11.557,
+        "zpy": 2458000,
+        "zpx": 673500,
+        "kdes": 29.464
+    },
+    {
+        "id": "W18X211",
+        "d": 525.78,
+        "bf": 294.64,
+        "tf": 48.514,
+        "tw": 26.928,
+        "zpy": 8030000,
+        "zpx": 2163000,
+        "kdes": 58.674
+    },
+    {
+        "id": "W21X68",
+        "d": 535.94,
+        "bf": 210.058,
+        "tf": 17.399,
+        "tw": 10.922,
+        "zpy": 2622000,
+        "zpx": 399800,
+        "kdes": 30.226
+    },
+    {
+        "id": "W24X94",
+        "d": 622.3,
+        "bf": 228.6,
+        "tf": 24.892,
+        "tw": 13.97,
+        "zpy": 5588000,
+        "zpx": 680100,
+        "kdes": 37.592
+    },
+    {
+        "id": "W27X114",
+        "d": 693.42,
+        "bf": 256.54,
+        "tf": 23.622,
+        "tw": 14.478,
+        "zpy": 5621000,
+        "zpx": 807900,
+        "kdes": 38.862
+    },
+    {
+        "id": "W30X116",
+        "d": 762,
+        "bf": 266.7,
+        "tf": 21.59,
+        "tw": 14.351,
+        "zpy": 6194000,
+        "zpx": 806200,
+        "kdes": 38.1
+    },
+    {
+        "id": "W40X149",
+        "d": 970.28,
+        "bf": 299.72,
+        "tf": 21.082,
+        "tw": 16.002,
+        "zpy": 9799000,
+        "zpx": 1019000,
+        "kdes": 51.054
+    }
     ]
   }
     document.addEventListener("DOMContentLoaded", function () {
@@ -458,13 +833,30 @@ th, td {
             const LL = parseFloat(document.getElementById("LL").value);
             const Fy = parseFloat(document.getElementById("Fy").value);
             const E = parseFloat(document.getElementById("E").value);
+            const d_b = document.querySelector(".d_b")
+            const bf_b = document.querySelector(".bf_b")
+            const bf_c = document.querySelector(".bf_c")
+            const d_c =document.querySelector(".d_c")
+            const tw_c =document.querySelector(".tw_c")
+            const x =document.querySelector(".x")
+            const tf_c =document.querySelector(".tf_c")
             const beamId = document.getElementById("beam").value;
             const columnId = document.getElementById("column").value;
+
 
             // Fetching JSON data
             let beamData, columnData;
                     beamData = data.beams.find((beam) => beam.id === beamId);
+                    console.log(beamData)
                     columnData = data.columns.find((column) => column.id === columnId);
+
+                    d_b.textContent = beamData.d
+                    bf_b.textContent = beamData.bf
+                    bf_c.textContent = columnData.bf
+                    d_c.textContent= columnData.d
+                    tw_c.textContent= columnData.tw
+                    x.textContent= columnData.zpx
+                    tf_c.textContent= columnData.tf
                     console.log("column data is --------------->", columnData)
                     // Calculating moment capacity
                     const Mpr = Cpr * Ry * Fy * beamData.zpx / Math.pow(10, 6);
