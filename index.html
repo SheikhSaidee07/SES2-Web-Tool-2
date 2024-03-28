@@ -84,15 +84,12 @@ header {
 }
 
 .image--box-1{
-    /* border: 1px solid red; */
     position: relative;
 }
 
 .image--box-2{
-    /* border: 1px solid red; */
     position: relative;
 }
-
 .span-class{
     position: absolute;
     background-color: white;
@@ -104,6 +101,9 @@ header {
     width: 3rem;
     height: 2rem;
     font-size: 13px;
+}
+.span-class:nth-child(4){
+    border: none;
 }
 .d_b, .d_c {
     top: 11rem;
@@ -818,6 +818,8 @@ th, td {
         const calculateBtn = document.getElementById("calculateBtn");
         const mprContainer = document.querySelector(".mpr")
         const demandContainer = document.querySelector(".demand")
+        const x =document.querySelector(".x")
+        x.textContent= "x(+)"
         calculateBtn.addEventListener("click", function () {
             mprContainer.innerHTML='';
             demandContainer.innerHTML='';
@@ -838,7 +840,6 @@ th, td {
             const bf_c = document.querySelector(".bf_c")
             const d_c =document.querySelector(".d_c")
             const tw_c =document.querySelector(".tw_c")
-            const x =document.querySelector(".x")
             const tf_c =document.querySelector(".tf_c")
             const beamId = document.getElementById("beam").value;
             const columnId = document.getElementById("column").value;
@@ -855,7 +856,6 @@ th, td {
                     bf_c.textContent = columnData.bf
                     d_c.textContent= columnData.d
                     tw_c.textContent= columnData.tw
-                    x.textContent= columnData.zpx
                     tf_c.textContent= columnData.tf
                     console.log("column data is --------------->", columnData)
                     // Calculating moment capacity
