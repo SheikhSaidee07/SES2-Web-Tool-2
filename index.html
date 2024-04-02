@@ -8,7 +8,7 @@
     <style>
         @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 :root {
-  --background: #f5f5f5;
+  --background: #ffffff;
 }
 * {
   box-sizing: border-box;
@@ -24,7 +24,7 @@ body {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  border: 1px solid grey;
+  /* border: 1px solid grey; */
   border-radius: 5px;
   /* max-width: 70%; */
 }
@@ -39,24 +39,36 @@ header {
   display: block;
   font-weight: 600;
 }
+p{
+    color: #555;
+}
 .input--container {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 1rem;
   width: 70%;
+  
 }
 
 .input {
   width: 70%;
-  height: 2.2rem;
-  border: 1px solid grey;
+  height: 3.2rem;
+  background-color: #F7F7F7;
+  border: 1px solid rgba(0, 0, 0, 0.08);
   border-radius: 5px;
-  padding: 1rem;
+  line-height: 50px;
+  padding: 1.5rem 20px;
+  color: #555;
+}
+.input:focus {
+ outline: none;
+ padding: 1.5rem 20px;
 }
 .label {
-  font-weight: 700;
+  font-weight: 400;
   width: 2rem;
+  color: #555;
 }
 .input--parent-container {
   display: flex;
@@ -93,7 +105,7 @@ header {
 .span-class{
     position: absolute;
     background-color: white;
-    color: black;
+    color: #555;
     border:1px solid black;
     display: flex;
     justify-content: center;
@@ -110,16 +122,16 @@ header {
     left: 1.3rem;
 }
 .bf_b, .bf_c{
-    bottom: 6.5rem;
+    bottom: 13.4rem;
     left:8.9rem;
 }
 
 .tw_c{
-    bottom: 13rem;
-    right: 5rem;
+    bottom: 20rem;
+    right: 4.3rem;
 }
 .x{
-    bottom: 16.5rem;
+    top: 10.5rem;
     right: 1.2rem;
 }
 .tf_c{
@@ -144,10 +156,19 @@ header {
   margin-top: 1rem;
 }
 .dropdown {
-  padding: 0.6rem;
+  padding: 1rem;
   border-radius: 5px;
+  color: #555;
   width: 35%;
   font-weight: 700;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+.dropdown:focus{
+  outline: none;
+}
+.dropdown option{
+    padding: 2rem 0;
+    
 }
 .table--container {
   overflow-x: auto;
@@ -161,9 +182,10 @@ th {
   white-space: nowrap; 
   overflow: hidden;
   text-overflow: ellipsis;
-  border: 1px solid #777;
+  border: 1px solid rgba(0, 0, 0, 0.08);
   padding: 0.5rem;
   text-align: center;
+  color: #555;
 }
 
 table {
@@ -184,7 +206,7 @@ caption {
     margin: 2rem;
 
     .btn {
-        background-color: grey;
+        background-color: #f52949;
         border: none;
         color: white;
         padding: 1rem 2rem;
@@ -192,7 +214,7 @@ caption {
         text-decoration: none;
         font-size: 1rem;
         cursor: pointer;
-        border-radius: .8rem;
+        border-radius: 5px;
       }
 }
 
@@ -256,17 +278,17 @@ caption {
         left: .6rem;
     }
     .bf_b, .bf_c{
-        bottom: 10.5rem;
+        bottom: 16.5rem;
         left:6rem;
     }
 
     .tw_c{
-        bottom: 15rem;
+        bottom:21.8rem;
         right: 2rem;
     }
     .x{
-        bottom: 18.4rem;
-        right: .7rem;
+        top: 9rem;
+        right: 0;
     }
     .tf_c{
         right: .2rem;
@@ -299,31 +321,35 @@ caption {
 }
 .image--section{
     margin: 0;
+    flex-direction: column;
+    align-items: center;
     img{
-        width: 19rem;
+        width: 30rem;
         margin-left: 2rem;
     }
 }
 .d_b, .d_c {
         top: 10rem;
-        left: 1.3rem;
+        left: 2.3rem;
     }
     .bf_b, .bf_c{
         bottom: 1.5rem;
-        left:10rem;
+        left:16rem;
     }
 
     .tw_c{
         bottom: 6rem;
-        right: 4rem;
+        right: 8rem;
     }
     .x{
-        bottom: 9.4rem;
-        right: .2rem;
+        right: 1.9rem;
+        top: 9rem;
     }
     .tf_c{
-        right: .3rem;
-        top: 1rem;
+        top: 0.5rem;
+        right: 1.5rem;
+
+}
     }
 .dropdown--box{
     width: 67%;
@@ -335,10 +361,7 @@ width: 45%;
 table {
     width: 100%;
   }
-th, td {
-    display: block; 
-  }
-}
+
 @media screen and (max-width: 425px) {
     .dropdown--box{
         width: 100%;
@@ -366,16 +389,19 @@ th, td {
         right: 7rem;
     }
     .x{
-        bottom: 9.4rem;
-        right: 3rem;
+        right: 2.5rem;
+        top: 9rem;
     }
     .tf_c{
-        right: 3rem;
         top: 1rem;
+        left: 18.7rem;
     }
     .span-class{
         width: 2.7rem;
     }
+    th, td {
+    display: block; 
+  }
 }
 @media screen and (max-width: 375px) {
     .dropdown--box{
@@ -410,11 +436,11 @@ th, td {
         right: 6rem;
     }
     .x{
-        bottom: 9.4rem;
-        right: 2.8rem;
+        top: 9rem;
+        right: 2.2rem;
     }
     .tf_c{
-        right: 2.8rem;
+        left: 16rem;
         top: 1rem;
     }
 }
@@ -451,11 +477,11 @@ th, td {
     }
     .x{
         bottom: 9.4rem;
-        left: 13.5rem;
+        top: 9rem;
     }
     .tf_c{
-        right:2.3rem;
         top: 1rem;
+        left: 13.5rem;
     }
 }
     </style>
@@ -466,9 +492,8 @@ th, td {
         <header>
             <h1 class="heading">Structual Steel Member Design </h1>
             </br>
-            <span class="sub--heading">AISC 360-16, AISC 341-16, AISC 358-16</span></p>
+            <p class="sub--heading">AISC 360-16, AISC 341-16, AISC 358-16</p>
         </header>
-        <hr>
         <div class="input--section-box">
             <section class="input--section">
                 <div class="input--parent-container">
@@ -517,7 +542,7 @@ th, td {
                     </select>
                     <select name="Column" id="column" class="dropdown dropdown-2">
                         <option value="" disabled selected>Columns</option>
-                        <option value="W8X67">W8X67</option>
+                        <option value="W8X67"><span>W8X67</span></option>
                         <option value="W10X77">W10X77</option>
                         <option value="W12X58">W12X58</option>
                         <option value="W14X68">W14X68</option>
