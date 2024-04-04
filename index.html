@@ -7,510 +7,666 @@
     <title>Document</title>
     <style>
         @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-:root {
-  --background: #ffffff;
-}
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-body {
-  background-color: var(--background);
-  font-family: "Poppins", sans-serif;
-  padding: 3rem;
-}
-.app--container {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  /* border: 1px solid grey; */
-  border-radius: 5px;
-  /* max-width: 70%; */
-}
-header {
-  text-align: center;
-  margin-bottom: 1rem;
-}
-.heading {
-  font-weight: 800;
-}
-.sub--heading {
-  display: block;
-  font-weight: 600;
-}
-p{
-    color: #555;
-}
-.input--container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-  width: 100%;
-  
-}
 
-.input {
-  width: 50%;
-  height: 3.2rem;
-  background-color: #F7F7F7;
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  border-radius: 5px;
-  line-height: 50px;
-  padding: 1.5rem 20px;
-  color: #555;
-}
-.input:focus {
- outline: none;
- padding: 1.5rem 20px;
-}
-.label {
-  font-weight: 400;
-  width: 7rem;
-  color: #555;
-}
-.input--parent-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  /* max-width: 50%; */
-  gap: 2rem;
-  margin-bottom: 1rem;
-}
-.input--section-box{
-    display : flex;
-    justify-content: center;
-    width: 100%;
-}
-.image--section{
-    display : flex;
-    gap : 1rem;
-    margin-top: 4rem;
-    margin-right: 2rem;
-    img {
-        width: 20rem;
-    }
-}
-
-.image--box-1{
-    position: relative;
-}
-
-.image--box-2{
-    position: relative;
-}
-.span-class{
-    position: absolute;
-    background-color: white;
-    color: #555;
-    border:1px solid black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 3rem;
-    height: 2rem;
-    font-size: 13px;
-}
-.span-class:nth-child(4){
-    border: none;
-}
-.d_b, .d_c {
-    top: 11rem;
-    left: 1.3rem;
-}
-.bf_b, .bf_c{
-    bottom: 13.4rem;
-    left:8.9rem;
-}
-
-.tw_c{
-    bottom: 20rem;
-    right: 4.3rem;
-}
-.x{
-    top: 10.5rem;
-    right: 1.2rem;
-}
-.tf_c{
-    right: .6rem;
-    top: 1.5rem;
-}
-
-.input--section {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  padding: 2rem;
-  width: 100%;
-}
-.dropdown--box {
-  /* text-align: center; */
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  margin: 0;
-  .select-container{
-    width: 50%;
-    h4{
-        padding: 1rem 0;
-        text-align: center;
-    }
-  }
-}
-.dropdown {
-  padding: 1rem;
-  border-radius: 5px;
-  color: #555;
-  width: 100%;
-  font-weight: 700;
-  border: 1px solid rgba(0, 0, 0, 0.08);
-}
-.dropdown:focus{
-  outline: none;
-}
-.dropdown option{
-    padding: 2rem 0;
-    
-}
-.table--container {
-  overflow-x: auto;
-  display: flex;
-  justify-content: center;
-  margin-top: 2rem;
-  padding-bottom: 2rem;
-}
-td,
-th {
-  white-space: nowrap; 
-  overflow: hidden;
-  text-overflow: ellipsis;
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  padding: 0.5rem;
-  text-align: center;
-  color: #555;
-}
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-  table-layout: fixed;
-  margin: 0 1rem;
-}
-
-tbody tr:nth-child(odd) {
-  background: #eee;
-}
-caption {
-  font-size: 0.8rem;
-}
-.calculate-btn{
-    text-align: center;
-    margin: 2rem;
-
-    .btn {
-        background-color: #f52949;
-        border: none;
-        color: white;
-        padding: 1rem 2rem;
-        text-align: center;
-        text-decoration: none;
-        font-size: 1rem;
-        cursor: pointer;
-        border-radius: 5px;
-      }
-}
-
-.mpr{
-    text-align: center;
-    font-size: 1rem;
-
-    p{
-        padding:1rem 0;
-        font-weight: 600;
-    }
-}
-.demand{
-    text-align: center;
-}
-.demand-numbers{
-    font-weight: 600;
-    padding: 1rem 0;
-}
-.brown{
-    color: red;
-    font-weight: 600;
-    padding: 1rem 0;
-}
-.green{
-    color: #03C03C;
-    font-weight: 600;
-    padding: 1rem 0;
-}
-@media screen and (max-width: 2560px){
-    .dropdown--box{
-        margin-left: 5rem;
-        width: 50%;
-    }
-}
-  @media screen and (max-width: 1440px){
-    .dropdown--box{
-       /*  width: 61%; */
-    }
-  }
-  @media screen and (max-width: 1024px){
-    .input{
-        width: 100%;
-    }
-    .dropdown--box{
-        margin-left: 0;
-        width: 70%;
-    }
-    .span-class{
-  width: 2.4;
-}
-    .image--section{
-        img{
-            width: 14rem;
-            height: 20rem;
+        :root {
+            --background: #ffffff;
         }
-    }
-    .d_b, .d_c {
-        top: 10rem;
-        left: .6rem;
-    }
-    .bf_b, .bf_c{
-        bottom: 16.5rem;
-        left:6rem;
-    }
 
-    .tw_c{
-        bottom:21.8rem;
-        right: 2rem;
-    }
-    .x{
-        top: 9rem;
-        right: 0;
-    }
-    .tf_c{
-        right: .2rem;
-        top: 1rem;
-    }
-
-}
-@media screen and (max-width: 768px) {
- body{
-    padding: 1rem;
- }
- .input{
-    width: 100%;
- } 
- .input--section {
-  padding: 1rem;
-  width: 100%;
-}
-.input--container {
-    padding-right: 0;
-    justify-content: center;
-    
-    span{
-        font-size: .8rem;
-    }
-
-}
-.input--section-box{
-    flex-direction: column;
-    width: 70%;
-    align-items: center;
-    margin: 0 auto;
-}
-.input--parent-container{
-    max-width: 100%;
-    align-items: center;
-}
-.image--section{
-    margin: 0;
-    flex-direction: column;
-    align-items: center;
-    img{
-        width: 30rem;
-        margin-left: 2rem;
-    }
-}
-.d_b, .d_c {
-        top: 10rem;
-        left: 2.3rem;
-    }
-    .bf_b, .bf_c{
-        bottom: 1.5rem;
-        left:16rem;
-    }
-
-    .tw_c{
-        bottom: 6rem;
-        right: 8rem;
-    }
-    .x{
-        right: 1.9rem;
-        top: 9rem;
-    }
-    .tf_c{
-        top: 0.5rem;
-        right: 1.5rem;
-
-}
-.dropdown--box{
-    width: 67%;
-    margin-left: 3rem;
-}
-.dropdown {
-width: 100%;
-}
-    }
-table {
-    width: 100%;
-  }
-
-@media screen and (max-width: 425px) {
-    .dropdown--box{
-        width: 100%;
-        margin-left: 0;
-    }
-    .image--section{
-        flex-direction: column;
-        margin-top: 0;
-        img{
-            width: 20rem;
-            margin: 0 2rem;
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
-    }
-    .label{
-        font-size: .8rem;
-    }
-  }
-    .d_b, .d_c {
-        top: 10rem;
-        left: 1.6rem;
-    }
-    .bf_b, .bf_c{
-        bottom: 1.5rem;
-        left:11rem;
-    }
 
-    .tw_c{
-        bottom: 6rem;
-        right: 7rem;
-    }
-    .x{
-        right: 2.5rem;
-        top: 9rem;
-    }
-    .tf_c{
-        top: 1rem;
-        left: 18.7rem;
-    }
-    .span-class{
-        width: 2.7rem;
-    }
-    th, td {
-    display: block; 
-  }
-@media screen and (max-width: 375px) {
-    .dropdown--box{
-        width: 100%;
-        margin-left: 0;
-        .select-container {
+        body {
+            background-color: var(--background);
+            font-family: "Poppins", sans-serif;
+            padding: 3rem;
+        }
+
+        .app--container {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            border-radius: 5px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .heading {
+            font-weight: 800;
+        }
+
+        .sub--heading {
+            display: block;
+            font-weight: 600;
+        }
+
+        p {
+            color: #555;
+        }
+
+        .input--container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
             width: 100%;
-}
-    }
-    .image--section{
-        flex-direction: column;
-        margin-top: 0;
-        img{
-            width: 17rem;
-        }
-    }
-    .span-class{
-        font-size: 9px;
-        width: 2.5rem;
-    }
-    .span-class:nth-child(4){
-        font-size: .8rem;
-    }
-    .d_b, .d_c {
-        top: 10rem;
-        left: 1.3rem;
-    }
-    .bf_b, .bf_c{
-        bottom: 1.5rem;
-        left:9.4rem;
-    }
 
-    .tw_c{
-        bottom: 6rem;
-        right: 6rem;
-    }
-    .x{
-        top: 9rem;
-        right: 2.2rem;
-    }
-    .tf_c{
-        left: 16rem;
-        top: 1rem;
-    }
-    .dropdown--box{
-        width: 67%;
-        margin-left: 3rem;
-        flex-direction: column;
-}
-    .dropdown {
-        width: 100%;
-    }
-}
-@media screen and (max-width: 320px) {
-    .dropdown--box{
-        width: 100%;
-        margin-left: 0;
-    }
-    
-    .span-class{
-        width: 2.2rem;
-    }
-    .span-class:nth-child(4){
-        font-size: .8rem;
-    }
-    .image--section{
-        flex-direction: column;
-        img{
-            width: 14rem;
         }
-    }
-    .d_b, .d_c {
-        top: 10rem;
-        left: 1.3rem;
-    }
-    .bf_b, .bf_c{
-        bottom: 1.5rem;
-        left:8rem;
-    }
 
-    .tw_c{
-        bottom: 6rem;
-        right: 4.8rem;
-    }
-    .x{
-        bottom: 9.4rem;
-        top: 9rem;
-    }
-    .tf_c{
-        top: 1rem;
-        left: 13.5rem;
-    }
-}
+        .input {
+            width: 50%;
+            height: 3.2rem;
+            background-color: #F7F7F7;
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            border-radius: 5px;
+            line-height: 50px;
+            padding: 1.5rem 20px;
+            color: #555;
+        }
+
+        .input:focus {
+            outline: none;
+            padding: 1.5rem 20px;
+        }
+
+        .label {
+            font-weight: 400;
+            width: 7rem;
+            color: #555;
+        }
+
+        .input--parent-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            gap: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .input--section-box {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .image--section {
+            display: flex;
+            gap: 1rem;
+            margin-top: 4rem;
+            margin-right: 2rem;
+
+
+        }
+
+        .image--section img {
+            width: 20rem;
+        }
+
+        .image--box-1 {
+            position: relative;
+        }
+
+        .image--box-2 {
+            position: relative;
+        }
+
+        .span-class {
+            position: absolute;
+            background-color: white;
+            color: #555;
+            border: 1px solid black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 3rem;
+            height: 2rem;
+            font-size: 13px;
+        }
+
+        .span-class:nth-child(4) {
+            border: none;
+        }
+
+        .d_b,
+        .d_c {
+            top: 11rem;
+            left: 1.3rem;
+        }
+
+        .bf_b,
+        .bf_c {
+            bottom: 13.4rem;
+            left: 8.9rem;
+        }
+
+        .tw_c {
+            bottom: 20rem;
+            right: 4.3rem;
+        }
+
+        .x {
+            top: 10.5rem;
+            right: 1.2rem;
+        }
+
+        .tf_c {
+            right: .6rem;
+            top: 1.5rem;
+        }
+
+        .input--section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 2rem;
+            width: 100%;
+        }
+
+        .dropdown--box {
+            /* text-align: center; */
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 0;
+
+
+        }
+
+        .dropdown--box .select-container {
+            width: 50%;
+
+
+        }
+
+        .dropdown--box .select-container h4 {
+            padding: 1rem 0;
+            text-align: center;
+        }
+
+        .dropdown {
+            padding: 1rem;
+            border-radius: 5px;
+            color: #555;
+            width: 100%;
+            font-weight: 700;
+            border: 1px solid rgba(0, 0, 0, 0.08);
+        }
+
+        .dropdown:focus {
+            outline: none;
+        }
+
+        .dropdown option {
+            padding: 2rem 0;
+
+        }
+
+        .table--container {
+            overflow-x: hidden;
+            margin-top: 2rem;
+            padding-bottom: 2rem;
+        }
+
+        td,
+        th {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            padding: 0.5rem;
+            text-align: center;
+            color: #555;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            table-layout: fixed;
+            margin: 0 1rem;
+        }
+
+        tbody tr:nth-child(odd) {
+            background: #eee;
+        }
+
+        caption {
+            font-size: 0.8rem;
+        }
+
+        .calculate-btn {
+            text-align: center;
+            margin: 2rem;
+
+
+        }
+
+        .btn {
+            background-color: #f52949;
+            border: none;
+            color: white;
+            padding: 1rem 2rem;
+            text-align: center;
+            text-decoration: none;
+            font-size: 1rem;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .mprContainer {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .mpr {
+            display: flex;
+            align-items: center;
+            flex-direction: column-reverse;
+            gap: 2rem;
+            text-align: center;
+            font-size: 1rem;
+            /* backdrop-filter: blur(4px);
+            background-color: rgba(128, 128, 128, 0.5); */
+            border-radius: 2rem;
+            width: 75%;
+
+
+        }
+
+        .mpr p {
+            padding: 1rem 0;
+            font-weight: 600;
+        }
+
+        .memberLeftBox,
+        .memberRightBox {
+            display: flex;
+            flex-direction: column;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            padding: 2rem;
+            border-radius: 1rem;
+            background-color: #F7F7F7;
+        }
+
+        .memberContainer {
+            display: flex;
+            gap: 5rem;
+        }
+
+        .demand {
+            text-align: center;
+        }
+
+        .demand-numbers {
+            font-weight: 600;
+            padding: 1rem 0;
+        }
+
+        .safeAndUnsafeContainer {
+            display: flex;
+            gap: 2rem;
+
+            /* p {
+                border: 1px solid red;
+            } */
+        }
+
+        .brown {
+            color: red;
+            font-weight: 600;
+            padding: 1rem;
+            border: 1px solid red;
+            border-radius: 10px;
+            box-shadow: rgba(255, 0, 0, 0.2) 0px 7px 15px 0px;
+
+
+        }
+
+        .green {
+            color: #03C03C;
+            font-weight: 600;
+            padding: 1rem;
+            border: 1px solid #03C03C;
+            border-radius: 10px;
+            box-shadow: rgba(2, 244, 79, 0.2) 0px 7px 15px 0px;
+        }
+
+        @media screen and (max-width: 2560px) {
+            .dropdown--box {
+                margin-left: 5rem;
+                width: 50%;
+            }
+        }
+
+        @media screen and (max-width: 1440px) {
+            .dropdown--box {
+                /*  width: 61%; */
+            }
+        }
+
+        @media screen and (max-width: 1024px) {
+            .input {
+                width: 100%;
+            }
+
+            .dropdown--box {
+                margin-left: 0;
+                width: 70%;
+            }
+
+            .span-class {
+                width: 2.4;
+            }
+
+            .image--section {
+                img {
+                    width: 14rem;
+                    height: 20rem;
+                }
+            }
+
+            .d_b,
+            .d_c {
+                top: 10rem;
+                left: .6rem;
+            }
+
+            .bf_b,
+            .bf_c {
+                bottom: 16.5rem;
+                left: 6rem;
+            }
+
+            .tw_c {
+                bottom: 21.8rem;
+                right: 2rem;
+            }
+
+            .x {
+                top: 9rem;
+                right: 0;
+            }
+
+            .tf_c {
+                right: .2rem;
+                top: 1rem;
+            }
+
+        }
+
+        @media screen and (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+
+            .input {
+                width: 100%;
+            }
+
+            .input--section {
+                padding: 1rem;
+                width: 100%;
+            }
+
+            .input--container {
+                padding-right: 0;
+                justify-content: center;
+
+                span {
+                    font-size: .8rem;
+                }
+
+            }
+
+            .input--section-box {
+                flex-direction: column;
+                width: 70%;
+                align-items: center;
+                margin: 0 auto;
+            }
+
+            .input--parent-container {
+                max-width: 100%;
+                align-items: center;
+            }
+
+            .image--section {
+                margin: 0;
+                flex-direction: column;
+                align-items: center;
+
+                img {
+                    width: 30rem;
+                    margin-left: 2rem;
+                }
+            }
+
+            .d_b,
+            .d_c {
+                top: 10rem;
+                left: 2.3rem;
+            }
+
+            .bf_b,
+            .bf_c {
+                bottom: 1.5rem;
+                left: 16rem;
+            }
+
+            .tw_c {
+                bottom: 6rem;
+                right: 8rem;
+            }
+
+            .x {
+                right: 1.9rem;
+                top: 9rem;
+            }
+
+            .tf_c {
+                top: 0.5rem;
+                right: 1.5rem;
+
+            }
+
+            .dropdown--box {
+                width: 67%;
+                margin-left: 3rem;
+            }
+
+            .dropdown {
+                width: 100%;
+            }
+        }
+
+        table {
+            width: 100%;
+        }
+
+        @media screen and (max-width: 425px) {
+            .dropdown--box {
+                width: 100%;
+                margin-left: 0;
+            }
+
+            .image--section {
+                flex-direction: column;
+                margin-top: 0;
+
+                img {
+                    width: 20rem;
+                    margin: 0 2rem;
+                }
+            }
+
+            .label {
+                font-size: .8rem;
+            }
+
+            .d_b,
+            .d_c {
+                top: 10rem;
+                left: 1.6rem;
+            }
+
+            .bf_b,
+            .bf_c {
+                bottom: 1.5rem;
+                left: 11rem;
+            }
+
+            .tw_c {
+                bottom: 6rem;
+                right: 7rem;
+            }
+
+            .x {
+                right: 2.5rem;
+                top: 9rem;
+            }
+
+            .tf_c {
+                top: 1rem;
+                left: 18.7rem;
+            }
+
+            .span-class {
+                width: 2.7rem;
+            }
+
+            th,
+            td {
+                display: block;
+            }
+        }
+
+
+
+        @media screen and (max-width: 375px) {
+            .dropdown--box {
+                width: 100%;
+                margin-left: 0;
+
+                .select-container {
+                    width: 100%;
+                }
+            }
+
+            .image--section {
+                flex-direction: column;
+                margin-top: 0;
+
+                img {
+                    width: 17rem;
+                }
+            }
+
+            .span-class {
+                font-size: 9px;
+                width: 2.5rem;
+            }
+
+            .span-class:nth-child(4) {
+                font-size: .8rem;
+            }
+
+            .d_b,
+            .d_c {
+                top: 10rem;
+                left: 1.3rem;
+            }
+
+            .bf_b,
+            .bf_c {
+                bottom: 1.5rem;
+                left: 9.4rem;
+            }
+
+            .tw_c {
+                bottom: 6rem;
+                right: 6rem;
+            }
+
+            .x {
+                top: 9rem;
+                right: 2.2rem;
+            }
+
+            .tf_c {
+                left: 16rem;
+                top: 1rem;
+            }
+
+            .dropdown--box {
+                width: 67%;
+                margin-left: 3rem;
+                flex-direction: column;
+            }
+
+            .dropdown {
+                width: 100%;
+            }
+        }
+
+        @media screen and (max-width: 320px) {
+            .dropdown--box {
+                width: 100%;
+                margin-left: 0;
+            }
+
+            .span-class {
+                width: 2.2rem;
+            }
+
+            .span-class:nth-child(4) {
+                font-size: .8rem;
+            }
+
+            .image--section {
+                flex-direction: column;
+
+                img {
+                    width: 14rem;
+                }
+            }
+
+            .d_b,
+            .d_c {
+                top: 10rem;
+                left: 1.3rem;
+            }
+
+            .bf_b,
+            .bf_c {
+                bottom: 1.5rem;
+                left: 8rem;
+            }
+
+            .tw_c {
+                bottom: 6rem;
+                right: 4.8rem;
+            }
+
+            .x {
+                bottom: 9.4rem;
+                top: 9rem;
+            }
+
+            .tf_c {
+                top: 1rem;
+                left: 13.5rem;
+            }
+        }
     </style>
 </head>
 
@@ -540,9 +696,9 @@ table {
                         <label for="LL" class="label label-LL">Live Load (LL)</label>
                         <input type="number" id="LL" class="input input--field-4"><span>kN/m</span>
                     </div>
-    
+
                     <div class="input--container">
-                        <label for="Fy" class="label label-Fy">Grade of Steel  (Fy)</label>
+                        <label for="Fy" class="label label-Fy">Grade of Steel (Fy)</label>
                         <input type="number" id="Fy" class="input input--field-5"><span>Mpa</span>
                     </div>
                     <div class="input--container">
@@ -550,41 +706,43 @@ table {
                         <input type="number" id="E" class="input input--field-6"><span>Mpa</span>
                     </div>
                 </div>
-    
+
                 <h3>Select Beam And Column</h3>
                 <div class="dropdown--box">
-                    <div class="select-container"><h4>BEAM</h4>
-                    <select name="BEAM" id="beam" class="dropdown dropdown-1">
-                        <option value="" disabled selected>Beams</option>
-                        <option value="W8X67">W8X67</option>
-                        <option value="W10X77">W10X77</option>
-                        <option value="W12X58">W12X58</option>
-                        <option value="W14X68">W14X68</option>
-                        <option value="W16X77">W16X77</option>
-                        <option value="W18X211">W18X211</option>
-                        <option value="W21X68">W21X68</option>
-                        <option value="W24X94">W24X94</option>
-                        <option value="W27X114">W27X114</option>
-                        <option value="W30X116">W30X116</option>
-                        <option value="W40X149">W40X149</option>
-                    </select>
-                </div>
-                    <div class="select-container"><h4>COLUMN</h4>
-                    <select name="Column" id="column" class="dropdown dropdown-2">
-                        <option value="" disabled selected>Columns</option>
-                        <option value="W8X67"><span>W8X67</span></option>
-                        <option value="W10X77">W10X77</option>
-                        <option value="W12X58">W12X58</option>
-                        <option value="W14X68">W14X68</option>
-                        <option value="W16X77">W16X77</option>
-                        <option value="W18X211">W18X211</option>
-                        <option value="W21X68">W21X68</option>
-                        <option value="W24X94">W24X94</option>
-                        <option value="W27X114">W27X114</option>
-                        <option value="W30X116">W30X116</option>
-                        <option value="W40X149">W40X149</option>
-                    </select>
-                </div>
+                    <div class="select-container">
+                        <h4>BEAM</h4>
+                        <select name="BEAM" id="beam" class="dropdown dropdown-1">
+                            <option value="" disabled selected>Beams</option>
+                            <option value="W8X67">W8X67</option>
+                            <option value="W10X77">W10X77</option>
+                            <option value="W12X58">W12X58</option>
+                            <option value="W14X68">W14X68</option>
+                            <option value="W16X77">W16X77</option>
+                            <option value="W18X211">W18X211</option>
+                            <option value="W21X68">W21X68</option>
+                            <option value="W24X94">W24X94</option>
+                            <option value="W27X114">W27X114</option>
+                            <option value="W30X116">W30X116</option>
+                            <option value="W40X149">W40X149</option>
+                        </select>
+                    </div>
+                    <div class="select-container">
+                        <h4>COLUMN</h4>
+                        <select name="Column" id="column" class="dropdown dropdown-2">
+                            <option value="" disabled selected>Columns</option>
+                            <option value="W8X67"><span>W8X67</span></option>
+                            <option value="W10X77">W10X77</option>
+                            <option value="W12X58">W12X58</option>
+                            <option value="W14X68">W14X68</option>
+                            <option value="W16X77">W16X77</option>
+                            <option value="W18X211">W18X211</option>
+                            <option value="W21X68">W21X68</option>
+                            <option value="W24X94">W24X94</option>
+                            <option value="W27X114">W27X114</option>
+                            <option value="W30X116">W30X116</option>
+                            <option value="W40X149">W40X149</option>
+                        </select>
+                    </div>
                 </div>
             </section>
             <section class="image--section">
@@ -606,12 +764,22 @@ table {
 
         </div>
 
-        <section>
+        <section class="mprContainer">
             <div class="calculate-btn">
                 <button type="button" class="btn" id="calculateBtn">Run Analysis</button>
             </div>
             <div class="mpr">
-               <!--  <p>"Max Moment, Mpr =", Mpr.toFixed(2), "kNm"</p>
+                <div class="memberContainer">
+                    <!-- <div class="memberLeftBox">
+
+                    </div> -->
+
+                    <!-- <div class="memberRightBox">
+
+                    </div> -->
+
+                </div>
+                <!--  <p>"Max Moment, Mpr =", Mpr.toFixed(2), "kNm"</p>
                 <p>"--------------------------------------- MEMBER LEFT END ------------------------------------------------------"</p>
                 <p>"Left End Shear, VuL = ", ${}, "kN", "\nRight End Shear, VuR = ", {}, "kNm"></p>
 
@@ -639,252 +807,262 @@ table {
                 </table>
             </div>
             <div class="demand">
+                <div class="demandAndCapacity"></div>
                 <!-- <p>Demand = ", ${}, "kN", "Capacity = ", ${}, "kN"</p>
                 console.log("\n\x1b[1;31m UNSAFE IN PANEL ZONE SHEAR");
                 console.log("\n\x1b[1;32m USE DOUBLER PLATES"); -->
 
                 <!-- <p> UNSAFE IN PANEL ZONE SHEAR"</p>
                 <p>USE DOUBLER PLATES"</p> -->
+                <div class="safeAndUnsafeContainer"></div>
             </div>
         </section>
     </div>
 </body>
 <script>
-   const data= {
-    beams: [
-    {
-        "id": "W8X67",
-        "d": 228.6,
-        "bf": 210.312,
-        "tf": 23.749,
-        "tw": 14.478,
-        "zpy": 1149000,
-        "zpx": 535900,
-        "kdes": 33.782
-    },
-    {
-        "id": "W10X77",
-        "d": 269.24,
-        "bf": 259.08,
-        "tf": 22.098,
-        "tw": 13.462,
-        "zpy": 1599000,
-        "zpx": 752200,
-        "kdes": 34.798
-    },
-    {
-        "id": "W12X58",
-        "d": 309.88,
-        "bf": 254,
-        "tf": 16.256,
-        "tw": 9.144,
-        "zpy": 1416000,
-        "zpx": 532600,
-        "kdes": 31.496
-    },
-    {
-        "id": "W14X68",
-        "d": 355.6,
-        "bf": 254,
-        "tf": 18.288,
-        "tw": 10.541,
-        "zpy": 1885000,
-        "zpx": 604700,
-        "kdes": 33.274
-    },
-    {
-        "id": "W16X77",
-        "d": 419.1,
-        "bf": 261.62,
-        "tf": 19.304,
-        "tw": 11.557,
-        "zpy": 2458000,
-        "zpx": 673500,
-        "kdes": 29.464
-    },
-    {
-        "id": "W18X211",
-        "d": 525.78,
-        "bf": 294.64,
-        "tf": 48.514,
-        "tw": 26.928,
-        "zpy": 8030000,
-        "zpx": 2163000,
-        "kdes": 58.674
-    },
-    {
-        "id": "W21X68",
-        "d": 535.94,
-        "bf": 210.058,
-        "tf": 17.399,
-        "tw": 10.922,
-        "zpy": 2622000,
-        "zpx": 399800,
-        "kdes": 30.226
-    },
-    {
-        "id": "W24X94",
-        "d": 622.3,
-        "bf": 228.6,
-        "tf": 24.892,
-        "tw": 13.97,
-        "zpy": 5588000,
-        "zpx": 680100,
-        "kdes": 37.592
-    },
-    {
-        "id": "W27X114",
-        "d": 693.42,
-        "bf": 256.54,
-        "tf": 23.622,
-        "tw": 14.478,
-        "zpy": 5621000,
-        "zpx": 807900,
-        "kdes": 38.862
-    },
-    {
-        "id": "W30X116",
-        "d": 762,
-        "bf": 266.7,
-        "tf": 21.59,
-        "tw": 14.351,
-        "zpy": 6194000,
-        "zpx": 806200,
-        "kdes": 38.1
-    },
-    {
-        "id": "W40X149",
-        "d": 970.28,
-        "bf": 299.72,
-        "tf": 21.082,
-        "tw": 16.002,
-        "zpy": 9799000,
-        "zpx": 1019000,
-        "kdes": 51.054
+    const data = {
+        beams: [
+            {
+                "id": "W8X67",
+                "d": 228.6,
+                "bf": 210.312,
+                "tf": 23.749,
+                "tw": 14.478,
+                "zpy": 1149000,
+                "zpx": 535900,
+                "kdes": 33.782
+            },
+            {
+                "id": "W10X77",
+                "d": 269.24,
+                "bf": 259.08,
+                "tf": 22.098,
+                "tw": 13.462,
+                "zpy": 1599000,
+                "zpx": 752200,
+                "kdes": 34.798
+            },
+            {
+                "id": "W12X58",
+                "d": 309.88,
+                "bf": 254,
+                "tf": 16.256,
+                "tw": 9.144,
+                "zpy": 1416000,
+                "zpx": 532600,
+                "kdes": 31.496
+            },
+            {
+                "id": "W14X68",
+                "d": 355.6,
+                "bf": 254,
+                "tf": 18.288,
+                "tw": 10.541,
+                "zpy": 1885000,
+                "zpx": 604700,
+                "kdes": 33.274
+            },
+            {
+                "id": "W16X77",
+                "d": 419.1,
+                "bf": 261.62,
+                "tf": 19.304,
+                "tw": 11.557,
+                "zpy": 2458000,
+                "zpx": 673500,
+                "kdes": 29.464
+            },
+            {
+                "id": "W18X211",
+                "d": 525.78,
+                "bf": 294.64,
+                "tf": 48.514,
+                "tw": 26.928,
+                "zpy": 8030000,
+                "zpx": 2163000,
+                "kdes": 58.674
+            },
+            {
+                "id": "W21X68",
+                "d": 535.94,
+                "bf": 210.058,
+                "tf": 17.399,
+                "tw": 10.922,
+                "zpy": 2622000,
+                "zpx": 399800,
+                "kdes": 30.226
+            },
+            {
+                "id": "W24X94",
+                "d": 622.3,
+                "bf": 228.6,
+                "tf": 24.892,
+                "tw": 13.97,
+                "zpy": 5588000,
+                "zpx": 680100,
+                "kdes": 37.592
+            },
+            {
+                "id": "W27X114",
+                "d": 693.42,
+                "bf": 256.54,
+                "tf": 23.622,
+                "tw": 14.478,
+                "zpy": 5621000,
+                "zpx": 807900,
+                "kdes": 38.862
+            },
+            {
+                "id": "W30X116",
+                "d": 762,
+                "bf": 266.7,
+                "tf": 21.59,
+                "tw": 14.351,
+                "zpy": 6194000,
+                "zpx": 806200,
+                "kdes": 38.1
+            },
+            {
+                "id": "W40X149",
+                "d": 970.28,
+                "bf": 299.72,
+                "tf": 21.082,
+                "tw": 16.002,
+                "zpy": 9799000,
+                "zpx": 1019000,
+                "kdes": 51.054
+            }
+        ],
+        columns: [
+            {
+                "id": "W8X67",
+                "d": 228.6,
+                "bf": 210.312,
+                "tf": 23.749,
+                "tw": 14.478,
+                "zpy": 1149000,
+                "zpx": 535900,
+                "kdes": 33.782
+            },
+            {
+                "id": "W10X77",
+                "d": 269.24,
+                "bf": 259.08,
+                "tf": 22.098,
+                "tw": 13.462,
+                "zpy": 1599000,
+                "zpx": 752200,
+                "kdes": 34.798
+            },
+            {
+                "id": "W12X58",
+                "d": 309.88,
+                "bf": 254,
+                "tf": 16.256,
+                "tw": 9.144,
+                "zpy": 1416000,
+                "zpx": 532600,
+                "kdes": 31.496
+            },
+            {
+                "id": "W14X68",
+                "d": 355.6,
+                "bf": 254,
+                "tf": 18.288,
+                "tw": 10.541,
+                "zpy": 1885000,
+                "zpx": 604700,
+                "kdes": 33.274
+            },
+            {
+                "id": "W16X77",
+                "d": 419.1,
+                "bf": 261.62,
+                "tf": 19.304,
+                "tw": 11.557,
+                "zpy": 2458000,
+                "zpx": 673500,
+                "kdes": 29.464
+            },
+            {
+                "id": "W18X211",
+                "d": 525.78,
+                "bf": 294.64,
+                "tf": 48.514,
+                "tw": 26.928,
+                "zpy": 8030000,
+                "zpx": 2163000,
+                "kdes": 58.674
+            },
+            {
+                "id": "W21X68",
+                "d": 535.94,
+                "bf": 210.058,
+                "tf": 17.399,
+                "tw": 10.922,
+                "zpy": 2622000,
+                "zpx": 399800,
+                "kdes": 30.226
+            },
+            {
+                "id": "W24X94",
+                "d": 622.3,
+                "bf": 228.6,
+                "tf": 24.892,
+                "tw": 13.97,
+                "zpy": 5588000,
+                "zpx": 680100,
+                "kdes": 37.592
+            },
+            {
+                "id": "W27X114",
+                "d": 693.42,
+                "bf": 256.54,
+                "tf": 23.622,
+                "tw": 14.478,
+                "zpy": 5621000,
+                "zpx": 807900,
+                "kdes": 38.862
+            },
+            {
+                "id": "W30X116",
+                "d": 762,
+                "bf": 266.7,
+                "tf": 21.59,
+                "tw": 14.351,
+                "zpy": 6194000,
+                "zpx": 806200,
+                "kdes": 38.1
+            },
+            {
+                "id": "W40X149",
+                "d": 970.28,
+                "bf": 299.72,
+                "tf": 21.082,
+                "tw": 16.002,
+                "zpy": 9799000,
+                "zpx": 1019000,
+                "kdes": 51.054
+            }
+        ]
     }
-],
-    columns: [
-    {
-        "id": "W8X67",
-        "d": 228.6,
-        "bf": 210.312,
-        "tf": 23.749,
-        "tw": 14.478,
-        "zpy": 1149000,
-        "zpx": 535900,
-        "kdes": 33.782
-    },
-    {
-        "id": "W10X77",
-        "d": 269.24,
-        "bf": 259.08,
-        "tf": 22.098,
-        "tw": 13.462,
-        "zpy": 1599000,
-        "zpx": 752200,
-        "kdes": 34.798
-    },
-    {
-        "id": "W12X58",
-        "d": 309.88,
-        "bf": 254,
-        "tf": 16.256,
-        "tw": 9.144,
-        "zpy": 1416000,
-        "zpx": 532600,
-        "kdes": 31.496
-    },
-    {
-        "id": "W14X68",
-        "d": 355.6,
-        "bf": 254,
-        "tf": 18.288,
-        "tw": 10.541,
-        "zpy": 1885000,
-        "zpx": 604700,
-        "kdes": 33.274
-    },
-    {
-        "id": "W16X77",
-        "d": 419.1,
-        "bf": 261.62,
-        "tf": 19.304,
-        "tw": 11.557,
-        "zpy": 2458000,
-        "zpx": 673500,
-        "kdes": 29.464
-    },
-    {
-        "id": "W18X211",
-        "d": 525.78,
-        "bf": 294.64,
-        "tf": 48.514,
-        "tw": 26.928,
-        "zpy": 8030000,
-        "zpx": 2163000,
-        "kdes": 58.674
-    },
-    {
-        "id": "W21X68",
-        "d": 535.94,
-        "bf": 210.058,
-        "tf": 17.399,
-        "tw": 10.922,
-        "zpy": 2622000,
-        "zpx": 399800,
-        "kdes": 30.226
-    },
-    {
-        "id": "W24X94",
-        "d": 622.3,
-        "bf": 228.6,
-        "tf": 24.892,
-        "tw": 13.97,
-        "zpy": 5588000,
-        "zpx": 680100,
-        "kdes": 37.592
-    },
-    {
-        "id": "W27X114",
-        "d": 693.42,
-        "bf": 256.54,
-        "tf": 23.622,
-        "tw": 14.478,
-        "zpy": 5621000,
-        "zpx": 807900,
-        "kdes": 38.862
-    },
-    {
-        "id": "W30X116",
-        "d": 762,
-        "bf": 266.7,
-        "tf": 21.59,
-        "tw": 14.351,
-        "zpy": 6194000,
-        "zpx": 806200,
-        "kdes": 38.1
-    },
-    {
-        "id": "W40X149",
-        "d": 970.28,
-        "bf": 299.72,
-        "tf": 21.082,
-        "tw": 16.002,
-        "zpy": 9799000,
-        "zpx": 1019000,
-        "kdes": 51.054
-    }
-    ]
-  }
     document.addEventListener("DOMContentLoaded", function () {
         const calculateBtn = document.getElementById("calculateBtn");
         const mprContainer = document.querySelector(".mpr")
+        const memberLeftBox = document.querySelector(".memberLeftBox")
+        const memberRightBox = document.querySelector(".memberRightBox")
+        const memberContainer = document.querySelector(".memberContainer")
+        const demandAndCapacity = document.querySelector(".demandAndCapacity")
+        const safeAndUnsafeContainer = document.querySelector(".safeAndUnsafeContainer")
+
         const demandContainer = document.querySelector(".demand")
-        const x =document.querySelector(".x")
-        x.textContent= "x(+)"
+        console.log(memberLeftBox)
+        const x = document.querySelector(".x")
+        x.textContent = "x(+)"
         calculateBtn.addEventListener("click", function () {
-            mprContainer.innerHTML='';
-            demandContainer.innerHTML='';
+            // memberLeftBox.innerHTML = ""
+            // memberRightBox.innerHTML = ""
+            // demandContainer.innerHTML = '';
             // Constants
             const Cpr = 1.4;
             const Ry = 1.1;
@@ -900,207 +1078,207 @@ table {
             const d_b = document.querySelector(".d_b")
             const bf_b = document.querySelector(".bf_b")
             const bf_c = document.querySelector(".bf_c")
-            const d_c =document.querySelector(".d_c")
-            const tw_c =document.querySelector(".tw_c")
-            const tf_c =document.querySelector(".tf_c")
+            const d_c = document.querySelector(".d_c")
+            const tw_c = document.querySelector(".tw_c")
+            const tf_c = document.querySelector(".tf_c")
             const beamId = document.getElementById("beam").value;
             const columnId = document.getElementById("column").value;
 
 
             // Fetching JSON data
             let beamData, columnData;
-                    beamData = data.beams.find((beam) => beam.id === beamId);
-                    console.log(beamData)
-                    columnData = data.columns.find((column) => column.id === columnId);
+            beamData = data.beams.find((beam) => beam.id === beamId);
+            console.log(beamData)
+            columnData = data.columns.find((column) => column.id === columnId);
 
-                    d_b.textContent = beamData.d
-                    bf_b.textContent = beamData.bf
-                    bf_c.textContent = columnData.bf
-                    d_c.textContent= columnData.d
-                    tw_c.textContent= columnData.tw
-                    tf_c.textContent= columnData.tf
-                    console.log("column data is --------------->", columnData)
-                    // Calculating moment capacity
-                    const Mpr = Cpr * Ry * Fy * beamData.zpx / Math.pow(10, 6);
-                    // console.log("Max Moment, Mpr =", Mpr.toFixed(2), "kNm");
-                    const html = `<p>Max Moment Mpr = ${Mpr.toFixed(2)} kNm</p>`
-                    mprContainer.insertAdjacentHTML("beforeend", html)
+            d_b.textContent = beamData.d
+            bf_b.textContent = beamData.bf
+            bf_c.textContent = columnData.bf
+            d_c.textContent = columnData.d
+            tw_c.textContent = columnData.tw
+            tf_c.textContent = columnData.tf
+            console.log("column data is --------------->", columnData)
+            // Calculating moment capacity
+            const Mpr = Cpr * Ry * Fy * beamData.zpx / Math.pow(10, 6);
+            // console.log("Max Moment, Mpr =", Mpr.toFixed(2), "kNm");
+            const html = `<p>Max Moment Mpr = ${Mpr.toFixed(2)} kNm</p>`
+            mprContainer.insertAdjacentHTML("beforeend", html)
 
-                    // Calculating loads
-                    const wu = 1.2 * DL + 0.5 * LL; // kNm
-                    const Lh = L - columnData.bf / 1000; // m
+            // Calculating loads
+            const wu = 1.2 * DL + 0.5 * LL; // kNm
+            const Lh = L - columnData.bf / 1000; // m
 
-                    const Ve = 2 * Mpr / Lh; // kNm
-                    const Vg = 35.104; // kN from analysis
+            const Ve = 2 * Mpr / Lh; // kNm
+            const Vg = 35.104; // kN from analysis
 
-                    // Shear calculation for different sway conditions
-                    const Vurl = Ve - Vg; // kN
-                    const Vurr = Ve + Vg; // kN
+            // Shear calculation for different sway conditions
+            const Vurl = Ve - Vg; // kN
+            const Vurr = Ve + Vg; // kN
 
-                    // console.log("--------------------------------------- MEMBER LEFT END ------------------------------------------------------");
-                    // console.log("Left End Shear, VuL = ", Vurl, "kN", "\nRight End Shear, VuR = ", Vurr, "kNm");
+            // console.log("--------------------------------------- MEMBER LEFT END ------------------------------------------------------");
+            // console.log("Left End Shear, VuL = ", Vurl, "kN", "\nRight End Shear, VuR = ", Vurr, "kNm");
 
 
-                    const memberLeft = `<p>MEMBER LEFT END </p><p>Left End Shear VuL = ${(Vurl).toFixed(2)} kN</br> Right End Shear VuR = ${(Vurr).toFixed(2)} kNm</p>`
-                    mprContainer.insertAdjacentHTML("beforeend", memberLeft)
+            const memberLeft = `<div class="memberLeftBox"><p>MEMBER LEFT END </p><p>Left End Shear VuL = ${(Vurl).toFixed(2)} kN</br> Right End Shear VuR = ${(Vurr).toFixed(2)} kNm</p></div>`
+            memberContainer.insertAdjacentHTML("beforeend", memberLeft)
 
-                    const Vull = Ve + Vg; // kN
-                    const Vulr = Ve - Vg; // kN
+            const Vull = Ve + Vg; // kN
+            const Vulr = Ve - Vg; // kN
 
-                    // console.log("\n--------------------------------------- MEMBER RIGHT END ------------------------------------------------------");
-                    // console.log("Left End Shear, VuL = ", Vull, "kN", "\nRight End Shear, VuR = ", Vulr, "kNm");
+            // console.log("\n--------------------------------------- MEMBER RIGHT END ------------------------------------------------------");
+            // console.log("Left End Shear, VuL = ", Vull, "kN", "\nRight End Shear, VuR = ", Vulr, "kNm");
 
-                    const memberRight = `<p>MEMBER RIGHT END </p><p>Left End Shear VuL = ${(Vull).toFixed(2)} kN<br> Right End Shear VuR = ${(Vulr).toFixed(2)} kNm </p>`
-                    mprContainer.insertAdjacentHTML("beforeend", memberRight)
+            const memberRight = ` <div class="memberRightBox"><p>MEMBER RIGHT END </p><p>Left End Shear VuL = ${(Vull).toFixed(2)} kN<br> Right End Shear VuR = ${(Vulr).toFixed(2)} kNm </p></div>`
+            memberContainer.insertAdjacentHTML("beforeend", memberRight)
 
-                    // Dataframe creation
-                    const end = ["Left", "Right", "Left", "Right"];
-                    const V = [Vurl, Vurr, Vull, Vulr];
-                    const df = { "End": end, "Shear (kN)": V };
+            // Dataframe creation
+            const end = ["Left", "Right", "Left", "Right"];
+            const V = [Vurl, Vurr, Vull, Vulr];
+            const df = { "End": end, "Shear (kN)": V };
 
-                    /*  console.table(df); */
-                    const tableCells = document.querySelectorAll('.table--container table tbody tr td');
-                    tableCells[1].innerText = `'Left' \n ${(Vurl).toFixed(2)}`;
-                    tableCells[2].innerText = `'Right' \n ${(Vurr).toFixed(2)}`;
-                    tableCells[3].innerText = `'Left' \n ${(Vull).toFixed(2)}`;
-                    tableCells[4].innerText = `'Right' \n ${(Vulr).toFixed(2)}`;
+            /*  console.table(df); */
+            const tableCells = document.querySelectorAll('.table--container table tbody tr td');
+            tableCells[1].innerText = `'Left' \n ${(Vurl).toFixed(2)}`;
+            tableCells[2].innerText = `'Right' \n ${(Vurr).toFixed(2)}`;
+            tableCells[3].innerText = `'Left' \n ${(Vull).toFixed(2)}`;
+            tableCells[4].innerText = `'Right' \n ${(Vulr).toFixed(2)}`;
 
-                    // Panel zone shear demand calculation
-                    const sh = 0;
-                    const Vu = Math.max(Vurl, Vurr, Vull, Vulr);
-                    const Mf = Mpr + Vu * sh; // kNm
+            // Panel zone shear demand calculation
+            const sh = 0;
+            const Vu = Math.max(Vurl, Vurr, Vull, Vulr);
+            const Mf = Mpr + Vu * sh; // kNm
 
-                    const Mb1 = Mpr + Vu * (sh + columnData.d / 2000);
-                    const Mb2 = Mpr + Vu * (sh + columnData.d / 2000);
+            const Mb1 = Mpr + Vu * (sh + columnData.d / 2000);
+            const Mb2 = Mpr + Vu * (sh + columnData.d / 2000);
 
-                    const Vc = 2 * (Mb1) / H; // kN
+            const Vc = 2 * (Mb1) / H; // kN
 
-                    const Mf1 = Mf;
-                    const Mf2 = Mf;
-                    const Vpzdemand = Mf1 * Math.pow(10, 3) / (beamData.d - beamData.tf) + Mf2 * Math.pow(10, 3) / (beamData.d - beamData.tf) - Vc; // kN
-                    console.log("VpzDemand ------------->", Vpzdemand)
-                    // Panel zone shear capacity calculation
-                    const Vpzcapacity = 0.6 * Fy * columnData.d * columnData.tw / 1000 + (1.8 * columnData.bf * Math.pow(columnData.tf, 2) * Fy) / beamData.d / 1000;
-                    console.log("vpz capacity", Vpzcapacity)
-                    // console.log("Demand = ", Vpzdemand.toFixed(2), "kN", "Capacity = ", Vpzcapacity.toFixed(2), "kN");
-                    const demandHtml = `<p class='demand-numbers'>Demand = ${Vpzdemand.toFixed(2)} kN </br> Capacity = ${Vpzcapacity.toFixed(2)} kN</p>`
-                    demandContainer.insertAdjacentHTML("beforeend", demandHtml)
+            const Mf1 = Mf;
+            const Mf2 = Mf;
+            const Vpzdemand = Mf1 * Math.pow(10, 3) / (beamData.d - beamData.tf) + Mf2 * Math.pow(10, 3) / (beamData.d - beamData.tf) - Vc; // kN
+            console.log("VpzDemand ------------->", Vpzdemand)
+            // Panel zone shear capacity calculation
+            const Vpzcapacity = 0.6 * Fy * columnData.d * columnData.tw / 1000 + (1.8 * columnData.bf * Math.pow(columnData.tf, 2) * Fy) / beamData.d / 1000;
+            console.log("vpz capacity", Vpzcapacity)
+            // console.log("Demand = ", Vpzdemand.toFixed(2), "kN", "Capacity = ", Vpzcapacity.toFixed(2), "kN");
+            const demandHtml = `<p class='demand-numbers'>Demand = ${Vpzdemand.toFixed(2)} kN </br> Capacity = ${Vpzcapacity.toFixed(2)} kN</p>`
+            demandAndCapacity.insertAdjacentHTML("beforeend", demandHtml)
 
-                    if (Vpzcapacity < Vpzdemand) {
-                        console.log("\n\x1b[1;31m UNSAFE IN PANEL ZONE SHEAR");
-                        console.log("\n\x1b[1;32m USE DOUBLER PLATES");
-                        const unsafeHtml = "<p class='brown'> UNSAFE IN PANEL ZONE SHEAR</p><p class='green'>USE DOUBLER PLATES</p>"
-                        demandContainer.insertAdjacentHTML("beforeend", unsafeHtml)
-                        // console.log(unsafeHtm)
-                    }
+            if (Vpzcapacity < Vpzdemand) {
+                console.log("\n\x1b[1;31m UNSAFE IN PANEL ZONE SHEAR");
+                console.log("\n\x1b[1;32m USE DOUBLER PLATES");
+                const unsafeHtml = "<p class='brown'> UNSAFE IN PANEL ZONE SHEAR</p><p class='green'>USE DOUBLER PLATES</p>"
+                safeAndUnsafeContainer.insertAdjacentHTML("beforeend", unsafeHtml)
+                // console.log(unsafeHtm)
+            }
 
-                    // Shear Capacity of Doubler Plates
-                    const VpDP = Vpzdemand - Vpzcapacity;
-                    const tdpreq = VpDP * Math.pow(10, 3) / (0.6 * Fy * beamData.d); // Thickness of DP required
-                    const tdp = Math.round(tdpreq, 0); // Provided DP thickness
+            // Shear Capacity of Doubler Plates
+            const VpDP = Vpzdemand - Vpzcapacity;
+            const tdpreq = VpDP * Math.pow(10, 3) / (0.6 * Fy * beamData.d); // Thickness of DP required
+            const tdp = Math.round(tdpreq, 0); // Provided DP thickness
 
-                    const dz = beamData.d - 2 * beamData.tf;
-                    const wz = columnData.d - 2 * columnData.tf;
-                    const tpdlim = (dz + wz) / 90; // Min. Doubler Thickness
+            const dz = beamData.d - 2 * beamData.tf;
+            const wz = columnData.d - 2 * columnData.tf;
+            const tpdlim = (dz + wz) / 90; // Min. Doubler Thickness
 
-                    if (tpdlim < columnData.tw) {
-                        // console.log("\n\x1b[1;32m SAFE IN SHEAR");
-                        const safeInShearHTML = "<p class='green'> SAFE IN SHEAR</p>"
-                        demandContainer.insertAdjacentHTML("beforeend", safeInShearHTML)
-                    } else {
-                        // console.log("\n\x1b[1;31m UNSAFE IN SHEAR");
-                        const unsafeInShearHTML = "<p class='brown'> UNSAFE IN SHEAR</p>"
-                        demandContainer.insertAdjacentHTML("beforeend", unsafeInShearHTML)
-                    }
+            if (tpdlim < columnData.tw) {
+                // console.log("\n\x1b[1;32m SAFE IN SHEAR");
+                const safeInShearHTML = "<p class='green'> SAFE IN SHEAR</p>"
+                safeAndUnsafeContainer.insertAdjacentHTML("beforeend", safeInShearHTML)
+            } else {
+                // console.log("\n\x1b[1;31m UNSAFE IN SHEAR");
+                const unsafeInShearHTML = "<p class='brown'> UNSAFE IN SHEAR</p>"
+                safeAndUnsafeContainer.insertAdjacentHTML("beforeend", unsafeInShearHTML)
+            }
 
-                    // Beam Flange Bending
-                    const Ru_b = Math.max(Mf1, Mf2) * 1000 / (beamData.d - beamData.tf); // AISC 360-16 Sec. J10 (6)
-                    const Rn_b = 1.8 * beamData.bf * beamData.tf * Fy * Ry; // AISC 360-16 Sec. J10 (6)
+            // Beam Flange Bending
+            const Ru_b = Math.max(Mf1, Mf2) * 1000 / (beamData.d - beamData.tf); // AISC 360-16 Sec. J10 (6)
+            const Rn_b = 1.8 * beamData.bf * beamData.tf * Fy * Ry; // AISC 360-16 Sec. J10 (6)
 
-                    // if (Rn_b > Ru_b) {
-                    //     console.log("\n\x1b[1;32m -SAFE FOR BEAM FLANGE");
-                    // } else {
-                    //     console.log("\n\x1b[1;31m UNSAFE FOR BEAM FLANGE");
-                    // }
+            // if (Rn_b > Ru_b) {
+            //     console.log("\n\x1b[1;32m -SAFE FOR BEAM FLANGE");
+            // } else {
+            //     console.log("\n\x1b[1;31m UNSAFE FOR BEAM FLANGE");
+            // }
 
-                    if (Rn_b > Ru_b) {
-                        const safeForBeamFlangHTML = "<p class='green'> -SAFE FOR BEAM FLANGE</p>"
-                        demandContainer.insertAdjacentHTML("beforeend", safeForBeamFlangHTML)
-                    } else {
-                        // console.log("\n\x1b[1;31m UNSAFE IN SHEAR");
-                        const unsafeForBeamFlangHTML = "<p class='brown'> -UNSAFE FOR BEAM FLANGE</p>"
-                        demandContainer.insertAdjacentHTML("beforeend", unsafeForBeamFlangHTML)
-                    }
-                    // Column Flange Bending (Strength)
-                    const Rn_c = 6.25 * Fy * Math.pow(columnData.tf, 2) / 1000;
-                    const Rn_clim = 1.8 * beamData.bf * beamData.tf * Fy * Ry / 1000;
+            if (Rn_b > Ru_b) {
+                const safeForBeamFlangHTML = "<p class='green'> -SAFE FOR BEAM FLANGE</p>"
+                safeAndUnsafeContainer.insertAdjacentHTML("beforeend", safeForBeamFlangHTML)
+            } else {
+                // console.log("\n\x1b[1;31m UNSAFE IN SHEAR");
+                const unsafeForBeamFlangHTML = "<p class='brown'> -UNSAFE FOR BEAM FLANGE</p>"
+                safeAndUnsafeContainer.insertAdjacentHTML("beforeend", unsafeForBeamFlangHTML)
+            }
+            // Column Flange Bending (Strength)
+            const Rn_c = 6.25 * Fy * Math.pow(columnData.tf, 2) / 1000;
+            const Rn_clim = 1.8 * beamData.bf * beamData.tf * Fy * Ry / 1000;
 
-                    // if (Rn_c > Rn_clim) {
-                    //     console.log("\n\x1b[1;32m -SAFE FOR COLUMN FLANGE");
-                    // } else {
-                    //     console.log("\n\x1b[1;31m UNSAFE FOR COLUMN FLANGE");
-                    // }
+            // if (Rn_c > Rn_clim) {
+            //     console.log("\n\x1b[1;32m -SAFE FOR COLUMN FLANGE");
+            // } else {
+            //     console.log("\n\x1b[1;31m UNSAFE FOR COLUMN FLANGE");
+            // }
 
-                    if (Rn_c > Rn_clim) {
-                        const safeForColumnFlangHTML = "<p class='green'> -SAFE FOR COLUMN FLANGE</p>"
-                        demandContainer.insertAdjacentHTML("beforeend", safeForColumnFlangHTML)
-                    } else {
-                        // console.log("\n\x1b[1;31m UNSAFE IN SHEAR");
-                        const unsafeForColumnFlangHTML = "<!-- <p class='brown'> -UNSAFE FOR COLUMN FLANGE</p>"
-                        demandContainer.insertAdjacentHTML("beforeend", unsafeForColumnFlangHTML)
-                    }
+            if (Rn_c > Rn_clim) {
+                const safeForColumnFlangHTML = "<p class='green'> -SAFE FOR COLUMN FLANGE</p>"
+                safeAndUnsafeContainer.insertAdjacentHTML("beforeend", safeForColumnFlangHTML)
+            } else {
+                // console.log("\n\x1b[1;31m UNSAFE IN SHEAR");
+                const unsafeForColumnFlangHTML = "<!-- <p class='brown'> -UNSAFE FOR COLUMN FLANGE</p>"
+                safeAndUnsafeContainer.insertAdjacentHTML("beforeend", unsafeForColumnFlangHTML)
+            }
 
-                    // Column Flange Bending (Stiffness)
-                    const tlim_c = beamData.bf / 6;
+            // Column Flange Bending (Stiffness)
+            const tlim_c = beamData.bf / 6;
 
-                    // if (column.tf > tlim_c) {
-                    //     console.log("\n\x1b[1;32m -SAFE FOR COLUMN BENDING STIFFNESS\n --NO CONTINUITY PLATES REQURIED");
-                    // } else {
-                    //     console.log("\n\x1b[1;31m UNSAFE FOR BENDING STIFFNESS");
-                    // }
+            // if (column.tf > tlim_c) {
+            //     console.log("\n\x1b[1;32m -SAFE FOR COLUMN BENDING STIFFNESS\n --NO CONTINUITY PLATES REQURIED");
+            // } else {
+            //     console.log("\n\x1b[1;31m UNSAFE FOR BENDING STIFFNESS");
+            // }
 
-                    if (Rn_c > Rn_clim) {
-                        const safeForColumnBendingHTML = "<p class='green'> -SAFE FOR COLUMN BENDING STIFFNESS </br></br>--NO CONTINUITY PLATES REQURIED</p>"
-                        demandContainer.insertAdjacentHTML("beforeend", safeForColumnBendingHTML)
-                    } else {
-                        // console.log("\n\x1b[1;31m UNSAFE IN SHEAR");
-                        const unsafeForColumnBendingHTML = "<p class='brown'> UNSAFE FOR BENDING STIFFNESS</p>"
-                        demandContainer.insertAdjacentHTML("beforeend", unsafeForColumnBendingHTML)
-                    }
+            if (Rn_c > Rn_clim) {
+                const safeForColumnBendingHTML = "<p class='green'> -SAFE FOR COLUMN BENDING STIFFNESS </br></br>--NO CONTINUITY PLATES REQURIED</p>"
+                safeAndUnsafeContainer.insertAdjacentHTML("beforeend", safeForColumnBendingHTML)
+            } else {
+                // console.log("\n\x1b[1;31m UNSAFE IN SHEAR");
+                const unsafeForColumnBendingHTML = "<p class='brown'> UNSAFE FOR BENDING STIFFNESS</p>"
+                safeAndUnsafeContainer.insertAdjacentHTML("beforeend", unsafeForColumnBendingHTML)
+            }
 
-                    // Column Web Local Yielding
-                    const tw = columnData.tw + tdp + 1000; // similar To IS 800: 2007 - Cl. 8.7.1.3 stiff bearing length
-                    const k = columnData.kdes;
-                    const Lb = columnData.tf;
-                    const Rnc_webyield = Fy * tw * (5 * k + Lb) / 1000; // AISC 360-16 Sec. J10 (16.1-143)
+            // Column Web Local Yielding
+            const tw = columnData.tw + tdp + 1000; // similar To IS 800: 2007 - Cl. 8.7.1.3 stiff bearing length
+            const k = columnData.kdes;
+            const Lb = columnData.tf;
+            const Rnc_webyield = Fy * tw * (5 * k + Lb) / 1000; // AISC 360-16 Sec. J10 (16.1-143)
 
-                    if (Rnc_webyield > Ru_b) {
-                        /* console.log("\n\x1b[1;32m -SAFE FOR WEB LOCAL YIELDING"); */
-                        const safeWebLocalCripplingHTML = "<p class='green'> -SAFE FOR WEB LOCAL YIELDING</p>"
-                        demandContainer.insertAdjacentHTML("beforeend", safeWebLocalCripplingHTML)
-                    } else {
-                       /*  console.log("\n\x1b[1;31m UNSAFE IN WEB LOCAL YIELDING"); */
-                        const unSafeWebLocalCripplingHTML = "<p class='brown'> UNSAFE IN WEB LOCAL YIELDING</p>"
-                        demandContainer.insertAdjacentHTML("beforend", unSafeWebLocalCripplingHTML)
-                    }
+            if (Rnc_webyield > Ru_b) {
+                /* console.log("\n\x1b[1;32m -SAFE FOR WEB LOCAL YIELDING"); */
+                const safeWebLocalCripplingHTML = "<p class='green'> -SAFE FOR WEB LOCAL YIELDING</p>"
+                safeAndUnsafeContainer.insertAdjacentHTML("beforeend", safeWebLocalCripplingHTML)
+            } else {
+                /*  console.log("\n\x1b[1;31m UNSAFE IN WEB LOCAL YIELDING"); */
+                const unSafeWebLocalCripplingHTML = "<p class='brown'> UNSAFE IN WEB LOCAL YIELDING</p>"
+                safeAndUnsafeContainer.insertAdjacentHTML("beforend", unSafeWebLocalCripplingHTML)
+            }
 
-                    // Column Web Crippling
-                    const Qf = 1;
-                    const Rnc_webcrip = 0.80 * (Math.pow(tw, 2)) * (1 + 3 * (Lb / columnData.d) * Math.pow(tw / columnData.tf, 1.5)) * Math.sqrt(E * Fy * columnData.tf / tw) * Qf / 1000;
+            // Column Web Crippling
+            const Qf = 1;
+            const Rnc_webcrip = 0.80 * (Math.pow(tw, 2)) * (1 + 3 * (Lb / columnData.d) * Math.pow(tw / columnData.tf, 1.5)) * Math.sqrt(E * Fy * columnData.tf / tw) * Qf / 1000;
 
-                    if (Rnc_webcrip > Ru_b) {
-                        const safeWebCripplingHTML = "<p class='green'> SAFE FOR WEB CRIPPLING</p>"
-                        demandContainer.insertAdjacentHTML("beforeend", safeWebCripplingHTML)
-                        /* console.log("\n\x1b[1;32m SAFE FOR WEB CRIPPLING"); */
-                    } else {
-                        /* console.log("\n\x1b[1;31m UNSAFE IN WEB CRIPPLING"); */
-                        const unSafeWebCripplingHTML = "<p class='brown'> UNSAFE IN WEB CRIPPLING</p>"
-                        demandContainer.insertAdjacentHTML("beforeend", unSafeWebCripplingHTML)
-                    }
+            if (Rnc_webcrip > Ru_b) {
+                const safeWebCripplingHTML = "<p class='green'> SAFE FOR WEB CRIPPLING</p>"
+                safeAndUnsafeContainer.insertAdjacentHTML("beforeend", safeWebCripplingHTML)
+                /* console.log("\n\x1b[1;32m SAFE FOR WEB CRIPPLING"); */
+            } else {
+                /* console.log("\n\x1b[1;31m UNSAFE IN WEB CRIPPLING"); */
+                const unSafeWebCripplingHTML = "<p class='brown'> UNSAFE IN WEB CRIPPLING</p>"
+                safeAndUnsafeContainer.insertAdjacentHTML("beforeend", unSafeWebCripplingHTML)
+            }
 
-                })
+        })
 
-        });
+    });
 </script>
 
 </html>
