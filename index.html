@@ -47,12 +47,12 @@ p{
   justify-content: center;
   align-items: center;
   gap: 1rem;
-  width: 70%;
+  width: 100%;
   
 }
 
 .input {
-  width: 70%;
+  width: 50%;
   height: 3.2rem;
   background-color: #F7F7F7;
   border: 1px solid rgba(0, 0, 0, 0.08);
@@ -67,7 +67,7 @@ p{
 }
 .label {
   font-weight: 400;
-  width: 2rem;
+  width: 7rem;
   color: #555;
 }
 .input--parent-container {
@@ -145,21 +145,28 @@ p{
   align-items: center;
   flex-direction: column;
   padding: 2rem;
-  width: 50%;
+  width: 100%;
 }
 .dropdown--box {
-  text-align: center;
-  width: 50%;
+  /* text-align: center; */
+  width: 100%;
   display: flex;
   justify-content: center;
   gap: 2rem;
-  margin-top: 1rem;
+  margin: 0;
+  .select-container{
+    width: 50%;
+    h4{
+        padding: 1rem 0;
+        text-align: center;
+    }
+  }
 }
 .dropdown {
   padding: 1rem;
   border-radius: 5px;
   color: #555;
-  width: 35%;
+  width: 100%;
   font-weight: 700;
   border: 1px solid rgba(0, 0, 0, 0.08);
 }
@@ -246,14 +253,13 @@ caption {
 }
 @media screen and (max-width: 2560px){
     .dropdown--box{
-        margin-left: 3rem;
-        width: 67%;
+        margin-left: 5rem;
+        width: 50%;
     }
 }
   @media screen and (max-width: 1440px){
     .dropdown--box{
-        width: 61%;
-        margin-left: 3rem;
+       /*  width: 61%; */
     }
   }
   @media screen and (max-width: 1024px){
@@ -262,7 +268,7 @@ caption {
     }
     .dropdown--box{
         margin-left: 0;
-        width: 100%;
+        width: 70%;
     }
     .span-class{
   width: 2.4;
@@ -310,10 +316,17 @@ caption {
 .input--container {
     padding-right: 0;
     justify-content: center;
+    
+    span{
+        font-size: .8rem;
+    }
 
 }
 .input--section-box{
     flex-direction: column;
+    width: 70%;
+    align-items: center;
+    margin: 0 auto;
 }
 .input--parent-container{
     max-width: 100%;
@@ -350,14 +363,14 @@ caption {
         right: 1.5rem;
 
 }
-    }
 .dropdown--box{
     width: 67%;
     margin-left: 3rem;
 }
 .dropdown {
-width: 45%;
+width: 100%;
 }
+    }
 table {
     width: 100%;
   }
@@ -375,6 +388,10 @@ table {
             margin: 0 2rem;
         }
     }
+    .label{
+        font-size: .8rem;
+    }
+  }
     .d_b, .d_c {
         top: 10rem;
         left: 1.6rem;
@@ -402,11 +419,13 @@ table {
     th, td {
     display: block; 
   }
-}
 @media screen and (max-width: 375px) {
     .dropdown--box{
         width: 100%;
         margin-left: 0;
+        .select-container {
+            width: 100%;
+}
     }
     .image--section{
         flex-direction: column;
@@ -442,6 +461,14 @@ table {
     .tf_c{
         left: 16rem;
         top: 1rem;
+    }
+    .dropdown--box{
+        width: 67%;
+        margin-left: 3rem;
+        flex-direction: column;
+}
+    .dropdown {
+        width: 100%;
     }
 }
 @media screen and (max-width: 320px) {
@@ -498,34 +525,35 @@ table {
             <section class="input--section">
                 <div class="input--parent-container">
                     <div class="input--container">
-                        <label for="L" class="label label-L"> L </label>
-                        <input type="number" id="L" class="input input--field-1">
+                        <label for="L" class="label label-L"> Length (L)</label>
+                        <input type="number" id="L" class="input input--field-1"><span>m</span>
                     </div>
                     <div class="input--container">
-                        <label for="H" class="label label-H">H</label>
-                        <input type="number" id="H" class="input input--field-2">
+                        <label for="H" class="label label-H">Height (H)</label>
+                        <input type="number" id="H" class="input input--field-2"><span>m</span>
                     </div>
                     <div class="input--container">
-                        <label for="DL" class="label label-DL">DL</label>
-                        <input type="number" id="DL" class="input input--field-3">
+                        <label for="DL" class="label label-DL">Dead Load (DL)</label>
+                        <input type="number" id="DL" class="input input--field-3"><span>kN/m</span>
                     </div>
                     <div class="input--container">
-                        <label for="LL" class="label label-LL">LL</label>
-                        <input type="number" id="LL" class="input input--field-4">
+                        <label for="LL" class="label label-LL">Live Load (LL)</label>
+                        <input type="number" id="LL" class="input input--field-4"><span>kN/m</span>
                     </div>
     
                     <div class="input--container">
-                        <label for="Fy" class="label label-Fy">Fy</label>
-                        <input type="number" id="Fy" class="input input--field-5">
+                        <label for="Fy" class="label label-Fy">Grade of Steel  (Fy)</label>
+                        <input type="number" id="Fy" class="input input--field-5"><span>Mpa</span>
                     </div>
                     <div class="input--container">
-                        <label for="E" class="label label-E">E</label>
-                        <input type="number" id="E" class="input input--field-6">
+                        <label for="E" class="label label-E">Modulus of Elasticity (E)</label>
+                        <input type="number" id="E" class="input input--field-6"><span>Mpa</span>
                     </div>
                 </div>
     
                 <h3>Select Beam And Column</h3>
                 <div class="dropdown--box">
+                    <div class="select-container"><h4>BEAM</h4>
                     <select name="BEAM" id="beam" class="dropdown dropdown-1">
                         <option value="" disabled selected>Beams</option>
                         <option value="W8X67">W8X67</option>
@@ -540,6 +568,8 @@ table {
                         <option value="W30X116">W30X116</option>
                         <option value="W40X149">W40X149</option>
                     </select>
+                </div>
+                    <div class="select-container"><h4>COLUMN</h4>
                     <select name="Column" id="column" class="dropdown dropdown-2">
                         <option value="" disabled selected>Columns</option>
                         <option value="W8X67"><span>W8X67</span></option>
@@ -554,6 +584,7 @@ table {
                         <option value="W30X116">W30X116</option>
                         <option value="W40X149">W40X149</option>
                     </select>
+                </div>
                 </div>
             </section>
             <section class="image--section">
@@ -577,7 +608,7 @@ table {
 
         <section>
             <div class="calculate-btn">
-                <button type="button" class="btn" id="calculateBtn">Calculate</button>
+                <button type="button" class="btn" id="calculateBtn">Run Analysis</button>
             </div>
             <div class="mpr">
                <!--  <p>"Max Moment, Mpr =", Mpr.toFixed(2), "kNm"</p>
@@ -910,7 +941,7 @@ table {
                     // console.log("Left End Shear, VuL = ", Vurl, "kN", "\nRight End Shear, VuR = ", Vurr, "kNm");
 
 
-                    const memberLeft = `<p>MEMBER LEFT END </p><p>Left End Shear VuL = ${Vurl} kN</br> Right End Shear VuR = ${Vurr} kNm</p>`
+                    const memberLeft = `<p>MEMBER LEFT END </p><p>Left End Shear VuL = ${(Vurl).toFixed(2)} kN</br> Right End Shear VuR = ${(Vurr).toFixed(2)} kNm</p>`
                     mprContainer.insertAdjacentHTML("beforeend", memberLeft)
 
                     const Vull = Ve + Vg; // kN
@@ -919,7 +950,7 @@ table {
                     // console.log("\n--------------------------------------- MEMBER RIGHT END ------------------------------------------------------");
                     // console.log("Left End Shear, VuL = ", Vull, "kN", "\nRight End Shear, VuR = ", Vulr, "kNm");
 
-                    const memberRight = `<p>MEMBER RIGHT END </p><p>Left End Shear VuL = ${Vull} kN<br> Right End Shear VuR = ${Vulr} kNm </p>`
+                    const memberRight = `<p>MEMBER RIGHT END </p><p>Left End Shear VuL = ${(Vull).toFixed(2)} kN<br> Right End Shear VuR = ${(Vulr).toFixed(2)} kNm </p>`
                     mprContainer.insertAdjacentHTML("beforeend", memberRight)
 
                     // Dataframe creation
@@ -929,10 +960,10 @@ table {
 
                     /*  console.table(df); */
                     const tableCells = document.querySelectorAll('.table--container table tbody tr td');
-                    tableCells[1].innerText = `'Left' \n ${Vurl}`;
-                    tableCells[2].innerText = `'Right' \n ${Vurr}`;
-                    tableCells[3].innerText = `'Left' \n ${Vull}`;
-                    tableCells[4].innerText = `'Right' \n ${Vulr}`;
+                    tableCells[1].innerText = `'Left' \n ${(Vurl).toFixed(2)}`;
+                    tableCells[2].innerText = `'Right' \n ${(Vurr).toFixed(2)}`;
+                    tableCells[3].innerText = `'Left' \n ${(Vull).toFixed(2)}`;
+                    tableCells[4].innerText = `'Right' \n ${(Vulr).toFixed(2)}`;
 
                     // Panel zone shear demand calculation
                     const sh = 0;
