@@ -786,7 +786,7 @@
                 <p>"--------------------------------------- MEMBER RIGHT END ------------------------------------------------------"</p>
                 <p>"Left End Shear, VuL = ", ${}, "kN", "\nRight End Shear, VuR = ", ${}, "kNm"</p> -->
             </div>
-            <div class="table--container">
+       <!--      <div class="table--container">
                 <table>
                     <tbody>
                         <tr>
@@ -805,7 +805,7 @@
                         </tr>
                     </tbody>
                 </table>
-            </div>
+            </div> -->
             <div class="demand">
                 <div class="demandAndCapacity"></div>
                 <!-- <p>Demand = ", ${}, "kN", "Capacity = ", ${}, "kN"</p>
@@ -1063,6 +1063,7 @@
             // memberLeftBox.innerHTML = ""
             // memberRightBox.innerHTML = ""
             // demandContainer.innerHTML = '';
+            memberContainer.innerHTML="";
             // Constants
             const Cpr = 1.4;
             const Ry = 1.1;
@@ -1137,12 +1138,12 @@
             const df = { "End": end, "Shear (kN)": V };
 
             /*  console.table(df); */
-            const tableCells = document.querySelectorAll('.table--container table tbody tr td');
+           /*  const tableCells = document.querySelectorAll('.table--container table tbody tr td');
             tableCells[1].innerText = `'Left' \n ${(Vurl).toFixed(2)}`;
             tableCells[2].innerText = `'Right' \n ${(Vurr).toFixed(2)}`;
             tableCells[3].innerText = `'Left' \n ${(Vull).toFixed(2)}`;
             tableCells[4].innerText = `'Right' \n ${(Vulr).toFixed(2)}`;
-
+ */
             // Panel zone shear demand calculation
             const sh = 0;
             const Vu = Math.max(Vurl, Vurr, Vull, Vulr);
