@@ -51,7 +51,7 @@
 
         .input--container {
             display: flex;
-            justify-content: center;
+        /*     justify-content: center; */
             align-items: center;
             gap: 1rem;
             width: 100%;
@@ -59,7 +59,7 @@
         }
 
         .input {
-            width: 50%;
+            width: 56%;
             height: 3.2rem;
             background-color: #F7F7F7;
             border: 1px solid rgba(0, 0, 0, 0.08);
@@ -76,7 +76,7 @@
 
         .label {
             font-weight: 400;
-            width: 7rem;
+            width: 12rem;
             color: #555;
         }
 
@@ -89,7 +89,9 @@
             gap: 2rem;
             margin-bottom: 1rem;
         }
-
+        .input-section h3{
+            margin-left: 5rem;
+        }
         .input--section-box {
             display: flex;
             justify-content: center;
@@ -130,9 +132,9 @@
             font-size: 13px;
         }
 
-        .span-class:nth-child(4) {
+       /*  .span-class:nth-child(4) {
             border: none;
-        }
+        } */
 
         .d_b,
         .d_c {
@@ -150,10 +152,10 @@
             bottom: 20rem;
             right: 4.3rem;
         }
-
-        .x {
+        .x,.x-row {
             top: 10.5rem;
             right: 1.2rem;
+            border: none;
         }
 
         .tf_c {
@@ -316,8 +318,9 @@
 
         .safeAndUnsafeContainer {
             display: flex;
-            align-items: center;
+            /* align-items: center; */
             gap: 2rem;
+            flex-wrap: wrap;
 
             /* p {
                 border: 1px solid red;
@@ -337,7 +340,7 @@
         .headings {
             margin-bottom: 15px;
             display: block;
-            font-size: 14px;
+            font-size: 1rem;
         }
 
         /* .beamflange,
@@ -351,7 +354,6 @@
             border-radius: 10px;
             box-shadow: rgba(255, 0, 0, 0.2) 0px 7px 15px 0px;
             width: 9rem;
-
 
         }
 
@@ -416,7 +418,7 @@
                 right: 2rem;
             }
 
-            .x {
+            .x,.x-row {
                 top: 9rem;
                 right: 0;
             }
@@ -454,7 +456,7 @@
 
             .input--section-box {
                 flex-direction: column;
-                width: 70%;
+                width: 100%;
                 align-items: center;
                 margin: 0 auto;
             }
@@ -492,7 +494,7 @@
                 right: 8rem;
             }
 
-            .x {
+            .x,.x-row {
                 right: 1.9rem;
                 top: 9rem;
             }
@@ -504,25 +506,39 @@
             }
 
             .dropdown--box {
-                width: 67%;
+                width: 100%;
                 margin-left: 3rem;
             }
 
             .dropdown {
                 width: 100%;
             }
+            .safeAndUnsafeContainer{
+                gap: 2rem;
+            }
+            .mpr{
+                width: 100%;
+            }
+            .memberContainer {
+                gap: 1rem;
+            }
         }
-
-        table {
-            width: 100%;
-        }
-
         @media screen and (max-width: 425px) {
             .dropdown--box {
                 width: 100%;
-                margin-left: 0;
+                margin-left: 0 !important;
             }
-
+            .safeAndUnsafeContainer{
+                gap: .5rem;
+                align-items: center;
+                /* text-align: center; */
+                flex-direction: column;
+            }
+            .paneldoublerplates {
+                gap: .8rem;
+                display: flex;
+                flex-direction: column;
+            }
             .image--section {
                 flex-direction: column;
                 margin-top: 0;
@@ -554,7 +570,7 @@
                 right: 7rem;
             }
 
-            .x {
+            .x,.x-row {
                 right: 2.5rem;
                 top: 9rem;
             }
@@ -572,10 +588,13 @@
             td {
                 display: block;
             }
+            .memberContainer{
+                flex-wrap: wrap;
+            }
+            .brown,.green{
+                width: 20rem;
+            }
         }
-
-
-
         @media screen and (max-width: 375px) {
             .dropdown--box {
                 width: 100%;
@@ -621,7 +640,7 @@
                 right: 6rem;
             }
 
-            .x {
+            .x,.x-row {
                 top: 9rem;
                 right: 2.2rem;
             }
@@ -640,8 +659,10 @@
             .dropdown {
                 width: 100%;
             }
+            .brown,.green{
+                width: 20rem;
+            }
         }
-
         @media screen and (max-width: 320px) {
             .dropdown--box {
                 width: 100%;
@@ -681,7 +702,7 @@
                 right: 4.8rem;
             }
 
-            .x {
+            .x,.x-row {
                 bottom: 9.4rem;
                 top: 9rem;
             }
@@ -689,6 +710,9 @@
             .tf_c {
                 top: 1rem;
                 left: 13.5rem;
+            }
+            .brown,.green{
+                width: 18rem;
             }
         }
     </style>
@@ -773,7 +797,7 @@
                 <div class="image--box-1">
                     <span class="span-class d_b"></span>
                     <span class="bf_b span-class"></span>
-
+                    <span class="x-row span-class"></span>
                     <img src="./column.png" alt="column">
                 </div>
                 <div class="image--box-2">
@@ -1089,11 +1113,13 @@
         const demandContainer = document.querySelector(".demand")
         console.log(memberLeftBox)
         const x = document.querySelector(".x")
-        x.textContent = "x(+)"
+        x.textContent = "x(+)";
+        const xRow = document.querySelector(".x-row")
+        xRow.textContent = "x(+)";
+
         calculateBtn.addEventListener("click", function () {
             // memberLeftBox.innerHTML = ""
             // memberRightBox.innerHTML = ""
-            // demandContainer.innerHTML = '';
             memberContainer.innerHTML = "";
             // Constants
             const Cpr = 1.4;
@@ -1194,13 +1220,13 @@
             const Vpzcapacity = 0.6 * Fy * columnData.d * columnData.tw / 1000 + (1.8 * columnData.bf * Math.pow(columnData.tf, 2) * Fy) / beamData.d / 1000;
             console.log("vpz capacity", Vpzcapacity)
             // console.log("Demand = ", Vpzdemand.toFixed(2), "kN", "Capacity = ", Vpzcapacity.toFixed(2), "kN");
-            const demandHtml = `<p class='demand-numbers'>Demand = ${Vpzdemand.toFixed(2)} kN </br> Capacity = ${Vpzcapacity.toFixed(2)} kN</p>`
-            demandAndCapacity.insertAdjacentHTML("beforeend", demandHtml)
+           /*  const demandHtml = `<p class='demand-numbers'>Demand = ${Vpzdemand.toFixed(2)} kN </br> Capacity = ${Vpzcapacity.toFixed(2)} kN</p>`
+            demandAndCapacity.insertAdjacentHTML("beforeend", demandHtml) */
 
             if (Vpzcapacity < Vpzdemand) {
                 // console.log("\n\x1b[1;31m UNSAFE IN PANEL ZONE SHEAR");
                 // console.log("\n\x1b[1;32m USE DOUBLER PLATES");
-                const unsafeHtml = "<div class='paneldoublerplates'><div><span class='headings'> PANEL ZONE</span><p class='brown'> UNSAFE IN PANEL ZONE SHEAR'</p></div ><div><span class='headings'>DOUBLER PLATES</span><p class='green'>USE DOUBLER PLATES'</p></div></div >"
+                const unsafeHtml = `<div class='paneldoublerplates'><div><span class='headings'> PANEL ZONE</span><p class='brown'><span class='demand-numbers'>Demand = ${Vpzdemand.toFixed(2)} kN </br> Capacity = ${Vpzcapacity.toFixed(2)} kN</span></br>UNSAFE'</p></div ><div><span class='headings'>DOUBLER PLATES</span><p class='green'>USE DOUBLER PLATES'</p></div></div >`
                 safeAndUnsafeContainer.insertAdjacentHTML("beforeend", unsafeHtml)
                 // console.log(unsafeHtm)
             }
@@ -1216,11 +1242,11 @@
 
             if (tpdlim < columnData.tw) {
                 // console.log("\n\x1b[1;32m SAFE IN SHEAR");
-                const safeInShearHTML = "<div class='shears'><span class='headings'>SHEAR</span><p class='green'> SAFE IN SHEAR</p><div>"
+                const safeInShearHTML = "<div class='shears'><span class='headings'>SHEAR</span><p class='green'> SAFE</p><div>"
                 safeAndUnsafeContainer.insertAdjacentHTML("beforeend", safeInShearHTML)
             } else {
                 // console.log("\n\x1b[1;31m UNSAFE IN SHEAR");
-                const unsafeInShearHTML = "<div class='shears'><span class='headings'>SHEAR</span><p class='brown'> UNSAFE IN SHEAR</p><div>"
+                const unsafeInShearHTML = "<div class='shears'><span class='headings'>SHEAR</span><p class='brown'> UNSAFE</p><div>"
                 safeAndUnsafeContainer.insertAdjacentHTML("beforeend", unsafeInShearHTML)
             }
 
@@ -1235,11 +1261,11 @@
             // }
 
             if (Rn_b > Ru_b) {
-                const safeForBeamFlangHTML = "<div class='beamflange'><span class='headings'>BEAM FLANGE</span><p class='green'> -SAFE FOR BEAM FLANGE</p></div>"
+                const safeForBeamFlangHTML = `<div class='beamflange'><span class='headings'>BEAM FLANGE</span><p class='green'><span class='demand-numbers'>Demand = ${Ru_b.toFixed(2)} kN </br> Capacity = ${Rn_b.toFixed(2)} kN</span></br> -SAFE</p></div>`
                 safeAndUnsafeContainer.insertAdjacentHTML("beforeend", safeForBeamFlangHTML)
             } else {
                 // console.log("\n\x1b[1;31m UNSAFE IN SHEAR");
-                const unsafeForBeamFlangHTML = "<div class='beamflange'><span class='headings'>BEAM FLANGE</span><p class='brown'> -UNSAFE FOR BEAM FLANGE</p></div>"
+                const unsafeForBeamFlangHTML = `<div class='beamflange'><span class='headings'>BEAM FLANGE</span><p class='brown'> <span class='demand-numbers'>Demand = ${Ru_b.toFixed(2)} kN </br> Capacity = ${Rn_b.toFixed(2)} kN</span></br>-UNSAFE</p></div>`
                 safeAndUnsafeContainer.insertAdjacentHTML("beforeend", unsafeForBeamFlangHTML)
             }
             // Column Flange Bending (Strength)
@@ -1253,11 +1279,11 @@
             // }
 
             if (Rn_c > Rn_clim) {
-                const safeForColumnFlangHTML = "<div class='columnflange'><span class='headings'>BEAM FLANGE</span><p class='green'> -SAFE FOR COLUMN FLANGE</p></div>"
+                const safeForColumnFlangHTML = `<div class='columnflange'><span class='headings'>BEAM FLANGE</span><p class='green'> <span class='demand-numbers'>Demand = ${Rn_c.toFixed(2)} kN </br> Capacity = ${Rn_clim.toFixed(2)} kN</span></br>-SAFE</p></div>`
                 safeAndUnsafeContainer.insertAdjacentHTML("beforeend", safeForColumnFlangHTML)
             } else {
                 // console.log("\n\x1b[1;31m UNSAFE IN SHEAR");
-                const unsafeForColumnFlangHTML = "<div class='columnflange'><span class='headings'>BEAM FLANGE</span><p class='brown'> -UNSAFE FOR COLUMN FLANGE</p></div>"
+                const unsafeForColumnFlangHTML = `<div class='columnflange'><span class='headings'>BEAM FLANGE</span><p class='brown'><span class='demand-numbers'>Demand = ${Rn_c.toFixed(2)} kN </br> Capacity = ${Rn_clim.toFixed(2)} kN</span></br> -UNSAFE</p></div>`
                 safeAndUnsafeContainer.insertAdjacentHTML("beforeend", unsafeForColumnFlangHTML)
             }
 
@@ -1275,7 +1301,7 @@
                 safeAndUnsafeContainer.insertAdjacentHTML("beforeend", safeForColumnBendingHTML)
             } else {
                 // console.log("\n\x1b[1;31m UNSAFE IN SHEAR");
-                const unsafeForColumnBendingHTML = "<div><span class='headings'>BENDING STIFFNESS</span><p class='brown'> UNSAFE FOR BENDING STIFFNESS</p></div>"
+                const unsafeForColumnBendingHTML = "<div class='columnflange'><span class='headings'>BENDING STIFFNESS</span><p class='brown'> UNSAFE</p></div>"
                 safeAndUnsafeContainer.insertAdjacentHTML("beforeend", unsafeForColumnBendingHTML)
             }
 
@@ -1287,11 +1313,11 @@
 
             if (Rnc_webyield > Ru_b) {
                 /* console.log("\n\x1b[1;32m -SAFE FOR WEB LOCAL YIELDING"); */
-                const safeWebLocalCripplingHTML = "<div><span class='headings'>WEB LOCAL YIELDING</span><p class='green'> -SAFE FOR WEB LOCAL YIELDING</p></div>"
+                const safeWebLocalCripplingHTML = "<div class='columnflange'><span class='headings'>WEB LOCAL YIELDING</span><p class='green'> SAFE</p></div>"
                 safeAndUnsafeContainer.insertAdjacentHTML("beforeend", safeWebLocalCripplingHTML)
             } else {
                 /*  console.log("\n\x1b[1;31m UNSAFE IN WEB LOCAL YIELDING"); */
-                const unSafeWebLocalCripplingHTML = "<div><span class='headings'>WEB LOCAL YIELDING</span><p class='brown'> -UNSAFE FOR WEB LOCAL YIELDING</p></div>"
+                const unSafeWebLocalCripplingHTML = "<div class='columnflange'><span class='headings'>WEB LOCAL YIELDING</span><p class='brown'> UNSAFE</p></div>"
                 safeAndUnsafeContainer.insertAdjacentHTML("beforend", unSafeWebLocalCripplingHTML)
             }
 
@@ -1300,12 +1326,12 @@
             const Rnc_webcrip = 0.80 * (Math.pow(tw, 2)) * (1 + 3 * (Lb / columnData.d) * Math.pow(tw / columnData.tf, 1.5)) * Math.sqrt(E * Fy * columnData.tf / tw) * Qf / 1000;
 
             if (Rnc_webcrip > Ru_b) {
-                const safeWebCripplingHTML = "<div><span class='headings'>WEB CRIPPLING</span><p class='green'> -SAFE FOR WEB CRIPPLING</p></div>"
+                const safeWebCripplingHTML = "<div class='columnflange'><span class='headings'>WEB CRIPPLING</span><p class='green'> SAFE</p></div>"
                 safeAndUnsafeContainer.insertAdjacentHTML("beforeend", safeWebCripplingHTML)
                 /* console.log("\n\x1b[1;32m SAFE FOR WEB CRIPPLING"); */
             } else {
                 /* console.log("\n\x1b[1;31m UNSAFE IN WEB CRIPPLING"); */
-                const unSafeWebCripplingHTML = "<div><span class='headings'>WEB CRIPPLING</span><p class='brown'> -UNSAFE FOR WEB CRIPPLING</p></div>"
+                const unSafeWebCripplingHTML = "<div class='columnflange'><span class='headings'>WEB CRIPPLING</span><p class='brown'> UNSAFE</p></div>"
                 safeAndUnsafeContainer.insertAdjacentHTML("beforeend", unSafeWebCripplingHTML)
             }
 
