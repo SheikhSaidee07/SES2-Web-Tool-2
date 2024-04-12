@@ -374,12 +374,6 @@
             }
         }
 
-        /* @media screen and (max-width: 1440px) {
-            .dropdown--box {
-                 width: 61%;
-            }
-        } */
-
         @media screen and (max-width: 1024px) {
             .input {
                 width: 100%;
@@ -524,9 +518,13 @@
             }
         }
         @media screen and (max-width: 425px) {
+            .input--container span{
+                font-size: .8rem;
+                width: 1rem;
+            }
             .dropdown--box {
                 width: 100%;
-                margin-left: 0 !important;
+                margin-left: 0;
             }
             .safeAndUnsafeContainer{
                 gap: .5rem;
@@ -543,11 +541,11 @@
                 flex-direction: column;
                 margin-top: 0;
 
-                img {
-                    width: 20rem;
-                    margin: 0 2rem;
-                }
             }
+            .image--section .image--box-1  img,.image--section .image--box-2  img {
+                    width: 24rem;
+                    margin-left: 0rem;
+                }
 
             .label {
                 font-size: .8rem;
@@ -591,29 +589,28 @@
             .memberContainer{
                 flex-wrap: wrap;
             }
-            .brown,.green{
-                width: 20rem;
+            .brown ,.green{
+                width: 11rem;
+                height: 9rem;
             }
         }
         @media screen and (max-width: 375px) {
             .dropdown--box {
                 width: 100%;
                 margin-left: 0;
-
-                .select-container {
-                    width: 100%;
-                }
             }
 
+            .dropdown--box .select-container {
+                width: 100%;
+                }
             .image--section {
                 flex-direction: column;
                 margin-top: 0;
-
-                img {
-                    width: 17rem;
-                }
             }
-
+            .image--section .image--box-1  img ,.image--section .image--box-2  img {
+                    width: 17rem;
+                    margin: 0 2rem;
+                }
             .span-class {
                 font-size: 9px;
                 width: 2.5rem;
@@ -641,7 +638,7 @@
             }
 
             .x,.x-row {
-                top: 9rem;
+                top:11rem;
                 right: 2.2rem;
             }
 
@@ -679,12 +676,11 @@
 
             .image--section {
                 flex-direction: column;
-
-                img {
-                    width: 14rem;
-                }
             }
-
+            .image--section .image--box-1  img,.image--section .image--box-2  img {
+                    width: 20rem;
+                    margin: 0 2rem;
+                }
             .d_b,
             .d_c {
                 top: 10rem;
