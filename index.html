@@ -67,8 +67,6 @@
             }
         }
 
-
-
         .input {
             width: 52%;
             height: 3.2rem;
@@ -334,10 +332,13 @@
             gap: 2rem;
             flex-wrap: wrap;
             min-height: 10rem;
-
-            /* p {
-                border: 1px solid red;
-            } */
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            padding: 2rem;
+            border-radius: 1rem;
+            background-color: #F7F7F7;
+        }
+        .hidden{
+            display: none;
         }
 
         .shears {
@@ -388,7 +389,7 @@
             align-items: center;
             color: white;
             font-weight: 600;
-            /* padding: 1rem 1rem; */
+             padding: 0 1rem; 
             border: 1px solid #03C03C;
             border-radius: 10px;
             box-shadow: rgba(2, 244, 79, 0.2) 0px 7px 15px 0px;
@@ -401,6 +402,16 @@
             .dropdown--box {
                 margin-left: 5rem;
                 width: 50%;
+            }
+        }
+        @media screen and (max-width: 1440px) {
+            .safeAndUnsafeContainer{
+                width: 90%;
+                margin: 0 auto;
+                justify-content: center;
+            }
+            .green,.brown {
+                width: 15rem
             }
         }
 
@@ -417,7 +428,10 @@
             .span-class {
                 width: 2.4;
             }
-
+            .safeAndUnsafeContainer{
+                justify-content: center;
+                width: 100%;
+            }
             .image--section {
                 img {
                     width: 14rem;
@@ -451,6 +465,10 @@
             /*    right: .2rem;*/
             /*    top: 1rem;*/
             /*}*/
+
+            .green,.brown{
+                width: 15rem;
+            }
 
         }
 
@@ -531,7 +549,7 @@
 
             .dropdown--box {
                 width: 100%;
-                margin-left: 3rem;
+               /*  margin-left: 3rem; */
             }
 
             .dropdown {
@@ -540,10 +558,16 @@
 
             .safeAndUnsafeContainer {
                 gap: 2rem;
+                justify-content: center;
+                width: 94%;
+                padding: 2rem 0;
             }
 
             .mpr {
                 width: 100%;
+            }
+            .brown,.green{
+                width: 12rem;
             }
 
             .memberContainer {
@@ -568,7 +592,9 @@
                 /* text-align: center; */
                 flex-direction: column;
             }
-
+            .demand{
+                width: 100%;
+            }
             .paneldoublerplates {
                 gap: .8rem;
                 display: flex;
@@ -583,7 +609,7 @@
 
             .image--section .image--box-1 img,
             .image--section .image--box-2 img {
-                width: 24rem;
+                width: 20rem;
                 margin-left: 0rem;
             }
 
@@ -629,12 +655,12 @@
 
             .memberContainer {
                 flex-wrap: wrap;
+                justify-content: center;
             }
 
             .brown,
             .green {
-                width: 11rem;
-                height: 9rem;
+                width: 18rem;
             }
         }
 
@@ -707,7 +733,7 @@
 
             .brown,
             .green {
-                width: 20rem;
+                width: 15rem;
             }
         }
 
@@ -728,10 +754,12 @@
             .image--section {
                 flex-direction: column;
             }
-
+            .safeAndUnsafeContainer{
+                padding: .5rem;
+            }
             .image--section .image--box-1 img,
             .image--section .image--box-2 img {
-                width: 20rem;
+                width: 14rem;
                 margin: 0 2rem;
             }
 
@@ -763,7 +791,7 @@
             /*}*/
             .brown,
             .green {
-                width: 18rem;
+                width: 13rem;
             }
         }
     </style>
@@ -862,11 +890,10 @@
             </section>
 
         </div>
-
-        <section class="mprContainer">
-            <div class="calculate-btn">
-                <button type="button" class="btn" id="calculateBtn">Run Analysis</button>
-            </div>
+        <div class="calculate-btn">
+            <button type="button" class="btn" id="calculateBtn">Run Analysis</button>
+        </div>
+        <section class="mprContainer hidden">
             <div class="mpr">
                 <div class="memberContainer">
                     <!-- <div class="memberLeftBox">
@@ -1156,6 +1183,7 @@
     document.addEventListener("DOMContentLoaded", function () {
         const calculateBtn = document.getElementById("calculateBtn");
         const mprContainer = document.querySelector(".mpr")
+        const parentContainer = document.querySelector(".mprContainer")
         const memberLeftBox = document.querySelector(".memberLeftBox")
         const memberRightBox = document.querySelector(".memberRightBox")
         const memberContainer = document.querySelector(".memberContainer")
@@ -1174,9 +1202,11 @@
         calculateBtn.addEventListener("click", function () {
             // memberLeftBox.innerHTML = ""
             // memberRightBox.innerHTML = ""
+
             maxMoment.innerHTML = ""
             safeAndUnsafeContainer.innerHTML = ""
             memberContainer.innerHTML = "";
+            parentContainer.classList.remove("hidden")
             // Constants
             const Cpr = 1.4;
             const Ry = 1.1;
