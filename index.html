@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
     <meta charset="UTF-8">
@@ -51,15 +50,27 @@
 
         .input--container {
             display: flex;
-        /*     justify-content: center; */
+            /*     justify-content: center; */
             align-items: center;
             gap: 1rem;
             width: 100%;
 
         }
 
+        @media (max-width:1024px) {
+            .input {
+                width: 40% !important;
+            }
+
+            .label {
+                font-size: 16px;
+            }
+        }
+
+
+
         .input {
-            width: 56%;
+            width: 52%;
             height: 3.2rem;
             background-color: #F7F7F7;
             border: 1px solid rgba(0, 0, 0, 0.08);
@@ -76,7 +87,7 @@
 
         .label {
             font-weight: 400;
-            width: 12rem;
+            width: 30%;
             color: #555;
         }
 
@@ -89,12 +100,14 @@
             gap: 2rem;
             margin-bottom: 1rem;
         }
-        .input-section h3{
+
+        .input-section h3 {
             margin-left: 5rem;
         }
+
         .input--section-box {
             display: flex;
-            justify-content: center;
+            justify-content: space-evenly;
             width: 100%;
         }
 
@@ -103,8 +116,6 @@
             gap: 1rem;
             margin-top: 4rem;
             margin-right: 2rem;
-
-
         }
 
         .image--section img {
@@ -132,44 +143,45 @@
             font-size: 13px;
         }
 
-       /*  .span-class:nth-child(4) {
+        /*  .span-class:nth-child(4) {
             border: none;
         } */
 
-        .d_b,
-        .d_c {
-            top: 11rem;
-            left: 1.3rem;
-        }
+        /*.d_b,*/
+        /*.d_c {*/
+        /*    top: 11rem;*/
+        /*    left: 1.3rem;*/
+        /*}*/
 
-        .bf_b,
-        .bf_c {
-            bottom: 13.4rem;
-            left: 8.9rem;
-        }
+        /*.bf_b,*/
+        /*.bf_c {*/
+        /*    bottom: 13.4rem;*/
+        /*    left: 8.9rem;*/
+        /*}*/
 
-        .tw_c {
-            bottom: 20rem;
-            right: 4.3rem;
-        }
-        .x,.x-row {
-            top: 10.5rem;
-            right: 1.2rem;
-            border: none;
-        }
+        /*.tw_c {*/
+        /*    bottom: 20rem;*/
+        /*    right: 4.3rem;*/
+        /*}*/
+        /*.x,.x-row {*/
+        /*    top: 10.5rem;*/
+        /*    right: 1.2rem;*/
+        /*    border: none;*/
+        /*}*/
 
-        .tf_c {
-            right: .6rem;
-            top: 1.5rem;
-        }
+        /*.tf_c {*/
+        /*    right: .6rem;*/
+        /*    top: 1.5rem;*/
+        /*}*/
 
         .input--section {
             display: flex;
-            justify-content: center;
+            justify-content: flex-start;
             align-items: center;
             flex-direction: column;
             padding: 2rem;
-            width: 100%;
+
+
         }
 
         .dropdown--box {
@@ -198,7 +210,7 @@
             padding: 1rem;
             border-radius: 5px;
             color: #555;
-            width: 100%;
+            width: 128px;
             font-weight: 700;
             border: 1px solid rgba(0, 0, 0, 0.08);
         }
@@ -312,8 +324,8 @@
 
         .demand-numbers {
             font-weight: 600;
-            padding: 1rem 0;
-            margin-bottom: 2rem;
+            /* padding: 1rem 0; */
+            /* margin-bottom: 2rem; */
         }
 
         .safeAndUnsafeContainer {
@@ -321,6 +333,7 @@
             /* align-items: center; */
             gap: 2rem;
             flex-wrap: wrap;
+            min-height: 10rem;
 
             /* p {
                 border: 1px solid red;
@@ -345,26 +358,43 @@
 
         /* .beamflange,
         .shears */
+        .columnflange {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
 
         .brown {
-            color: red;
+            background-color: #f52949;
+            color: white;
             font-weight: 600;
             padding: 1rem 1rem;
             border: 1px solid red;
             border-radius: 10px;
             box-shadow: rgba(255, 0, 0, 0.2) 0px 7px 15px 0px;
             width: 9rem;
-
+            min-height: 12rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
         }
 
         .green {
-            color: #03C03C;
+            background-color: #03C03C;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
             font-weight: 600;
-            padding: 1rem 1rem;
+            /* padding: 1rem 1rem; */
             border: 1px solid #03C03C;
             border-radius: 10px;
             box-shadow: rgba(2, 244, 79, 0.2) 0px 7px 15px 0px;
             width: 7.9rem;
+            min-height: 12rem;
+            flex-direction: column;
         }
 
         @media screen and (max-width: 2560px) {
@@ -375,9 +405,9 @@
         }
 
         @media screen and (max-width: 1024px) {
-            .input {
-                width: 100%;
-            }
+            /*.input {*/
+            /*    width: 100%;*/
+            /*}*/
 
             .dropdown--box {
                 margin-left: 0;
@@ -395,32 +425,32 @@
                 }
             }
 
-            .d_b,
-            .d_c {
-                top: 10rem;
-                left: .6rem;
-            }
+            /*.d_b,*/
+            /*.d_c {*/
+            /*    top: 10rem;*/
+            /*    left: .6rem;*/
+            /*}*/
 
-            .bf_b,
-            .bf_c {
-                bottom: 16.5rem;
-                left: 6rem;
-            }
+            /*.bf_b,*/
+            /*.bf_c {*/
+            /*    bottom: 16.5rem;*/
+            /*    left: 6rem;*/
+            /*}*/
 
-            .tw_c {
-                bottom: 21.8rem;
-                right: 2rem;
-            }
+            /*.tw_c {*/
+            /*    bottom: 21.8rem;*/
+            /*    right: 2rem;*/
+            /*}*/
 
-            .x,.x-row {
-                top: 9rem;
-                right: 0;
-            }
+            /*.x,.x-row {*/
+            /*    top: 9rem;*/
+            /*    right: 0;*/
+            /*}*/
 
-            .tf_c {
-                right: .2rem;
-                top: 1rem;
-            }
+            /*.tf_c {*/
+            /*    right: .2rem;*/
+            /*    top: 1rem;*/
+            /*}*/
 
         }
 
@@ -429,9 +459,9 @@
                 padding: 1rem;
             }
 
-            .input {
-                width: 100%;
-            }
+            /*.input {*/
+            /*    width: 100%;*/
+            /*}*/
 
             .input--section {
                 padding: 1rem;
@@ -440,7 +470,7 @@
 
             .input--container {
                 padding-right: 0;
-                justify-content: center;
+                justify-content: flex-start;
 
                 span {
                     font-size: .8rem;
@@ -471,33 +501,33 @@
                 }
             }
 
-            .d_b,
-            .d_c {
-                top: 10rem;
-                left: 2.3rem;
-            }
+            /*.d_b,*/
+            /*.d_c {*/
+            /*    top: 10rem;*/
+            /*    left: 2.3rem;*/
+            /*}*/
 
-            .bf_b,
-            .bf_c {
-                bottom: 1.5rem;
-                left: 16rem;
-            }
+            /*.bf_b,*/
+            /*.bf_c {*/
+            /*    bottom: 1.5rem;*/
+            /*    left: 16rem;*/
+            /*}*/
 
-            .tw_c {
-                bottom: 6rem;
-                right: 8rem;
-            }
+            /*.tw_c {*/
+            /*    bottom: 6rem;*/
+            /*    right: 8rem;*/
+            /*}*/
 
-            .x,.x-row {
-                right: 1.9rem;
-                top: 9rem;
-            }
+            /*.x,.x-row {*/
+            /*    right: 1.9rem;*/
+            /*    top: 9rem;*/
+            /*}*/
 
-            .tf_c {
-                top: 0.5rem;
-                right: 1.5rem;
+            /*.tf_c {*/
+            /*    top: 0.5rem;*/
+            /*    right: 1.5rem;*/
 
-            }
+            /*}*/
 
             .dropdown--box {
                 width: 100%;
@@ -507,76 +537,86 @@
             .dropdown {
                 width: 100%;
             }
-            .safeAndUnsafeContainer{
+
+            .safeAndUnsafeContainer {
                 gap: 2rem;
             }
-            .mpr{
+
+            .mpr {
                 width: 100%;
             }
+
             .memberContainer {
                 gap: 1rem;
             }
         }
+
         @media screen and (max-width: 425px) {
-            .input--container span{
+            .input--container span {
                 font-size: .8rem;
                 width: 1rem;
             }
+
             .dropdown--box {
                 width: 100%;
                 margin-left: 0;
             }
-            .safeAndUnsafeContainer{
+
+            .safeAndUnsafeContainer {
                 gap: .5rem;
                 align-items: center;
                 /* text-align: center; */
                 flex-direction: column;
             }
+
             .paneldoublerplates {
                 gap: .8rem;
                 display: flex;
                 flex-direction: column;
             }
+
             .image--section {
                 flex-direction: column;
                 margin-top: 0;
 
             }
-            .image--section .image--box-1  img,.image--section .image--box-2  img {
-                    width: 24rem;
-                    margin-left: 0rem;
-                }
+
+            .image--section .image--box-1 img,
+            .image--section .image--box-2 img {
+                width: 24rem;
+                margin-left: 0rem;
+            }
 
             .label {
                 font-size: .8rem;
             }
 
-            .d_b,
-            .d_c {
-                top: 10rem;
-                left: 1.6rem;
-            }
+            /*.d_b,*/
+            /*.d_c {*/
+            /*    top: 10rem;*/
+            /*    left: 1.6rem;*/
+            /*}*/
 
-            .bf_b,
-            .bf_c {
-                bottom: 1.5rem;
-                left: 11rem;
-            }
+            /*.bf_b,*/
+            /*.bf_c {*/
+            /*    bottom: 1.5rem;*/
+            /*    left: 11rem;*/
+            /*}*/
 
-            .tw_c {
-                bottom: 6rem;
-                right: 7rem;
-            }
+            /*.tw_c {*/
+            /*    bottom: 6rem;*/
+            /*    right: 7rem;*/
+            /*}*/
 
-            .x,.x-row {
-                right: 2.5rem;
-                top: 9rem;
-            }
+            /*.x,.x-row {*/
+            /*    right: 2.5rem;*/
+            /*    top: 9rem;*/
+            /*}*/
 
-            .tf_c {
-                top: 1rem;
-                left: 18.7rem;
-            }
+            /*.tf_c {*/
+            /*    top: 1rem;*/
+            /*    left: 18.7rem;*/
+            /*}*/
 
             .span-class {
                 width: 2.7rem;
@@ -586,14 +626,18 @@
             td {
                 display: block;
             }
-            .memberContainer{
+
+            .memberContainer {
                 flex-wrap: wrap;
             }
-            .brown ,.green{
+
+            .brown,
+            .green {
                 width: 11rem;
                 height: 9rem;
             }
         }
+
         @media screen and (max-width: 375px) {
             .dropdown--box {
                 width: 100%;
@@ -602,15 +646,19 @@
 
             .dropdown--box .select-container {
                 width: 100%;
-                }
+            }
+
             .image--section {
                 flex-direction: column;
                 margin-top: 0;
             }
-            .image--section .image--box-1  img ,.image--section .image--box-2  img {
-                    width: 17rem;
-                    margin: 0 2rem;
-                }
+
+            .image--section .image--box-1 img,
+            .image--section .image--box-2 img {
+                width: 17rem;
+                margin: 0 2rem;
+            }
+
             .span-class {
                 font-size: 9px;
                 width: 2.5rem;
@@ -620,32 +668,32 @@
                 font-size: .8rem;
             }
 
-            .d_b,
-            .d_c {
-                top: 10rem;
-                left: 1.3rem;
-            }
+            /*.d_b,*/
+            /*.d_c {*/
+            /*    top: 10rem;*/
+            /*    left: 1.3rem;*/
+            /*}*/
 
-            .bf_b,
-            .bf_c {
-                bottom: 1.5rem;
-                left: 9.4rem;
-            }
+            /*.bf_b,*/
+            /*.bf_c {*/
+            /*    bottom: 1.5rem;*/
+            /*    left: 9.4rem;*/
+            /*}*/
 
-            .tw_c {
-                bottom: 6rem;
-                right: 6rem;
-            }
+            /*.tw_c {*/
+            /*    bottom: 6rem;*/
+            /*    right: 6rem;*/
+            /*}*/
 
-            .x,.x-row {
-                top:11rem;
-                right: 2.2rem;
-            }
+            /*.x,.x-row {*/
+            /*    top:11rem;*/
+            /*    right: 2.2rem;*/
+            /*}*/
 
-            .tf_c {
-                left: 16rem;
-                top: 1rem;
-            }
+            /*.tf_c {*/
+            /*    left: 16rem;*/
+            /*    top: 1rem;*/
+            /*}*/
 
             .dropdown--box {
                 width: 67%;
@@ -656,10 +704,13 @@
             .dropdown {
                 width: 100%;
             }
-            .brown,.green{
+
+            .brown,
+            .green {
                 width: 20rem;
             }
         }
+
         @media screen and (max-width: 320px) {
             .dropdown--box {
                 width: 100%;
@@ -677,37 +728,41 @@
             .image--section {
                 flex-direction: column;
             }
-            .image--section .image--box-1  img,.image--section .image--box-2  img {
-                    width: 20rem;
-                    margin: 0 2rem;
-                }
-            .d_b,
-            .d_c {
-                top: 10rem;
-                left: 1.3rem;
+
+            .image--section .image--box-1 img,
+            .image--section .image--box-2 img {
+                width: 20rem;
+                margin: 0 2rem;
             }
 
-            .bf_b,
-            .bf_c {
-                bottom: 1.5rem;
-                left: 8rem;
-            }
+            /*.d_b,*/
+            /*.d_c {*/
+            /*    top: 10rem;*/
+            /*    left: 1.3rem;*/
+            /*}*/
 
-            .tw_c {
-                bottom: 6rem;
-                right: 4.8rem;
-            }
+            /*.bf_b,*/
+            /*.bf_c {*/
+            /*    bottom: 1.5rem;*/
+            /*    left: 8rem;*/
+            /*}*/
 
-            .x,.x-row {
-                bottom: 9.4rem;
-                top: 9rem;
-            }
+            /*.tw_c {*/
+            /*    bottom: 6rem;*/
+            /*    right: 4.8rem;*/
+            /*}*/
 
-            .tf_c {
-                top: 1rem;
-                left: 13.5rem;
-            }
-            .brown,.green{
+            /*.x,.x-row {*/
+            /*    bottom: 9.4rem;*/
+            /*    top: 9rem;*/
+            /*}*/
+
+            /*.tf_c {*/
+            /*    top: 1rem;*/
+            /*    left: 13.5rem;*/
+            /*}*/
+            .brown,
+            .green {
                 width: 18rem;
             }
         }
@@ -717,7 +772,7 @@
 <body>
     <div class="app--container">
         <header>
-            <h1 class="heading">Structual Steel Member Design </h1>
+            <h1 class="heading">Steel WUF -W Connection Design </h1>
             </br>
             <p class="sub--heading">AISC 360-16, AISC 341-16, AISC 358-16</p>
         </header>
@@ -794,7 +849,7 @@
                     <span class="span-class d_b"></span>
                     <span class="bf_b span-class"></span>
                     <span class="x-row span-class"></span>
-                    <img src="./column.png" alt="column">
+                    <img src="http://sterlingengineering.us/wp-content/uploads/2020/12/column.png" alt="column">
                 </div>
                 <div class="image--box-2">
                     <span class="d_c span-class"></span>
@@ -802,7 +857,7 @@
                     <span class="tw_c span-class"></span>
                     <span class="x span-class"></span>
                     <span class="tf_c span-class"></span>
-                    <img src="./row.png" alt="row">
+                    <img src="http://sterlingengineering.us/wp-content/uploads/2020/12/row.png" alt="row">
                 </div>
             </section>
 
@@ -823,6 +878,7 @@
                     </div> -->
 
                 </div>
+                <p class="max-moment"></p>
                 <!--  <p>"Max Moment, Mpr =", Mpr.toFixed(2), "kNm"</p>
                 <p>"--------------------------------------- MEMBER LEFT END ------------------------------------------------------"</p>
                 <p>"Left End Shear, VuL = ", ${}, "kN", "\nRight End Shear, VuR = ", {}, "kNm"></p>
@@ -1105,6 +1161,8 @@
         const memberContainer = document.querySelector(".memberContainer")
         const demandAndCapacity = document.querySelector(".demandAndCapacity")
         const safeAndUnsafeContainer = document.querySelector(".safeAndUnsafeContainer")
+        const maxMoment = document.querySelector(".max-moment")
+        console.log(maxMoment)
 
         const demandContainer = document.querySelector(".demand")
         console.log(memberLeftBox)
@@ -1116,6 +1174,8 @@
         calculateBtn.addEventListener("click", function () {
             // memberLeftBox.innerHTML = ""
             // memberRightBox.innerHTML = ""
+            maxMoment.innerHTML = ""
+            safeAndUnsafeContainer.innerHTML = ""
             memberContainer.innerHTML = "";
             // Constants
             const Cpr = 1.4;
@@ -1151,12 +1211,12 @@
             d_c.textContent = columnData.d
             tw_c.textContent = columnData.tw
             tf_c.textContent = columnData.tf
-            console.log("column data is --------------->", columnData)
+            // console.log("column data is --------------->", columnData)
             // Calculating moment capacity
             const Mpr = Cpr * Ry * Fy * beamData.zpx / Math.pow(10, 6);
             // console.log("Max Moment, Mpr =", Mpr.toFixed(2), "kNm");
-            const html = `<p>Max Moment Mpr = ${Mpr.toFixed(2)} kNm</p>`
-            mprContainer.insertAdjacentHTML("beforeend", html)
+            const html = `Max Moment Mpr = ${Mpr.toFixed(2)} kNm`
+            maxMoment.insertAdjacentHTML("beforeend", html)
 
             // Calculating loads
             const wu = 1.2 * DL + 0.5 * LL; // kNm
@@ -1216,13 +1276,13 @@
             const Vpzcapacity = 0.6 * Fy * columnData.d * columnData.tw / 1000 + (1.8 * columnData.bf * Math.pow(columnData.tf, 2) * Fy) / beamData.d / 1000;
             console.log("vpz capacity", Vpzcapacity)
             // console.log("Demand = ", Vpzdemand.toFixed(2), "kN", "Capacity = ", Vpzcapacity.toFixed(2), "kN");
-           /*  const demandHtml = `<p class='demand-numbers'>Demand = ${Vpzdemand.toFixed(2)} kN </br> Capacity = ${Vpzcapacity.toFixed(2)} kN</p>`
-            demandAndCapacity.insertAdjacentHTML("beforeend", demandHtml) */
+            /*  const demandHtml = `<p class='demand-numbers'>Demand = ${Vpzdemand.toFixed(2)} kN </br> Capacity = ${Vpzcapacity.toFixed(2)} kN</p>`
+             demandAndCapacity.insertAdjacentHTML("beforeend", demandHtml) */
 
             if (Vpzcapacity < Vpzdemand) {
                 // console.log("\n\x1b[1;31m UNSAFE IN PANEL ZONE SHEAR");
                 // console.log("\n\x1b[1;32m USE DOUBLER PLATES");
-                const unsafeHtml = `<div class='paneldoublerplates'><div><span class='headings'> PANEL ZONE</span><p class='brown'><span class='demand-numbers'>Demand = ${Vpzdemand.toFixed(2)} kN </br> Capacity = ${Vpzcapacity.toFixed(2)} kN</span></br>UNSAFE'</p></div ><div><span class='headings'>DOUBLER PLATES</span><p class='green'>USE DOUBLER PLATES'</p></div></div >`
+                const unsafeHtml = `<div class='paneldoublerplates'><div><span class='headings'> PANEL ZONE</span><p class='brown'><span class='demand-numbers'>Demand = ${Vpzdemand.toFixed(2)} kN </br> Capacity = ${Vpzcapacity.toFixed(2)} kN</span></br><span>UNSAFE</span></p></div ><div><span class='headings'>DOUBLER PLATES</span><p class='green'>USE DOUBLER PLATES</p></div></div >`
                 safeAndUnsafeContainer.insertAdjacentHTML("beforeend", unsafeHtml)
                 // console.log(unsafeHtm)
             }
@@ -1257,11 +1317,11 @@
             // }
 
             if (Rn_b > Ru_b) {
-                const safeForBeamFlangHTML = `<div class='beamflange'><span class='headings'>BEAM FLANGE</span><p class='green'><span class='demand-numbers'>Demand = ${Ru_b.toFixed(2)} kN </br> Capacity = ${Rn_b.toFixed(2)} kN</span></br> -SAFE</p></div>`
+                const safeForBeamFlangHTML = `<div class='beamflange'><span class='headings'>BEAM FLANGE</span><p class='green'><span class='demand-numbers'>Demand = ${Ru_b.toFixed(2)} kN </br> Capacity = ${Rn_b.toFixed(2)} kN</span></br><span>SAFE</span></p></div>`
                 safeAndUnsafeContainer.insertAdjacentHTML("beforeend", safeForBeamFlangHTML)
             } else {
                 // console.log("\n\x1b[1;31m UNSAFE IN SHEAR");
-                const unsafeForBeamFlangHTML = `<div class='beamflange'><span class='headings'>BEAM FLANGE</span><p class='brown'> <span class='demand-numbers'>Demand = ${Ru_b.toFixed(2)} kN </br> Capacity = ${Rn_b.toFixed(2)} kN</span></br>-UNSAFE</p></div>`
+                const unsafeForBeamFlangHTML = `<div class='beamflange'><span class='headings'>BEAM FLANGE</span><p class='brown'> <span class='demand-numbers'>Demand = ${Ru_b.toFixed(2)} kN </br> Capacity = ${Rn_b.toFixed(2)} kN</span></br>UNSAFE</p></div>`
                 safeAndUnsafeContainer.insertAdjacentHTML("beforeend", unsafeForBeamFlangHTML)
             }
             // Column Flange Bending (Strength)
@@ -1275,11 +1335,11 @@
             // }
 
             if (Rn_c > Rn_clim) {
-                const safeForColumnFlangHTML = `<div class='columnflange'><span class='headings'>BEAM FLANGE</span><p class='green'> <span class='demand-numbers'>Demand = ${Rn_c.toFixed(2)} kN </br> Capacity = ${Rn_clim.toFixed(2)} kN</span></br>-SAFE</p></div>`
+                const safeForColumnFlangHTML = `<div class='columnflange'><span class='headings'>BEAM FLANGE</span><p class='green'> <span class='demand-numbers'>Demand = ${Rn_c.toFixed(2)} kN </br> Capacity = ${Rn_clim.toFixed(2)} kN</span></br>SAFE</p></div>`
                 safeAndUnsafeContainer.insertAdjacentHTML("beforeend", safeForColumnFlangHTML)
             } else {
                 // console.log("\n\x1b[1;31m UNSAFE IN SHEAR");
-                const unsafeForColumnFlangHTML = `<div class='columnflange'><span class='headings'>BEAM FLANGE</span><p class='brown'><span class='demand-numbers'>Demand = ${Rn_c.toFixed(2)} kN </br> Capacity = ${Rn_clim.toFixed(2)} kN</span></br> -UNSAFE</p></div>`
+                const unsafeForColumnFlangHTML = `<div class='columnflange'><span class='headings'>BEAM FLANGE</span><p class='brown'><span class='demand-numbers'>Demand = ${Rn_c.toFixed(2)} kN </br> Capacity = ${Rn_clim.toFixed(2)} kN</span></br>UNSAFE</p></div>`
                 safeAndUnsafeContainer.insertAdjacentHTML("beforeend", unsafeForColumnFlangHTML)
             }
 
