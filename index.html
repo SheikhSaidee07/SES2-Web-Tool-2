@@ -367,13 +367,12 @@
         }
 
         .brown {
-            background-color: #f52949;
-            color: white;
+            color: #f52949;
             font-weight: 600;
             padding: 1rem 1rem;
-            border: 1px solid red;
+            border: 1px solid #f52949;
             border-radius: 10px;
-            box-shadow: rgba(255, 0, 0, 0.2) 0px 7px 15px 0px;
+            box-shadow: rgba(255, 0, 0, 0.4) 0px 7px 15px 0px;
             width: 9rem;
             min-height: 12rem;
             display: flex;
@@ -383,16 +382,16 @@
         }
 
         .green {
-            background-color: #03C03C;
+            /* background-color: #03C03C; */
             display: flex;
             justify-content: center;
             align-items: center;
-            color: white;
+            color: #03C03C;
             font-weight: 600;
-             padding: 0 1rem; 
+            padding: 0 1rem; 
             border: 1px solid #03C03C;
             border-radius: 10px;
-            box-shadow: rgba(2, 244, 79, 0.2) 0px 7px 15px 0px;
+            box-shadow: rgba(2, 244, 79, 0.4) 0px 7px 15px 0px;
             width: 7.9rem;
             min-height: 12rem;
             flex-direction: column;
@@ -1308,11 +1307,12 @@
             // console.log("Demand = ", Vpzdemand.toFixed(2), "kN", "Capacity = ", Vpzcapacity.toFixed(2), "kN");
             /*  const demandHtml = `<p class='demand-numbers'>Demand = ${Vpzdemand.toFixed(2)} kN </br> Capacity = ${Vpzcapacity.toFixed(2)} kN</p>`
              demandAndCapacity.insertAdjacentHTML("beforeend", demandHtml) */
-
+            const demandPercentage = (Vpzdemand / Vpzcapacity) * 100;
+            const capacityPercentage = (Vpzcapacity / Vpzdemand) * 100;
             if (Vpzcapacity < Vpzdemand) {
                 // console.log("\n\x1b[1;31m UNSAFE IN PANEL ZONE SHEAR");
                 // console.log("\n\x1b[1;32m USE DOUBLER PLATES");
-                const unsafeHtml = `<div class='paneldoublerplates'><div><span class='headings'> PANEL ZONE</span><p class='brown'><span class='demand-numbers'>Demand = ${Vpzdemand.toFixed(2)} kN </br> Capacity = ${Vpzcapacity.toFixed(2)} kN</span></br><span>UNSAFE</span></p></div ><div><span class='headings'>DOUBLER PLATES</span><p class='green'>USE DOUBLER PLATES</p></div></div >`
+                const unsafeHtml = `<div class='paneldoublerplates'><div><span class='headings'> PANEL ZONE</span><p class='brown'><span class='demand-numbers'>Demand = ${demandPercentage.toFixed(2)} % </br> Capacity = ${capacityPercentage.toFixed(2)} %</span></br><span>UNSAFE</span></p></div ><div><span class='headings'>DOUBLER PLATES</span><p class='green'>USE DOUBLER PLATES</p></div></div >`
                 safeAndUnsafeContainer.insertAdjacentHTML("beforeend", unsafeHtml)
                 // console.log(unsafeHtm)
             }
@@ -1324,15 +1324,18 @@
 
             const dz = beamData.d - 2 * beamData.tf;
             const wz = columnData.d - 2 * columnData.tf;
+            console.log("columnData ",columnData.tw)
             const tpdlim = (dz + wz) / 90; // Min. Doubler Thickness
-
+            console.log("tdlim" ,tpdlim)
+            const shearPercentage=((tpdlim/columnData.tw)*100).toFixed(2)
             if (tpdlim < columnData.tw) {
                 // console.log("\n\x1b[1;32m SAFE IN SHEAR");
-                const safeInShearHTML = "<div class='shears'><span class='headings'>SHEAR</span><p class='green'> SAFE</p><div>"
+                
+                const safeInShearHTML = `<div class='shears'><span class='headings'>SHEAR</span><p class='green'> ${shearPercentage} % SAFE</p><div>`
                 safeAndUnsafeContainer.insertAdjacentHTML("beforeend", safeInShearHTML)
             } else {
                 // console.log("\n\x1b[1;31m UNSAFE IN SHEAR");
-                const unsafeInShearHTML = "<div class='shears'><span class='headings'>SHEAR</span><p class='brown'> UNSAFE</p><div>"
+                const unsafeInShearHTML = `<div class='shears'><span class='headings'>SHEAR</span><p class='brown'>${shearPercentage} % UNSAFE</p><div>`
                 safeAndUnsafeContainer.insertAdjacentHTML("beforeend", unsafeInShearHTML)
             }
 
@@ -1345,13 +1348,14 @@
             // } else {
             //     console.log("\n\x1b[1;31m UNSAFE FOR BEAM FLANGE");
             // }
-
+            const beamFlangeDemandPercentage=((Rn_b/Ru_b)*100).toFixed(2)
+            const beamFlangeCapacityPercentage=((Ru_b/Rn_b)*100).toFixed(2)
             if (Rn_b > Ru_b) {
-                const safeForBeamFlangHTML = `<div class='beamflange'><span class='headings'>BEAM FLANGE</span><p class='green'><span class='demand-numbers'>Demand = ${Ru_b.toFixed(2)} kN </br> Capacity = ${Rn_b.toFixed(2)} kN</span></br><span>SAFE</span></p></div>`
+                const safeForBeamFlangHTML = `<div class='beamflange'><span class='headings'>BEAM FLANGE</span><p class='green'><span class='demand-numbers'>Demand = ${beamFlangeDemandPercentage} % </br> Capacity = ${beamFlangeCapacityPercentage} %</span></br><span>SAFE</span></p></div>`
                 safeAndUnsafeContainer.insertAdjacentHTML("beforeend", safeForBeamFlangHTML)
             } else {
                 // console.log("\n\x1b[1;31m UNSAFE IN SHEAR");
-                const unsafeForBeamFlangHTML = `<div class='beamflange'><span class='headings'>BEAM FLANGE</span><p class='brown'> <span class='demand-numbers'>Demand = ${Ru_b.toFixed(2)} kN </br> Capacity = ${Rn_b.toFixed(2)} kN</span></br>UNSAFE</p></div>`
+                const unsafeForBeamFlangHTML = `<div class='beamflange'><span class='headings'>BEAM FLANGE</span><p class='brown'> <span class='demand-numbers'>Demand = ${beamFlangeDemandPercentage} % </br> Capacity = ${beamFlangeCapacityPercentage} %</span></br>UNSAFE</p></div>`
                 safeAndUnsafeContainer.insertAdjacentHTML("beforeend", unsafeForBeamFlangHTML)
             }
             // Column Flange Bending (Strength)
@@ -1363,13 +1367,14 @@
             // } else {
             //     console.log("\n\x1b[1;31m UNSAFE FOR COLUMN FLANGE");
             // }
-
+            const beamDemandFlangePercentage=((Rn_c/Rn_clim)*100).toFixed(2)
+            const beamCapacityFlangePercentage=((Rn_clim/Rn_c)*100).toFixed(2)
             if (Rn_c > Rn_clim) {
-                const safeForColumnFlangHTML = `<div class='columnflange'><span class='headings'>BEAM FLANGE</span><p class='green'> <span class='demand-numbers'>Demand = ${Rn_c.toFixed(2)} kN </br> Capacity = ${Rn_clim.toFixed(2)} kN</span></br>SAFE</p></div>`
+                const safeForColumnFlangHTML = `<div class='columnflange'><span class='headings'>BEAM FLANGE</span><p class='green'> <span class='demand-numbers'>Demand = ${beamDemandFlangePercentage} % </br> Capacity = ${beamCapacityFlangePercentage} %</span></br>SAFE</p></div>`
                 safeAndUnsafeContainer.insertAdjacentHTML("beforeend", safeForColumnFlangHTML)
             } else {
                 // console.log("\n\x1b[1;31m UNSAFE IN SHEAR");
-                const unsafeForColumnFlangHTML = `<div class='columnflange'><span class='headings'>BEAM FLANGE</span><p class='brown'><span class='demand-numbers'>Demand = ${Rn_c.toFixed(2)} kN </br> Capacity = ${Rn_clim.toFixed(2)} kN</span></br>UNSAFE</p></div>`
+                const unsafeForColumnFlangHTML = `<div class='columnflange'><span class='headings'>BEAM FLANGE</span><p class='brown'><span class='demand-numbers'>Demand = ${beamDemandFlangePercentage} % </br> Capacity = ${beamCapacityFlangePercentage} %</span></br>UNSAFE</p></div>`
                 safeAndUnsafeContainer.insertAdjacentHTML("beforeend", unsafeForColumnFlangHTML)
             }
 
@@ -1381,13 +1386,13 @@
             // } else {
             //     console.log("\n\x1b[1;31m UNSAFE FOR BENDING STIFFNESS");
             // }
-
+            
             if (Rn_c > Rn_clim) {
-                const safeForColumnBendingHTML = "<div><span class='headings'>BENDING STIFFNESS</span><p class='green'> -SAFE FOR COLUMN BENDING STIFFNESS </br></br>--NO CONTINUITY PLATES REQURIED</p></div>"
+                const safeForColumnBendingHTML = `<div><span class='headings'>BENDING STIFFNESS</span><p class='green'>${beamDemandFlangePercentage} % -SAFE FOR COLUMN BENDING STIFFNESS </br></br>--NO CONTINUITY PLATES REQURIED</p></div>`
                 safeAndUnsafeContainer.insertAdjacentHTML("beforeend", safeForColumnBendingHTML)
             } else {
                 // console.log("\n\x1b[1;31m UNSAFE IN SHEAR");
-                const unsafeForColumnBendingHTML = "<div class='columnflange'><span class='headings'>BENDING STIFFNESS</span><p class='brown'> UNSAFE</p></div>"
+                const unsafeForColumnBendingHTML = `<div class='columnflange'><span class='headings'>BENDING STIFFNESS</span><p class='brown'>${beamDemandFlangePercentage} % UNSAFE</p></div>`
                 safeAndUnsafeContainer.insertAdjacentHTML("beforeend", unsafeForColumnBendingHTML)
             }
 
@@ -1396,28 +1401,28 @@
             const k = columnData.kdes;
             const Lb = columnData.tf;
             const Rnc_webyield = Fy * tw * (5 * k + Lb) / 1000; // AISC 360-16 Sec. J10 (16.1-143)
-
+            const yieldingPercentage=((Rnc_webyield/Ru_b)*100).toFixed(2)
             if (Rnc_webyield > Ru_b) {
                 /* console.log("\n\x1b[1;32m -SAFE FOR WEB LOCAL YIELDING"); */
-                const safeWebLocalCripplingHTML = "<div class='columnflange'><span class='headings'>WEB LOCAL YIELDING</span><p class='green'> SAFE</p></div>"
+                const safeWebLocalCripplingHTML = `<div class='columnflange'><span class='headings'>WEB LOCAL YIELDING</span><p class='green'>${yieldingPercentage} % SAFE</p></div>`
                 safeAndUnsafeContainer.insertAdjacentHTML("beforeend", safeWebLocalCripplingHTML)
             } else {
                 /*  console.log("\n\x1b[1;31m UNSAFE IN WEB LOCAL YIELDING"); */
-                const unSafeWebLocalCripplingHTML = "<div class='columnflange'><span class='headings'>WEB LOCAL YIELDING</span><p class='brown'> UNSAFE</p></div>"
+                const unSafeWebLocalCripplingHTML = `<div class='columnflange'><span class='headings'>WEB LOCAL YIELDING</span><p class='brown'>${yieldingPercentage} % UNSAFE</p></div>`
                 safeAndUnsafeContainer.insertAdjacentHTML("beforend", unSafeWebLocalCripplingHTML)
             }
 
             // Column Web Crippling
             const Qf = 1;
             const Rnc_webcrip = 0.80 * (Math.pow(tw, 2)) * (1 + 3 * (Lb / columnData.d) * Math.pow(tw / columnData.tf, 1.5)) * Math.sqrt(E * Fy * columnData.tf / tw) * Qf / 1000;
-
+            const cripplingPercentage=((Rnc_webcrip/Ru_b)*100).toFixed(2)
             if (Rnc_webcrip > Ru_b) {
-                const safeWebCripplingHTML = "<div class='columnflange'><span class='headings'>WEB CRIPPLING</span><p class='green'> SAFE</p></div>"
+                const safeWebCripplingHTML = `<div class='columnflange'><span class='headings'>WEB CRIPPLING</span><p class='green'>${cripplingPercentage} % SAFE</p></div>`
                 safeAndUnsafeContainer.insertAdjacentHTML("beforeend", safeWebCripplingHTML)
                 /* console.log("\n\x1b[1;32m SAFE FOR WEB CRIPPLING"); */
             } else {
                 /* console.log("\n\x1b[1;31m UNSAFE IN WEB CRIPPLING"); */
-                const unSafeWebCripplingHTML = "<div class='columnflange'><span class='headings'>WEB CRIPPLING</span><p class='brown'> UNSAFE</p></div>"
+                const unSafeWebCripplingHTML = `<div class='columnflange'><span class='headings'>WEB CRIPPLING</span><p class='brown'>${cripplingPercentage} % UNSAFE</p></div>`
                 safeAndUnsafeContainer.insertAdjacentHTML("beforeend", unSafeWebCripplingHTML)
             }
 
